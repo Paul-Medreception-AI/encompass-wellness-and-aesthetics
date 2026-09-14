@@ -9,40 +9,67 @@ export const metadata = {
 export default function HomePage() {
   return (
     <main>
-      {/* Hero */}
-      <section className="relative min-h-[90vh] flex items-center text-white overflow-hidden">
-        {/* The practice's own hero from encompassspa.com, with the same scroll
-            parallax their Elementor build used (motion-effects background). */}
-        <HeroParallax
-          src="/images/scraped/hero-beach.jpg"
-          alt="Woman walking along the shoreline in bright sunlight"
-          className="object-[60%_top] sm:object-[68%_top] md:object-[72%_top]"
+      {/* Hero.
+          One idea at two sizes: the photo and the copy are separate zones, so
+          her face is never behind the headline and the copy never needs a
+          scrim to be legible.
+            < lg  photo on top, copy beneath it on brand colour
+            >= lg the same two zones side by side, photo bleeding to the right
+                  edge with the scroll parallax their Elementor build had. */}
+      <section className="relative bg-[var(--color-dark)] text-white overflow-hidden">
+        {/* Their brand pattern, barely there, so the colour panel has texture. */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 opacity-[0.06] bg-repeat"
+          style={{ backgroundImage: 'url(/images/scraped/encompass_pattern1_web.jpg)', backgroundSize: '420px' }}
         />
-        {/* The source photo is high-key, so white text needs a real scrim. */}
-        <div className="absolute inset-0 bg-gradient-to-r from-ink/85 via-ink/60 to-dark/35" />
-        <div className="relative w-full max-w-7xl mx-auto px-6 py-20">
-          <div className="max-w-2xl text-left">
-          <h1 className="text-6xl sm:text-7xl font-light tracking-tight leading-tight" style={{fontFamily: 'var(--font-cormorant)'}}>
-            Get to the Root Cause of Your Health Issues
-          </h1>
-          <p className="text-xl text-white/90 mt-6 leading-relaxed">
-            Encompass Wellness and Aesthetics partners with you in your healthcare journey to reverse disease and restore optimal health. Our functional medicine approach addresses hormonal imbalance, weight management, thyroid disorders, and age-related concerns through comprehensive, personalized care.
-          </p>
-          <div className="flex flex-col sm:flex-row items-start gap-4 mt-10">
-            <Link 
-              href="/contact" 
-              className="bg-white text-dark px-8 py-4 rounded-xl font-bold shadow-xl hover:-translate-y-0.5 transition-all"
-            >
-              Schedule Your Consultation
-            </Link>
-            <Link 
-              href="/services" 
-              className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/10 transition-all"
-            >
-              Explore Our Services
-            </Link>
+
+        <div className="relative lg:grid lg:grid-cols-2 lg:items-stretch lg:min-h-[88vh]">
+          {/* Photo — first on phones, right-hand column on desktop */}
+          <div className="relative h-[40vh] min-h-[280px] lg:h-auto lg:order-2 overflow-hidden">
+            <HeroParallax
+              src="/images/scraped/hero-beach.jpg"
+              alt="Woman walking along the shoreline in bright sunlight"
+              speed={0.18}
+              className="object-[58%_top] lg:object-[62%_top]"
+            />
+            {/* Feather the seam into the colour panel: downward on phones,
+                sideways on desktop. */}
+            <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[var(--color-dark)] to-transparent lg:hidden" />
+            <div className="hidden lg:block absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[var(--color-dark)] to-transparent" />
           </div>
-        </div>
+
+          {/* Copy */}
+          <div className="relative lg:order-1 flex items-center">
+            <div className="w-full lg:max-w-[40rem] lg:ml-auto px-6 lg:pr-14 xl:pr-20 pt-12 pb-14 lg:py-24">
+              <h1
+                className="text-5xl sm:text-6xl xl:text-7xl font-light tracking-tight leading-[1.08]"
+                style={{ fontFamily: 'var(--font-cormorant)' }}
+              >
+                Get to the Root Cause of Your Health Issues
+              </h1>
+              <p className="text-lg sm:text-xl text-white/90 mt-5 lg:mt-7 leading-relaxed">
+                Encompass Wellness and Aesthetics partners with you in your healthcare journey to
+                reverse disease and restore optimal health. Our functional medicine approach
+                addresses hormonal imbalance, weight management, thyroid disorders, and age-related
+                concerns through comprehensive, personalized care.
+              </p>
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-start gap-3 sm:gap-4 mt-8 lg:mt-10">
+                <Link
+                  href="/contact"
+                  className="text-center bg-white text-[var(--color-dark)] px-8 py-4 rounded-xl font-bold shadow-xl hover:-translate-y-0.5 transition-all"
+                >
+                  Schedule Your Consultation
+                </Link>
+                <Link
+                  href="/services"
+                  className="text-center border-2 border-white/80 text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/10 transition-all"
+                >
+                  Explore Our Services
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
