@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { CONDITIONS } from '@/lib/data/conditions'
 
@@ -122,8 +123,23 @@ export default function ConditionsPage() {
               <Link 
                 key={index}
                 href={`/conditions/${condition.slug}`}
-                className="bg-white rounded-2xl p-8 border border-[var(--color-border)] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 animate-fade-up block"
+                className="bg-white rounded-2xl overflow-hidden border border-[var(--color-border)] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 block"
               >
+                {(() => {
+                  const img = CONDITIONS.find((c) => c.slug === condition.slug)?.heroImage
+                  return img ? (
+                    <div className="relative h-44 bg-[var(--color-light)]">
+                      <Image
+                        src={img.src}
+                        alt={img.alt}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-cover"
+                      />
+                    </div>
+                  ) : null
+                })()}
+                <div className="p-8">
                 <div className="stroke-[var(--color-primary)]">
                   {condition.icon}
                 </div>
@@ -136,6 +152,7 @@ export default function ConditionsPage() {
                 <div className="text-[var(--color-primary)] font-semibold text-sm mt-4 hover:underline">
                   Learn More →
                 </div>
+              </div>
               </Link>
             ))}
           </div>

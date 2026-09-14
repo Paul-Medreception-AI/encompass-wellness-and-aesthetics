@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { SERVICES } from '@/lib/data/services'
 
@@ -116,8 +117,20 @@ export default function ServicesPage() {
               <Link
                 key={service.slug}
                 href={`/services/${service.slug}`}
-                className="bg-white rounded-2xl p-8 border border-[var(--color-border)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col"
+                className="bg-white rounded-2xl overflow-hidden border border-[var(--color-border)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col"
               >
+                {service.heroImage && (
+                  <div className="relative h-48 bg-[var(--color-light)] shrink-0">
+                    <Image
+                      src={service.heroImage.src}
+                      alt={service.heroImage.alt}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className={service.heroImage.fit === 'contain' ? 'object-contain p-3' : 'object-cover'}
+                    />
+                  </div>
+                )}
+                <div className="p-8 flex flex-col flex-1">
                 <h3 className="font-cormorant text-2xl font-semibold text-[var(--color-ink)]">
                   {service.title}
                 </h3>
@@ -127,6 +140,7 @@ export default function ServicesPage() {
                 <span className="block mt-6 text-[var(--color-primary)] font-semibold text-sm group-hover:underline">
                   Learn More &rarr;
                 </span>
+              </div>
               </Link>
             ))}
           </div>

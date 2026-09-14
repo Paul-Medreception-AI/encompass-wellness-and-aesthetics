@@ -6,6 +6,7 @@ export const CONDITIONS: ConditionPageContent[] = [
   {
     ...BASE,
     slug: "chronic-fatigue-and-low-energy",
+    heroImage: {"src":"/images/conditions/chronic-fatigue-and-low-energy.jpg","alt":"Side view of young exhausted woman with rag lying on couch in living room in daylight"},
     badge: "Conditions",
     title: "Chronic Fatigue and Low Energy",
     metaTitle: "Chronic Fatigue and Low Energy Treatment in Edmond, OK",
@@ -31,6 +32,7 @@ export const CONDITIONS: ConditionPageContent[] = [
   {
     ...BASE,
     slug: "unexplained-weight-gain",
+    heroImage: {"src":"/images/scraped/1867234-e1629837967663.jpg","alt":"Medical weight loss at Encompass Wellness"},
     badge: "Conditions",
     title: "Unexplained Weight Gain",
     metaTitle: "Unexplained Weight Gain Treatment in Edmond, OK",
@@ -56,6 +58,7 @@ export const CONDITIONS: ConditionPageContent[] = [
   {
     ...BASE,
     slug: "difficulty-losing-weight",
+    heroImage: {"src":"/images/scraped/untitled-design-37-scaled.jpg","alt":"Weight loss support at Encompass Wellness"},
     badge: "Conditions",
     title: "Difficulty Losing Weight",
     metaTitle: "Difficulty Losing Weight Treatment in Edmond, OK",
@@ -81,6 +84,7 @@ export const CONDITIONS: ConditionPageContent[] = [
   {
     ...BASE,
     slug: "menopausal-symptoms",
+    heroImage: {"src":"/images/conditions/menopausal-symptoms.jpg","alt":"Elegant senior woman with gray hair holds a coffee cup, gazing out a window during winter."},
     badge: "Conditions",
     title: "Menopausal Symptoms",
     metaTitle: "Menopausal Symptoms Treatment in Edmond, OK | Encompass Wellness",
@@ -106,6 +110,7 @@ export const CONDITIONS: ConditionPageContent[] = [
   {
     ...BASE,
     slug: "perimenopause",
+    heroImage: {"src":"/images/conditions/perimenopause.jpg","alt":"A woman gazes thoughtfully amidst lush greenery, bathed in natural light."},
     badge: "Conditions",
     title: "Perimenopause",
     metaTitle: "Perimenopause Treatment in Edmond, OK | Encompass Wellness",
@@ -131,6 +136,7 @@ export const CONDITIONS: ConditionPageContent[] = [
   {
     ...BASE,
     slug: "low-testosterone-in-men",
+    heroImage: {"src":"/images/scraped/encompass-mens-sexual-health.jpg","alt":"Men’s hormone health at Encompass Wellness"},
     badge: "Conditions",
     title: "Low Testosterone in Men",
     metaTitle: "Low Testosterone in Men Treatment in Edmond, OK",
@@ -156,6 +162,7 @@ export const CONDITIONS: ConditionPageContent[] = [
   {
     ...BASE,
     slug: "hormonal-imbalance",
+    heroImage: {"src":"/images/scraped/untitled-design-36-scaled.jpg","alt":"Hormone evaluation at Encompass Wellness"},
     badge: "Conditions",
     title: "Hormonal Imbalance",
     metaTitle: "Hormonal Imbalance Treatment in Edmond, OK | Encompass Wellness",
@@ -181,6 +188,7 @@ export const CONDITIONS: ConditionPageContent[] = [
   {
     ...BASE,
     slug: "hypothyroidism",
+    heroImage: {"src":"/images/scraped/adobestock_237394541-scaled-1.jpeg","alt":"Thyroid evaluation and management"},
     badge: "Conditions",
     title: "Hypothyroidism",
     metaTitle: "Hypothyroidism Treatment in Edmond, OK | Encompass Wellness",
@@ -206,6 +214,7 @@ export const CONDITIONS: ConditionPageContent[] = [
   {
     ...BASE,
     slug: "hyperthyroidism",
+    heroImage: {"src":"/images/conditions/hyperthyroidism.jpg","alt":"A medical practitioner in scrub suit performs a neck examination on a smiling woman in a clinic."},
     badge: "Conditions",
     title: "Hyperthyroidism",
     metaTitle: "Hyperthyroidism Treatment in Edmond, OK | Encompass Wellness",
@@ -231,6 +240,7 @@ export const CONDITIONS: ConditionPageContent[] = [
   {
     ...BASE,
     slug: "hashimoto-s-thyroiditis",
+    heroImage: {"src":"/images/conditions/hashimoto-s-thyroiditis.jpg","alt":"A medical professional conducts an ultrasound on a patient in a clinical setting."},
     badge: "Conditions",
     title: "Hashimoto's Thyroiditis",
     metaTitle: "Hashimoto's Thyroiditis Treatment in Edmond, OK",
@@ -256,6 +266,7 @@ export const CONDITIONS: ConditionPageContent[] = [
   {
     ...BASE,
     slug: "thyroid-nodules",
+    heroImage: {"src":"/images/conditions/thyroid-nodules.jpg","alt":"Close-up image of ultrasound equipment showing the monitor and probe holders."},
     badge: "Conditions",
     title: "Thyroid Nodules",
     metaTitle: "Thyroid Nodules Treatment in Edmond, OK | Encompass Wellness",
@@ -281,6 +292,7 @@ export const CONDITIONS: ConditionPageContent[] = [
   {
     ...BASE,
     slug: "adrenal-fatigue",
+    heroImage: {"src":"/images/conditions/adrenal-fatigue.jpg","alt":"Woman in white shirt looking stressed, touching her temples indoors."},
     badge: "Conditions",
     title: "Adrenal Fatigue",
     metaTitle: "Adrenal Fatigue Treatment in Edmond, OK | Encompass Wellness",
@@ -306,6 +318,7 @@ export const CONDITIONS: ConditionPageContent[] = [
   {
     ...BASE,
     slug: "metabolic-syndrome",
+    heroImage: {"src":"/images/conditions/metabolic-syndrome.jpg","alt":"Doctor checking blood pressure of patient at medical clinic."},
     badge: "Conditions",
     title: "Metabolic Syndrome",
     metaTitle: "Metabolic Syndrome Treatment in Edmond, OK | Encompass Wellness",
@@ -331,6 +344,7 @@ export const CONDITIONS: ConditionPageContent[] = [
   {
     ...BASE,
     slug: "insulin-resistance",
+    heroImage: {"src":"/images/conditions/insulin-resistance.jpg","alt":"A close-up view of a hand with a blood drop, illustrating a diabetic blood sugar test."},
     badge: "Conditions",
     title: "Insulin Resistance",
     metaTitle: "Insulin Resistance Treatment in Edmond, OK | Encompass Wellness",
@@ -356,6 +370,7 @@ export const CONDITIONS: ConditionPageContent[] = [
   {
     ...BASE,
     slug: "pcos-polycystic-ovary-syndrome",
+    heroImage: {"src":"/images/conditions/pcos-polycystic-ovary-syndrome.jpg","alt":"A doctor consulting a female patient in a modern clinic"},
     badge: "Conditions",
     title: "PCOS (Polycystic Ovary Syndrome)",
     metaTitle: "PCOS Treatment Edmond | Polycystic Ovary Syndrome Care",
@@ -381,6 +396,7 @@ export const CONDITIONS: ConditionPageContent[] = [
   {
     ...BASE,
     slug: "erectile-dysfunction",
+    heroImage: {"src":"/images/scraped/untitled-design-23.jpg","alt":"Men’s sexual health treatment"},
     badge: "Conditions",
     title: "Erectile Dysfunction",
     metaTitle: "Erectile Dysfunction Treatment in Edmond, OK | Encompass Wellness",
@@ -406,6 +422,7 @@ export const CONDITIONS: ConditionPageContent[] = [
   {
     ...BASE,
     slug: "low-libido",
+    heroImage: {"src":"/images/scraped/wsh-scaled.jpg","alt":"Sexual health treatment at Encompass Wellness"},
     badge: "Conditions",
     title: "Low Libido",
     metaTitle: "Low Libido Treatment in Edmond, OK | Encompass Wellness",
@@ -431,6 +448,7 @@ export const CONDITIONS: ConditionPageContent[] = [
   {
     ...BASE,
     slug: "gut-dysbiosis",
+    heroImage: {"src":"/images/conditions/gut-dysbiosis.jpg","alt":"Rustic homemade yogurt in a glass jar tied with twine on blue floral cloth for breakfast."},
     badge: "Conditions",
     title: "Gut Dysbiosis",
     metaTitle: "Gut Dysbiosis Treatment in Edmond, OK | Encompass Wellness",
@@ -456,6 +474,7 @@ export const CONDITIONS: ConditionPageContent[] = [
   {
     ...BASE,
     slug: "leaky-gut-syndrome",
+    heroImage: {"src":"/images/conditions/leaky-gut-syndrome.jpg","alt":"Woman sitting in bed holding her stomach, indicating pain or discomfort, possibly due to cramps."},
     badge: "Conditions",
     title: "Leaky Gut Syndrome",
     metaTitle: "Leaky Gut Syndrome Treatment in Edmond, OK | Encompass Wellness",
@@ -481,6 +500,7 @@ export const CONDITIONS: ConditionPageContent[] = [
   {
     ...BASE,
     slug: "autoimmune-conditions",
+    heroImage: {"src":"/images/conditions/autoimmune-conditions.jpg","alt":"Close-up of hands, one grasping the other, symbolizing pain or discomfort."},
     badge: "Conditions",
     title: "Autoimmune Conditions",
     metaTitle: "Autoimmune Conditions Treatment in Edmond, OK",
@@ -506,6 +526,7 @@ export const CONDITIONS: ConditionPageContent[] = [
   {
     ...BASE,
     slug: "chronic-inflammation",
+    heroImage: {"src":"/images/conditions/chronic-inflammation.jpg","alt":"From above of appetizing healthy strawberries and blueberries served in white ceramic bowls and placed on table in kitchen in sunlight"},
     badge: "Conditions",
     title: "Chronic Inflammation",
     metaTitle: "Chronic Inflammation Treatment in Edmond, OK | Encompass Wellness",
@@ -531,6 +552,7 @@ export const CONDITIONS: ConditionPageContent[] = [
   {
     ...BASE,
     slug: "brain-fog-and-cognitive-decline",
+    heroImage: {"src":"/images/conditions/brain-fog-and-cognitive-decline.jpg","alt":"A thoughtful young woman with curly hair indoors, displaying a curious expression."},
     badge: "Conditions",
     title: "Brain Fog and Cognitive Decline",
     metaTitle: "Brain Fog and Cognitive Decline Treatment in Edmond, OK",
@@ -556,6 +578,7 @@ export const CONDITIONS: ConditionPageContent[] = [
   {
     ...BASE,
     slug: "sleep-disturbances",
+    heroImage: {"src":"/images/conditions/sleep-disturbances.jpg","alt":"An Asian woman lying awake under soft white bedding in a dimly lit modern bedroom."},
     badge: "Conditions",
     title: "Sleep Disturbances",
     metaTitle: "Sleep Disturbances Treatment in Edmond, OK | Encompass Wellness",
@@ -581,6 +604,7 @@ export const CONDITIONS: ConditionPageContent[] = [
   {
     ...BASE,
     slug: "mood-imbalances-and-anxiety",
+    heroImage: {"src":"/images/conditions/mood-imbalances-and-anxiety.jpg","alt":"A woman with red hair sits by a window, deep in thought, conveying emotion and reflection."},
     badge: "Conditions",
     title: "Mood Imbalances and Anxiety",
     metaTitle: "Mood Imbalances and Anxiety Treatment in Edmond, OK",
@@ -606,6 +630,7 @@ export const CONDITIONS: ConditionPageContent[] = [
   {
     ...BASE,
     slug: "premature-aging",
+    heroImage: {"src":"/images/scraped/untitled-design-38-scaled.jpg","alt":"Aesthetic treatments at Encompass Wellness"},
     badge: "Conditions",
     title: "Premature Aging",
     metaTitle: "Premature Aging Treatment in Edmond, OK | Encompass Wellness",
