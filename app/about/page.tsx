@@ -1,4 +1,5 @@
-import Image from 'next/image'
+import Link from 'next/link'
+import SplitHero from '@/components/SplitHero'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -11,33 +12,26 @@ export default function AboutPage() {
   return (
     <main>
       {/* Hero */}
-      {/* Their own about-page header image from encompassspa.com */}
-      <section className="relative py-28 text-white overflow-hidden">
-        <Image
-          src="/images/scraped/about_header.jpg"
-          alt="Encompass Wellness and Aesthetics"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-ink/80 via-accent-dark/70 to-ink/75" />
-        <div className="relative">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-sm mb-6 opacity-80">
-            <span className="hover:opacity-100 transition-opacity">Home</span>
-            <span className="mx-2">›</span>
-            <span>About</span>
-          </div>
-          <h1 className="font-[family-name:var(--font-cormorant)] text-6xl font-light mb-4">
-            A Partnership Approach to Your Health
-          </h1>
-          <p className="text-xl text-white/80 mt-4 max-w-3xl">
-            Comprehensive functional medicine and wellness care in Edmond, OK
-          </p>
-        </div>
-      </div>
-      </section>
+      <SplitHero
+        src="/images/scraped/about_header.jpg"
+        alt="A provider at Encompass Wellness and Aesthetics reviewing patient notes"
+        objectPosition="object-[42%_top]"
+        mobileObjectPosition="object-[46%_top]"
+      >
+        <nav className="text-sm mb-6 opacity-80">
+          <Link href="/" className="hover:opacity-100 hover:underline transition-opacity">
+            Home
+          </Link>
+          <span className="mx-2">&rsaquo;</span>
+          <span>About</span>
+        </nav>
+        <h1 className="font-[family-name:var(--font-cormorant)] text-5xl sm:text-6xl font-light leading-[1.05] tracking-tight">
+          A Partnership Approach to Your Health
+        </h1>
+        <p className="text-lg sm:text-xl text-white/85 mt-6 leading-relaxed">
+          Comprehensive functional medicine and wellness care in Edmond, OK.
+        </p>
+      </SplitHero>
 
       {/* Main Content */}
       <section className="bg-[var(--color-cream)] py-24">

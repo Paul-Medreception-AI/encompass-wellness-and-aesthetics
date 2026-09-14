@@ -60,7 +60,7 @@ export const SERVICES: ServicePageContent[] = [
   {
     ...BASE,
     slug: "thyroid-management",
-    heroImage: {"src":"/images/scraped/adobestock_237394541-scaled-1.jpeg","alt":"Thyroid evaluation and management"},
+    heroImage: {"src":"/images/scraped/adobestock_237394541-scaled-1.jpeg","alt":"Thyroid evaluation and management","pos":"object-[66%_center]"},
     badge: "Services",
     title: "Thyroid Management",
     metaTitle: "Thyroid Management in Edmond, OK | Encompass Wellness",

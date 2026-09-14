@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import HeroParallax from '@/components/HeroParallax'
+import SplitHero from '@/components/SplitHero'
 
 export const metadata = {
   alternates: { canonical: '/' },
@@ -9,112 +9,44 @@ export const metadata = {
 export default function HomePage() {
   return (
     <main>
-      {/* Hero.
-          One continuous photograph, not a coloured box next to a picture.
-          The image spans the whole hero and a teal overlay fades out across a
-          long eased ramp — the stops below approximate an ease-out rather than
-          a linear alpha, because a straight ramp shows as a visible band.
-            < lg  photo on top, long vertical feather into the colour
-            >= lg photo full-bleed, overlay covering the left ~58% */}
-      <section className="relative text-white bg-[var(--color-dark)] overflow-hidden">
-        {/* lg+: the photograph behind everything.
-            The layer starts at 16% rather than 0 so the subject sits further
-            right, clear of the gradient's transition zone. object-position
-            alone could not do this: at these viewports the photo is
-            width-constrained, so there is no horizontal overflow to shift.
-            The exposed strip on the left is under the fully opaque part of
-            the overlay, so the offset is invisible. */}
-        <div className="hidden lg:block absolute inset-y-0 right-0 left-[16%] xl:left-[14%]">
-          <HeroParallax
-            src="/images/scraped/hero-beach.jpg"
-            alt=""
-            speed={0.16}
-            className="object-[52%_top]"
-          />
+      {/* Hero */}
+      <SplitHero
+        src="/images/scraped/hero-beach.jpg"
+        alt="Woman walking along the shoreline in bright sunlight"
+        size="full"
+        objectPosition="object-[52%_top]"
+        mobileObjectPosition="object-[58%_top]"
+      >
+        <h1
+          className="text-5xl sm:text-6xl xl:text-[4.15rem] font-light tracking-tight leading-[1.05] text-balance"
+          style={{ fontFamily: 'var(--font-cormorant)' }}
+        >
+          Your Health,
+          <br />
+          Fully Encompassed.
+        </h1>
+        <p className="text-lg sm:text-xl text-white/85 mt-8 lg:mt-10 leading-relaxed max-w-xl">
+          Personalized, root-cause care that looks at the whole you &mdash; from hormones and
+          thyroid health to weight management, healthy aging, and aesthetics.
+        </p>
+        <div className="flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-8 mt-12 lg:mt-14">
+          <Link
+            href="/contact"
+            className="text-center whitespace-nowrap bg-white text-[var(--color-dark)] px-9 py-4 rounded-xl font-bold shadow-xl hover:-translate-y-0.5 transition-all"
+          >
+            Schedule Your Consultation
+          </Link>
+          <Link
+            href="/services"
+            className="group inline-flex items-center justify-center gap-2 whitespace-nowrap text-white/85 hover:text-white font-medium transition-colors"
+          >
+            Explore Our Services
+            <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">
+              &rarr;
+            </span>
+          </Link>
         </div>
-        <div className="hidden lg:block absolute inset-0">
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                'linear-gradient(90deg,' +
-                'var(--color-dark) 0%,' +
-                'var(--color-dark) 34%,' +
-                'rgba(61,100,99,0.93) 42%,' +
-                'rgba(61,100,99,0.78) 48%,' +
-                'rgba(61,100,99,0.55) 54%,' +
-                'rgba(61,100,99,0.32) 59%,' +
-                'rgba(61,100,99,0.14) 64%,' +
-                'rgba(61,100,99,0.04) 69%,' +
-                'rgba(61,100,99,0) 74%)',
-            }}
-          />
-        </div>
-
-        <div className="relative lg:grid lg:grid-cols-[55fr_45fr] lg:min-h-[92vh]">
-          {/* Photo — on top for phones and tablets */}
-          <div className="relative h-[42vh] min-h-[300px] w-full lg:hidden overflow-hidden">
-            <Image
-              src="/images/scraped/hero-beach.jpg"
-              alt="Woman walking along the shoreline in bright sunlight"
-              fill
-              priority
-              quality={85}
-              sizes="100vw"
-              className="object-cover object-[58%_top]"
-            />
-            <div
-              className="absolute inset-x-0 bottom-0 h-56"
-              style={{
-                background:
-                  'linear-gradient(180deg,' +
-                  'rgba(61,100,99,0) 0%,' +
-                  'rgba(61,100,99,0.08) 22%,' +
-                  'rgba(61,100,99,0.24) 38%,' +
-                  'rgba(61,100,99,0.48) 54%,' +
-                  'rgba(61,100,99,0.74) 70%,' +
-                  'rgba(61,100,99,0.92) 84%,' +
-                  'var(--color-dark) 100%)',
-              }}
-            />
-          </div>
-
-          {/* Copy */}
-          <div className="relative flex items-center">
-            <div className="w-full lg:max-w-[42rem] lg:ml-auto px-6 lg:pr-12 xl:pr-16 pt-14 pb-20 lg:py-32">
-              <h1
-                className="text-5xl sm:text-6xl xl:text-[4.15rem] font-light tracking-tight leading-[1.05] text-balance"
-                style={{ fontFamily: 'var(--font-cormorant)' }}
-              >
-                Your Health,
-                <br />
-                Fully Encompassed.
-              </h1>
-              <p className="text-lg sm:text-xl text-white/85 mt-8 lg:mt-10 leading-relaxed max-w-xl">
-                Personalized, root-cause care that looks at the whole you — from hormones and
-                thyroid health to weight management, healthy aging, and aesthetics.
-              </p>
-              <div className="flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-8 mt-12 lg:mt-14">
-                <Link
-                  href="/contact"
-                  className="text-center whitespace-nowrap bg-white text-[var(--color-dark)] px-9 py-4 rounded-xl font-bold shadow-xl hover:-translate-y-0.5 transition-all"
-                >
-                  Schedule Your Consultation
-                </Link>
-                <Link
-                  href="/services"
-                  className="group inline-flex items-center justify-center gap-2 whitespace-nowrap text-white/85 hover:text-white font-medium transition-colors"
-                >
-                  Explore Our Services
-                  <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">
-                    &rarr;
-                  </span>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      </SplitHero>
 
       {/* Trust Bar */}
       <section className="bg-white py-8 border-b border-[var(--color-border)]">

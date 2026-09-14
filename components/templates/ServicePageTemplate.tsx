@@ -27,7 +27,7 @@ export type ServicePageContent = {
   relatedLinks?: RelatedLink[]
   metaTitle?: string
   heroSubhead?: string
-  heroImage?: { src: string; alt: string; fit?: 'cover' | 'contain' }
+  heroImage?: { src: string; alt: string; fit?: 'cover' | 'contain'; pos?: string }
   gallery?: { src: string; alt: string; fit?: 'cover' | 'contain' }[]
   featuredVideo?: { videoId: string; title: string; heading?: string; subhead?: string }
   introHeading?: string
@@ -135,7 +135,10 @@ export function ServicePageTemplate({ c }: { c: ServicePageContent }) {
                   priority
                   quality={90}
                   sizes="(max-width: 768px) 100vw, 512px"
-                  className={c.heroImage.fit === 'contain' ? 'object-contain' : 'object-cover'}
+                  className={
+                    (c.heroImage.fit === 'contain' ? 'object-contain' : 'object-cover') +
+                    (c.heroImage.pos ? ' ' + c.heroImage.pos : '')
+                  }
                 />
               </div>
             )}
