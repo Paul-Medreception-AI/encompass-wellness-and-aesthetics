@@ -1,0 +1,43 @@
+/** @type {import("next").NextConfig} */
+const nextConfig = {
+  typescript: { ignoreBuildErrors: true },
+  eslint: { ignoreDuringBuilds: true },
+  async redirects() {
+    return [
+      { source: '/privacy', destination: '/privacy-sms', permanent: true },
+      { source: '/privacy-policy', destination: '/privacy-sms', permanent: true },
+      { source: '/terms', destination: '/terms-sms', permanent: true },
+      { source: '/terms-of-service', destination: '/terms-sms', permanent: true },
+      { source: '/sms-terms', destination: '/terms-sms', permanent: true },
+      { source: '/patient-resources', destination: '/', permanent: true },
+      { source: '/services/aesthetics/skinceuticals', destination: '/services', permanent: true },
+      { source: '/services/aesthetics/spider-vein-treatment', destination: '/services', permanent: true },
+      { source: '/services/aesthetics/prp-facials', destination: '/services', permanent: true },
+      { source: '/iv-therapy/uv-light-iv-therapy', destination: '/', permanent: true },
+      { source: '/services/vaginal-rejuvenation', destination: '/services', permanent: true },
+      { source: '/skin-rejuvenation-1', destination: '/', permanent: true },
+      { source: '/services/aesthetics/aesthetics-menu', destination: '/services', permanent: true },
+      { source: '/services/aesthetics/laser-treatments', destination: '/services', permanent: true },
+      { source: '/services/aesthetics/facials-and-peels', destination: '/services', permanent: true },
+      { source: '/iv-therapy/iv-therapy-menu', destination: '/', permanent: true },
+      { source: '/services/aesthetics/hydrafacial', destination: '/services', permanent: true },
+      { source: '/services/aesthetics/prp-hair-loss', destination: '/services', permanent: true },
+      { source: '/services/body-contouring', destination: '/services', permanent: true },
+      { source: '/skin-pen', destination: '/', permanent: true },
+      { source: '/services/chelation-therapy', destination: '/services', permanent: true },
+      { source: '/contact-2', destination: '/contact', permanent: true },
+      { source: '/services/aesthetics/fillers', destination: '/services', permanent: true },
+      { source: '/services/aesthetics/wrinkle-relaxers', destination: '/services', permanent: true },
+      { source: '/services/functional-medicine', destination: '/services', permanent: true },
+      { source: '/services/aesthetics', destination: '/services', permanent: true },
+      { source: '/services/hormones', destination: '/services', permanent: true },
+      { source: '/services/thyroid-management', destination: '/services', permanent: true },
+      { source: '/services/womens-sexual-health', destination: '/services', permanent: true },
+      { source: '/services/mens-sexual-health', destination: '/services', permanent: true },
+      { source: '/services/weight-loss', destination: '/services', permanent: true },
+      { source: '/iv-therapy', destination: '/', permanent: true },
+      { source: '/about-2', destination: '/about', permanent: true },
+    ];
+  },
+};
+module.exports = nextConfig;
