@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'How to Boost Your Immune System Naturally | Encompass Wellness and Aesthetics',
+  alternates: { canonical: '/blog/how-to-boost-your-immune-system-naturally' },
+  title: 'How to Boost Your Immune System Naturally | Encompass Wellness',
   description: 'Discover evidence-based strategies to naturally strengthen your immune system. Expert guidance from board-certified hormone and metabolic medicine specialists in Edmond, OK.',
   openGraph: {
     title: 'How to Boost Your Immune System Naturally',

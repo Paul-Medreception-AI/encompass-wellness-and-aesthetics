@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'The Role of Nutrition in Hormone Balance | Encompass Wellness and Aesthetics',
+  alternates: { canonical: '/blog/the-role-of-nutrition-in-hormone-balance' },
+  title: 'The Role of Nutrition in Hormone Balance | Encompass Wellness',
   description: 'Discover how nutrition impacts hormone health and balance. Learn evidence-based dietary strategies to support your metabolic and hormonal wellness in Edmond, OK.',
   keywords: 'hormone balance, nutrition for hormones, hormone health diet, metabolic health, Edmond OK, hormone optimization',
 }

@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'The Role of Exercise in Hormone Optimization | Encompass Wellness and Aesthetics',
+  alternates: { canonical: '/blog/the-role-of-exercise-in-hormone-optimization' },
+  title: 'The Role of Exercise in Hormone Optimization | Encompass Wellness',
   description: 'Discover how strategic exercise can naturally optimize your hormones, improve energy, and support metabolic health. Expert insights from our Edmond, OK hormone specialists.',
   keywords: 'exercise and hormones, hormone optimization, metabolic health, testosterone optimization, cortisol management, Edmond OK',
 }

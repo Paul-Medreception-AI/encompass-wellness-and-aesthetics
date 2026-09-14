@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Bioidentical vs. Synthetic Hormone Replacement | Encompass Wellness and Aesthetics',
+  alternates: { canonical: '/compare/bioidentical-vs-synthetic-hormone-replacement' },
+  title: 'Bioidentical vs. Synthetic Hormone Replacement',
   description: 'Compare bioidentical and synthetic hormone replacement therapy. Learn the differences in effectiveness, side effects, and which option is right for your needs in Edmond, OK.',
 }
 

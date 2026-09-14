@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/about' },
   title: 'About | Encompass Wellness and Aesthetics',
   description: 'Learn about our functional medicine approach to hormone therapy, weight management, and comprehensive wellness care in Edmond, OK.',
 }

@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'The Truth About Hormone Pellet Therapy | Encompass Wellness and Aesthetics',
+  alternates: { canonical: '/blog/the-truth-about-hormone-pellet-therapy' },
+  title: 'The Truth About Hormone Pellet Therapy | Encompass Wellness',
   description: 'Discover the facts about hormone pellet therapy, how it works, who benefits, and what to expect. Evidence-based insights from our Hormone & Metabolic Medicine experts in Edmond, OK.',
   openGraph: {
     title: 'The Truth About Hormone Pellet Therapy',

@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Anti-Aging from the Inside Out: A Holistic Approach | Encompass Wellness and Aesthetics',
+  alternates: { canonical: '/blog/anti-aging-from-the-inside-out-a-holistic-approach' },
+  title: 'Anti-Aging from the Inside Out: A Holistic Approach',
   description: 'Discover how a comprehensive approach to anti-aging—combining hormone optimization, nutrition, lifestyle, and aesthetics—can help you look and feel your best at any age.',
   openGraph: {
     title: 'Anti-Aging from the Inside Out: A Holistic Approach',

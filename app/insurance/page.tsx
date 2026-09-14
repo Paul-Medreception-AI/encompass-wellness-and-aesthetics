@@ -1,5 +1,11 @@
 import Link from 'next/link'
 
+export const metadata = {
+  title: 'Insurance & Payment | Encompass Wellness',
+  description: 'We now accept most major forms of insurance for hormone therapy and thyroid management. Learn what is covered at Encompass Wellness and Aesthetics in Edmond, OK.',
+  alternates: { canonical: '/insurance' },
+}
+
 export default function InsurancePage() {
   return (
     <main className="min-h-screen">

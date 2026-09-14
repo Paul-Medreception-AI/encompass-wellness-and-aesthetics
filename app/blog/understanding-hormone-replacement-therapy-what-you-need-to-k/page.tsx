@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Understanding Hormone Replacement Therapy: What You Need to Know | Encompass Wellness and Aesthetics',
+  alternates: { canonical: '/blog/understanding-hormone-replacement-therapy-what-you-need-to-k' },
+  title: 'Understanding Hormone Replacement Therapy: What You Need to Know',
   description: 'Learn about hormone replacement therapy from Edmond, OK experts. Discover who benefits, what to expect, and evidence-based insights on HRT for optimal wellness.',
   keywords: 'hormone replacement therapy, HRT, bioidentical hormones, hormone therapy Edmond OK, menopause treatment, testosterone therapy, hormone imbalance',
 }

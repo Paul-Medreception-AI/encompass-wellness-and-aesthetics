@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Weight Loss Medications vs. Metabolic Optimization | Encompass Wellness and Aesthetics',
+  alternates: { canonical: '/compare/weight-loss-medications-vs-metabolic-optimization' },
+  title: 'Weight Loss Medications vs. Metabolic Optimization',
   description: 'Compare weight loss medications and metabolic optimization for long-term success. Evidence-based comparison to help you choose the right treatment approach in Edmond, OK.',
 }
 

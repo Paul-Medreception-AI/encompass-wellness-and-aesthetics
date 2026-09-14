@@ -11,7 +11,7 @@ const GA_ID = process.env.NEXT_PUBLIC_GA_ID
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://encompassspa.com'),
-  title: 'Encompass Wellness and Aesthetics | Restoring Health Through Functional & Hormone Medicine',
+  title: 'Encompass Wellness | Functional & Hormone Medicine in Edmond, OK',
   description: 'Encompass Wellness and Aesthetics partners with you in your healthcare journey to reverse disease and restore optimal health. Our functional medicine approach addresses hormonal imbalance, weight management, thyroid disorders, and age-related concerns through comprehensive, personalized care.',
   icons: {
     icon: [
@@ -80,9 +80,20 @@ export default function RootLayout({
                 <ul className="space-y-3">
                   <li><a href="/services" className="text-white/80 hover:text-white transition-colors text-sm">Services</a></li>
                   <li><a href="/conditions" className="text-white/80 hover:text-white transition-colors text-sm">Conditions</a></li>
+                  <li><a href="/locations" className="text-white/80 hover:text-white transition-colors text-sm">Areas We Serve</a></li>
                   <li><a href="/about" className="text-white/80 hover:text-white transition-colors text-sm">About</a></li>
                   <li><a href="/team" className="text-white/80 hover:text-white transition-colors text-sm">Team</a></li>
                   <li><a href="/contact" className="text-white/80 hover:text-white transition-colors text-sm">Contact</a></li>
+                </ul>
+
+                <h3 className="text-lg font-semibold mt-8 mb-6">Patients</h3>
+                <ul className="space-y-3">
+                  <li><a href="/new-patients" className="text-white/80 hover:text-white transition-colors text-sm">New Patients</a></li>
+                  <li><a href="/insurance" className="text-white/80 hover:text-white transition-colors text-sm">Insurance</a></li>
+                  <li><a href="/telehealth" className="text-white/80 hover:text-white transition-colors text-sm">Telehealth</a></li>
+                  <li><a href="/faq" className="text-white/80 hover:text-white transition-colors text-sm">FAQ</a></li>
+                  <li><a href="/blog" className="text-white/80 hover:text-white transition-colors text-sm">Blog</a></li>
+                  <li><a href="/reviews" className="text-white/80 hover:text-white transition-colors text-sm">Reviews</a></li>
                 </ul>
               </div>
 
@@ -90,7 +101,7 @@ export default function RootLayout({
                 <h3 className="text-lg font-semibold mb-6">Contact</h3>
                 <ul className="space-y-3 text-sm text-white/80">
                   <li>2925 Astoria Way<br />Edmond, OK 73034</li>
-                  <li><a href="tel:(405) 254-3000" className="hover:text-white transition-colors">(405) 254-3000</a></li>
+                  <li><a href="tel:+14052543000" className="hover:text-white transition-colors">(405) 254-3000</a></li>
                   <li className="text-xs leading-relaxed pt-2">Monday - Thursday: 8:00am - 5:00pm<br />Friday: 8:00am - 3:00pm<br />(Closed for lunch from 12:00pm to 1:00pm)</li>
                 </ul>
               </div>

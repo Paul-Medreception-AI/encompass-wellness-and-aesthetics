@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'The Connection Between Gut Health and Autoimmune Disease | Encompass Wellness and Aesthetics',
+  alternates: { canonical: '/blog/the-connection-between-gut-health-and-autoimmune-disease' },
+  title: 'The Connection Between Gut Health and Autoimmune Disease',
   description: 'Discover how your gut microbiome influences autoimmune conditions and what you can do to support healing. Expert insights from Encompass Wellness and Aesthetics in Edmond, OK.',
   keywords: 'gut health, autoimmune disease, leaky gut, microbiome, inflammation, Edmond OK, hormone health, functional medicine',
 }

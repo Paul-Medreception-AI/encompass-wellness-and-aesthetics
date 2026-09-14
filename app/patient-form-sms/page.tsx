@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/patient-form-sms' },
   title: 'Patient Form | Encompass Wellness and Aesthetics',
   robots: { index: false, follow: false },
 }

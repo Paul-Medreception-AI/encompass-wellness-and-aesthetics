@@ -1,20 +1,27 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+export const metadata = {
+  alternates: { canonical: '/' },
+}
+
 export default function HomePage() {
   return (
     <main>
       {/* Hero */}
       <section className="relative min-h-[90vh] flex items-center text-white overflow-hidden">
         <Image 
-          src="/images/AdobeStock_165128395_Edited-scaled.jpg" 
-          alt="Encompass Wellness and Aesthetics" 
-          fill 
-          priority 
-          sizes="100vw" 
-          className="object-cover object-center" 
+          src="/images/stock/hero-wellness.jpg" 
+          alt="Woman enjoying the outdoors in warm sunlight"
+          fill
+          priority
+          quality={85}
+          sizes="100vw"
+          className="object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-dark/85 to-primary/75" />
+        {/* Darker overlay: the tan-on-tan gradient washed the photo out and left
+            the headline low-contrast. Ink base keeps AA contrast on white text. */}
+        <div className="absolute inset-0 bg-gradient-to-br from-ink/80 via-dark/70 to-primary/60" />
         <div className="relative max-w-5xl mx-auto px-6 text-center py-20">
           <h1 className="text-6xl sm:text-7xl font-light tracking-tight leading-tight" style={{fontFamily: 'var(--font-cormorant)'}}>
             Get to the Root Cause of Your Health Issues
@@ -92,7 +99,7 @@ export default function HomePage() {
               <p className="text-[var(--color-muted)] text-sm leading-relaxed mt-3">
                 Our functional approach addresses the root cause of your health issues rather than just treating symptoms. Each symptom is carefully considered in our comprehensive diagnosis and customized treatment plan.
               </p>
-              <Link href="/services" className="inline-block text-[var(--color-primary)] font-semibold text-sm mt-6 hover:underline">
+              <Link href="/services/functional-medicine" className="inline-block text-[var(--color-primary)] font-semibold text-sm mt-6 hover:underline">
                 Learn More →
               </Link>
             </div>
@@ -108,7 +115,7 @@ export default function HomePage() {
               <p className="text-[var(--color-muted)] text-sm leading-relaxed mt-3">
                 Many age-related issues stem from hormonal imbalance affecting energy, mood, and vitality. We analyze and treat both women and men to restore optimal hormonal balance and well-being.
               </p>
-              <Link href="/services" className="inline-block text-[var(--color-primary)] font-semibold text-sm mt-6 hover:underline">
+              <Link href="/services/hormone-replacement-therapy" className="inline-block text-[var(--color-primary)] font-semibold text-sm mt-6 hover:underline">
                 Learn More →
               </Link>
             </div>
@@ -124,7 +131,7 @@ export default function HomePage() {
               <p className="text-[var(--color-muted)] text-sm leading-relaxed mt-3">
                 Irregular thyroid function can cause widespread discomfort and health challenges. We provide comprehensive thyroid assessment to properly diagnose and treat the underlying issue.
               </p>
-              <Link href="/services" className="inline-block text-[var(--color-primary)] font-semibold text-sm mt-6 hover:underline">
+              <Link href="/services/thyroid-management" className="inline-block text-[var(--color-primary)] font-semibold text-sm mt-6 hover:underline">
                 Learn More →
               </Link>
             </div>

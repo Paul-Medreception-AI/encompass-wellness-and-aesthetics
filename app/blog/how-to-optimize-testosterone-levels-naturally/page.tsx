@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'How to Optimize Testosterone Levels Naturally | Encompass Wellness and Aesthetics',
+  alternates: { canonical: '/blog/how-to-optimize-testosterone-levels-naturally' },
+  title: 'How to Optimize Testosterone Levels Naturally',
   description: 'Discover evidence-based strategies to naturally support healthy testosterone levels. Expert guidance from Edmond, OK hormone specialists.',
   openGraph: {
     title: 'How to Optimize Testosterone Levels Naturally',

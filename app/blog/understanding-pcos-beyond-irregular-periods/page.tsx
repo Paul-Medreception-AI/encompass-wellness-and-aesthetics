@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Understanding PCOS: Beyond Irregular Periods | Encompass Wellness and Aesthetics',
+  alternates: { canonical: '/blog/understanding-pcos-beyond-irregular-periods' },
+  title: 'Understanding PCOS: Beyond Irregular Periods | Encompass Wellness',
   description: 'PCOS affects far more than your menstrual cycle. Learn about the complex hormonal condition impacting millions of women and how comprehensive treatment can help.',
   openGraph: {
     title: 'Understanding PCOS: Beyond Irregular Periods',

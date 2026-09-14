@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Understanding Adrenal Fatigue and Chronic Stress | Encompass Wellness and Aesthetics',
+  alternates: { canonical: '/blog/understanding-adrenal-fatigue-and-chronic-stress' },
+  title: 'Understanding Adrenal Fatigue and Chronic Stress',
   description: 'Learn about adrenal fatigue, chronic stress, and how hormone imbalances affect your energy, mood, and overall health. Expert insights from Edmond, OK.',
   keywords: 'adrenal fatigue, chronic stress, cortisol, hormone balance, fatigue treatment, stress management, Edmond OK',
 }

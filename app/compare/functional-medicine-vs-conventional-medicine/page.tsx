@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Functional Medicine vs. Conventional Medicine: Understanding the Difference | Encompass Wellness and Aesthetics',
+  alternates: { canonical: '/compare/functional-medicine-vs-conventional-medicine' },
+  title: 'Functional Medicine vs. Conventional Medicine Explained',
   description: 'Compare functional medicine and conventional medicine approaches. Learn which treatment path is right for your health goals in Edmond, OK.',
 }
 
@@ -19,7 +20,7 @@ export default function ComparePage() {
             <span>Comparison</span>
           </div>
           <h1 className="text-5xl font-light mb-6" style={{ fontFamily: 'var(--font-cormorant)' }}>
-            Functional Medicine vs. Conventional Medicine: Understanding the Difference
+            Functional Medicine vs. Conventional Medicine Explained
           </h1>
           <p className="text-xl opacity-90 max-w-3xl mx-auto">
             Making informed decisions about your healthcare approach in Edmond, OK

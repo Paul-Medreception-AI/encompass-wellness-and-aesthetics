@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'The Science Behind Successful Weight Loss | Encompass Wellness and Aesthetics',
+  alternates: { canonical: '/blog/the-science-behind-successful-weight-loss' },
+  title: 'The Science Behind Successful Weight Loss | Encompass Wellness',
   description: 'Discover the evidence-based approach to sustainable weight loss. Learn how metabolism, hormones, and lifestyle factors contribute to long-term success in Edmond, OK.',
   keywords: 'weight loss science, metabolism, hormone balance, sustainable weight loss, Edmond OK, medical weight loss',
 }

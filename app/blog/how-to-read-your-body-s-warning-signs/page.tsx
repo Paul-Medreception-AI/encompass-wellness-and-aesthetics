@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'How to Read Your Body\'s Warning Signs | Encompass Wellness and Aesthetics',
+  alternates: { canonical: '/blog/how-to-read-your-body-s-warning-signs' },
+  title: 'How to Read Your Body\'s Warning Signs | Encompass Wellness',
   description: 'Learn to recognize the subtle signals your body sends when something isn\'t right. Expert guidance on identifying hormonal imbalances, metabolic changes, and health warning signs in Edmond, OK.',
   keywords: 'body warning signs, hormonal imbalance symptoms, metabolic health, health symptoms, fatigue causes, weight changes, hormone therapy Edmond OK',
   openGraph: {

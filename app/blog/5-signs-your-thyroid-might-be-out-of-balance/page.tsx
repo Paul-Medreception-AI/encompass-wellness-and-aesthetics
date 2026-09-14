@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: '5 Signs Your Thyroid Might Be Out of Balance | Encompass Wellness and Aesthetics',
+  alternates: { canonical: '/blog/5-signs-your-thyroid-might-be-out-of-balance' },
+  title: '5 Signs Your Thyroid Might Be Out of Balance | Encompass Wellness',
   description: 'Discover the subtle signs of thyroid imbalance and learn when to seek professional help. Expert insights from Edmond, OK hormone specialists.',
   keywords: 'thyroid symptoms, thyroid imbalance, hypothyroidism, hyperthyroidism, hormone health, thyroid treatment Edmond OK',
 }

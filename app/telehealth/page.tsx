@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/telehealth' },
   title: 'Telehealth Services | Encompass Wellness and Aesthetics',
   description: 'Expert hormone and metabolic medicine care from the comfort of your home. Convenient, private, and HIPAA-compliant virtual consultations in Edmond, OK.',
 }

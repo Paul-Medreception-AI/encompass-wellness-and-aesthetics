@@ -10,8 +10,12 @@
   --color-cream: #fdfcfb;
   --color-muted: #64748b;
   --color-border: #f3eded;
-  --color-accent: #c49a6c;
-  --color-accent-dark: #7f6446;
+  /* Brand accent is the TEAL from the logo ornament (sampled #609090), not a
+     second copy of the gold. Restricted to CTA buttons, icons, links, borders
+     and dividers — never a large section background. */
+  --color-accent: #5f8f8f;
+  --color-accent-dark: #47706f;
+  --color-sage: #a8ccc0;
 }
 
 * { box-sizing: border-box; }

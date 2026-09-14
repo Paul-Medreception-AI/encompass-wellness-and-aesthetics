@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'How to Interpret Your Thyroid Lab Results | Encompass Wellness and Aesthetics',
+  alternates: { canonical: '/blog/how-to-interpret-your-thyroid-lab-results' },
+  title: 'How to Interpret Your Thyroid Lab Results | Encompass Wellness',
   description: 'Learn how to read and understand your thyroid lab results including TSH, T3, T4, and antibodies. Expert guidance from our hormone specialists in Edmond, OK.',
   keywords: 'thyroid labs, TSH, T3, T4, thyroid antibodies, thyroid function test, hormone testing, Edmond OK',
 }

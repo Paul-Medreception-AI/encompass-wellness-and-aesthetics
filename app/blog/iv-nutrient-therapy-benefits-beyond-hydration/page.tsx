@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'IV Nutrient Therapy: Benefits Beyond Hydration | Encompass Wellness and Aesthetics',
+  alternates: { canonical: '/blog/iv-nutrient-therapy-benefits-beyond-hydration' },
+  title: 'IV Nutrient Therapy: Benefits Beyond Hydration',
   description: 'Discover how IV nutrient therapy goes beyond simple hydration to support immune function, energy, recovery, and metabolic health. Expert insights from Edmond, OK.',
   keywords: 'IV therapy, nutrient therapy, IV vitamins, hydration therapy, immune support, energy boost, Edmond OK, metabolic health',
 }

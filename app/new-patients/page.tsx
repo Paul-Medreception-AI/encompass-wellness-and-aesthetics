@@ -1,5 +1,11 @@
 import Link from 'next/link'
 
+export const metadata = {
+  title: 'New Patients | Encompass Wellness',
+  description: 'What to expect at your first visit to Encompass Wellness and Aesthetics in Edmond, OK — intake, testing and building your personalized treatment plan.',
+  alternates: { canonical: '/new-patients' },
+}
+
 export default function NewPatientsPage() {
   return (
     <main>

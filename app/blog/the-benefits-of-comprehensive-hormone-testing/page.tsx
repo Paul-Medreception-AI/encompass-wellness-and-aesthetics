@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'The Benefits of Comprehensive Hormone Testing | Encompass Wellness and Aesthetics',
+  alternates: { canonical: '/blog/the-benefits-of-comprehensive-hormone-testing' },
+  title: 'The Benefits of Comprehensive Hormone Testing',
   description: 'Discover how comprehensive hormone testing can uncover the root causes of fatigue, weight gain, mood changes, and more. Expert insights from Edmond, OK hormone specialists.',
   keywords: 'hormone testing, hormone imbalance, comprehensive hormone panel, bioidentical hormones, thyroid testing, cortisol testing, testosterone levels, estrogen testing, Edmond OK',
 }
