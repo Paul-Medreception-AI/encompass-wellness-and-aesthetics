@@ -390,7 +390,7 @@ export default function IVNutrientTherapyBlogPost() {
           </p>
           <a 
             href="/contact" 
-            className="inline-block bg-white text-[var(--color-primary)] px-8 py-4 rounded-full font-medium hover:bg-[var(--color-cream)] transition-all duration-300 shadow-lg hover:shadow-xl"
+            className="inline-block bg-white text-[var(--color-accent)] px-8 py-4 rounded-full font-medium hover:bg-[var(--color-cream)] transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             Contact Us Today
           </a>

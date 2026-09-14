@@ -10,18 +10,20 @@ export default function HomePage() {
     <main>
       {/* Hero */}
       <section className="relative min-h-[90vh] flex items-center text-white overflow-hidden">
-        <Image 
-          src="/images/stock/hero-wellness.jpg" 
-          alt="Woman enjoying the outdoors in warm sunlight"
+        {/* The practice's own hero from encompassspa.com. The autobuild referenced
+            this exact filename but never downloaded it, so the hero 404'd. */}
+        <Image
+          src="/images/scraped/hero-beach.jpg"
+          alt="Woman walking along the shoreline in bright sunlight"
           fill
           priority
           quality={85}
           sizes="100vw"
           className="object-cover object-center"
         />
-        {/* Darker overlay: the tan-on-tan gradient washed the photo out and left
-            the headline low-contrast. Ink base keeps AA contrast on white text. */}
-        <div className="absolute inset-0 bg-gradient-to-br from-ink/80 via-dark/70 to-primary/60" />
+        {/* The source photo is high-key and very bright, so white text needs a
+            substantial scrim. Teal-to-ink pulls the logo colour out of the ocean. */}
+        <div className="absolute inset-0 bg-gradient-to-br from-ink/75 via-accent-dark/65 to-ink/70" />
         <div className="relative max-w-5xl mx-auto px-6 text-center py-20">
           <h1 className="text-6xl sm:text-7xl font-light tracking-tight leading-tight" style={{fontFamily: 'var(--font-cormorant)'}}>
             Get to the Root Cause of Your Health Issues
@@ -99,7 +101,7 @@ export default function HomePage() {
               <p className="text-[var(--color-muted)] text-sm leading-relaxed mt-3">
                 Our functional approach addresses the root cause of your health issues rather than just treating symptoms. Each symptom is carefully considered in our comprehensive diagnosis and customized treatment plan.
               </p>
-              <Link href="/services/functional-medicine" className="inline-block text-[var(--color-primary)] font-semibold text-sm mt-6 hover:underline">
+              <Link href="/services/functional-medicine" className="inline-block text-[var(--color-accent)] font-semibold text-sm mt-6 hover:underline">
                 Learn More →
               </Link>
             </div>
@@ -115,7 +117,7 @@ export default function HomePage() {
               <p className="text-[var(--color-muted)] text-sm leading-relaxed mt-3">
                 Many age-related issues stem from hormonal imbalance affecting energy, mood, and vitality. We analyze and treat both women and men to restore optimal hormonal balance and well-being.
               </p>
-              <Link href="/services/hormone-replacement-therapy" className="inline-block text-[var(--color-primary)] font-semibold text-sm mt-6 hover:underline">
+              <Link href="/services/hormone-replacement-therapy" className="inline-block text-[var(--color-accent)] font-semibold text-sm mt-6 hover:underline">
                 Learn More →
               </Link>
             </div>
@@ -131,7 +133,7 @@ export default function HomePage() {
               <p className="text-[var(--color-muted)] text-sm leading-relaxed mt-3">
                 Irregular thyroid function can cause widespread discomfort and health challenges. We provide comprehensive thyroid assessment to properly diagnose and treat the underlying issue.
               </p>
-              <Link href="/services/thyroid-management" className="inline-block text-[var(--color-primary)] font-semibold text-sm mt-6 hover:underline">
+              <Link href="/services/thyroid-management" className="inline-block text-[var(--color-accent)] font-semibold text-sm mt-6 hover:underline">
                 Learn More →
               </Link>
             </div>
@@ -153,7 +155,7 @@ export default function HomePage() {
               <p className="text-[var(--color-muted)] leading-relaxed mb-8">
                 Rather than just treating your symptoms, we partner with you in your healthcare journey. Our functional medicine philosophy recognizes that the body is an interconnected system where imbalances in one area often manifest as symptoms in another. Whether you're struggling with fatigue, weight gain, hormonal imbalance, gut issues, autoimmune disease, signs of aging, or sexual dysfunction, we take the time to understand your complete health picture and create a path forward together.
               </p>
-              <Link href="/team" className="inline-block text-[var(--color-primary)] font-semibold hover:underline">
+              <Link href="/team" className="inline-block text-[var(--color-accent)] font-semibold hover:underline">
                 Meet Our Team →
               </Link>
             </div>
@@ -213,6 +215,54 @@ export default function HomePage() {
                 We monitor your progress with regular follow-ups and adjust your treatment plan as needed. Our team provides continuous support, education, and advanced therapies to help you achieve and maintain optimal health.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Shop — their real product lines, linking the Shopify store */}
+      <section className="relative py-24 overflow-hidden">
+        <Image
+          src="/images/scraped/encompass_pattern1_web.jpg"
+          alt=""
+          aria-hidden="true"
+          fill
+          sizes="100vw"
+          className="object-cover opacity-[0.10]"
+        />
+        <div className="relative max-w-7xl mx-auto px-6">
+          <h2 className="text-5xl text-center text-[var(--color-ink)] mb-4" style={{fontFamily: 'var(--font-cormorant)'}}>
+            Quality Ingredients
+          </h2>
+          <p className="text-center text-[var(--color-muted)] mb-16 max-w-2xl mx-auto">
+            Pharmaceutical-grade products you can purchase with confidence — nutraceuticals,
+            Obagi Medical and SkinCeuticals, all available in our online store.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { img: '/images/scraped/product-photo-1.png', title: 'Nutraceuticals', body: 'Pharmaceutical-grade supplements across hormone balance, gut health, energy, immune and metabolic support.' },
+              { img: '/images/scraped/obagi.jpg', title: 'Obagi Medical', body: 'Physician-dispensed skincare for tone, texture, pigmentation and long-term skin health.' },
+              { img: '/images/scraped/skinceuticals.jpg', title: 'SkinCeuticals', body: 'Clinically proven antioxidants, correctives and sun protection, including Silymarin CF.' },
+            ].map((c) => (
+              <a
+                key={c.title}
+                href="https://store.encompassspa.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group bg-white rounded-2xl overflow-hidden border border-[var(--color-border)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+              >
+                <div className="relative h-56 bg-[var(--color-light)]">
+                  <Image src={c.img} alt={c.title} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover" />
+                </div>
+                <div className="p-8">
+                  <h3 className="text-2xl font-semibold text-[var(--color-ink)]" style={{fontFamily: 'var(--font-cormorant)'}}>{c.title}</h3>
+                  <p className="text-[var(--color-muted)] text-sm leading-relaxed mt-3">{c.body}</p>
+                  <span className="inline-block text-[var(--color-accent)] font-semibold text-sm mt-6 group-hover:underline">
+                    Shop Now &rarr;
+                  </span>
+                </div>
+              </a>
+            ))}
           </div>
         </div>
       </section>

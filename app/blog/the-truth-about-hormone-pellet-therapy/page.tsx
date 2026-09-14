@@ -229,7 +229,7 @@ export default function BlogPost() {
               If you're experiencing symptoms of hormone imbalance and are curious whether pellet therapy might be right for you, the next step is a comprehensive consultation with a provider specializing in hormone and metabolic medicine. At Encompass Wellness and Aesthetics in Edmond, OK, our team is dedicated to personalized, evidence-based care that addresses your unique needs and goals.
             </p>
             <p>
-              <a href="/contact" className="text-[var(--color-primary)] hover:text-[var(--color-dark)] transition-colors font-semibold">Contact us today</a> to schedule your consultation and take the first step toward reclaiming your vitality and well-being.
+              <a href="/contact" className="text-[var(--color-accent)] hover:text-[var(--color-dark)] transition-colors font-semibold">Contact us today</a> to schedule your consultation and take the first step toward reclaiming your vitality and well-being.
             </p>
           </div>
         </div>

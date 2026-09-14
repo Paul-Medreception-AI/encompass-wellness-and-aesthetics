@@ -424,7 +424,7 @@ export default function BlogPost() {
           </p>
           <a
             href="/contact"
-            className="inline-block bg-white text-[var(--color-primary)] px-8 py-4 rounded-full font-semibold hover:bg-[var(--color-cream)] transition-all duration-300 animate-fade-up"
+            className="inline-block bg-white text-[var(--color-accent)] px-8 py-4 rounded-full font-semibold hover:bg-[var(--color-cream)] transition-all duration-300 animate-fade-up"
           >
             Schedule Your Consultation
           </a>

@@ -383,7 +383,7 @@ export default function TelehealthPage() {
             </a>
             <a
               href="/services"
-              className="inline-block bg-white text-[var(--color-primary)] px-10 py-4 rounded-full font-medium hover:bg-white/90 transition-colors duration-300"
+              className="inline-block bg-white text-[var(--color-accent)] px-10 py-4 rounded-full font-medium hover:bg-white/90 transition-colors duration-300"
             >
               Explore Our Services
             </a>

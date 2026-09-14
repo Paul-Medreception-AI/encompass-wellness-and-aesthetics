@@ -118,7 +118,7 @@ export default function ReviewsPage() {
           </p>
           <Link
             href="/contact"
-            className="inline-block bg-white text-[var(--color-primary)] hover:bg-[var(--color-cream)] px-10 py-4 rounded-full font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl"
+            className="inline-block bg-white text-[var(--color-accent)] hover:bg-[var(--color-cream)] px-10 py-4 rounded-full font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl"
           >
             Schedule Your Consultation
           </Link>

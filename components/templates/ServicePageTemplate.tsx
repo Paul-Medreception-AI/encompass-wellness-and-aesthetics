@@ -27,7 +27,8 @@ export type ServicePageContent = {
   relatedLinks?: RelatedLink[]
   metaTitle?: string
   heroSubhead?: string
-  heroImage?: { src: string; alt: string }
+  heroImage?: { src: string; alt: string; fit?: 'cover' | 'contain' }
+  gallery?: { src: string; alt: string }[]
   featuredVideo?: { videoId: string; title: string; heading?: string; subhead?: string }
   introHeading?: string
   intro?: string[]
@@ -118,7 +119,7 @@ export function ServicePageTemplate({ c }: { c: ServicePageContent }) {
             </div>
             {c.heroImage && (
               <div className="relative w-full max-w-md lg:w-2/5 lg:max-w-none h-96 lg:h-[28rem] rounded-2xl overflow-hidden shadow-2xl">
-                <Image src={c.heroImage.src} alt={c.heroImage.alt} fill priority quality={90} sizes="(max-width: 768px) 100vw, 384px" className="object-cover" />
+                <Image src={c.heroImage.src} alt={c.heroImage.alt} fill priority quality={90} sizes="(max-width: 768px) 100vw, 384px" className={c.heroImage.fit === 'contain' ? 'object-contain p-4' : 'object-cover'} />
               </div>
             )}
           </div>
@@ -292,6 +293,21 @@ export function ServicePageTemplate({ c }: { c: ServicePageContent }) {
         </section>
       ) : null}
 
+      {c.gallery && c.gallery.length ? (
+        <section className="bg-[var(--color-cream)] py-20 border-t border-[var(--color-border)]">
+          <div className="max-w-6xl mx-auto px-6">
+            <h3 className="font-cormorant text-3xl font-light mb-10 text-[var(--color-ink)] text-center">{c.title} Gallery</h3>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {c.gallery.map((g) => (
+                <div key={g.src} className="relative h-72 rounded-2xl overflow-hidden bg-white border border-[var(--color-border)]">
+                  <Image src={g.src} alt={g.alt} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
+
       {c.relatedLinks && c.relatedLinks.length ? (
         <section className="bg-white py-16">
           <div className="max-w-7xl mx-auto px-6">
@@ -313,7 +329,7 @@ export function ServicePageTemplate({ c }: { c: ServicePageContent }) {
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="font-cormorant text-3xl md:text-4xl font-light mb-6">{c.ctaHeading || 'Ready to Get Started?'}</h2>
           {c.ctaBody && <p className="text-xl mb-8 opacity-95 leading-relaxed">{c.ctaBody}</p>}
-          <a href={c.ctaHref} className="inline-block bg-white text-[var(--color-primary)] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[var(--color-cream)] transition-colors">{c.ctaLabel}</a>
+          <a href={c.ctaHref} className="inline-block bg-white text-[var(--color-accent)] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[var(--color-cream)] transition-colors">{c.ctaLabel}</a>
         </div>
       </section>
     </main>

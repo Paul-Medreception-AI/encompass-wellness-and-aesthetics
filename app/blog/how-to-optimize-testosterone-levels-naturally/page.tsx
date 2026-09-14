@@ -391,7 +391,7 @@ export default function BlogPostPage() {
           </p>
           <a 
             href="/contact" 
-            className="inline-block bg-white text-[var(--color-primary)] hover:bg-[var(--color-cream)] px-8 py-4 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
+            className="inline-block bg-white text-[var(--color-accent)] hover:bg-[var(--color-cream)] px-8 py-4 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             Schedule Your Consultation Today
           </a>

@@ -82,7 +82,7 @@ export default function BlogPage() {
                 </p>
                 <Link
                   href={`/blog/${post.slug}`}
-                  className="inline-block text-[var(--color-primary)] font-semibold text-sm mt-6 hover:underline"
+                  className="inline-block text-[var(--color-accent)] font-semibold text-sm mt-6 hover:underline"
                 >
                   Read More &rarr;
                 </Link>

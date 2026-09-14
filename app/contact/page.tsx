@@ -160,7 +160,7 @@ export default function ContactPage() {
                 </p>
                 <a
                   href="#form"
-                  className="inline-block bg-white text-[var(--color-primary)] hover:bg-white/90 px-8 py-3 rounded-xl font-semibold transition-colors"
+                  className="inline-block bg-white text-[var(--color-accent)] hover:bg-white/90 px-8 py-3 rounded-xl font-semibold transition-colors"
                 >
                   Fill Out Form Above
                 </a>

@@ -84,7 +84,7 @@ export default function TermsSmsPage() {
               8. Privacy Policy:
             </h3>
             <p className="text-[var(--color-muted)] mb-6">
-              For privacy-related inquiries, please refer to our <a href="/privacy-sms" className="text-[var(--color-primary)] underline">Privacy Policy</a> at https://encompassspa.com/privacy-sms
+              For privacy-related inquiries, please refer to our <a href="/privacy-sms" className="text-[var(--color-accent)] underline">Privacy Policy</a> at https://encompassspa.com/privacy-sms
             </p>
             <p className="text-[var(--color-muted)] mb-6">
               We comply with all applicable laws and regulations, including the Telephone Consumer Protection Act (TCPA) and CTIA guidelines, regarding the use of SMS communications.

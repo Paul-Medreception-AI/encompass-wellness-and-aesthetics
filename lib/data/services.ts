@@ -6,7 +6,8 @@ export const SERVICES: ServicePageContent[] = [
   {
     ...BASE,
     slug: "functional-medicine",
-    heroImage: {"src":"/images/services/functional-medicine.jpg","alt":"Provider reviewing a patient chart during a functional medicine consultation"},
+    heroImage: {"src":"/images/scraped/1672501-scaled-1.jpg","alt":"Functional medicine consultation at Encompass Wellness"},
+    gallery: [{"src":"/images/scraped/ifm_2-scaled.jpg","alt":"Functional medicine consultation at Encompass Wellness — 2"},{"src":"/images/scraped/ifm_1-scaled.jpg","alt":"Institute for Functional Medicine"},{"src":"/images/scraped/general-health-1-1024x683.jpg","alt":"General health and wellness"}],
     badge: "Services",
     title: "Functional Medicine",
     metaTitle: "Functional Medicine in Edmond, OK | Encompass Wellness",
@@ -33,7 +34,7 @@ export const SERVICES: ServicePageContent[] = [
   {
     ...BASE,
     slug: "hormone-replacement-therapy",
-    heroImage: {"src":"/images/services/hormone-replacement-therapy.jpg","alt":"Healthy older couple enjoying breakfast together"},
+    heroImage: {"src":"/images/scraped/untitled-design-36-scaled.jpg","alt":"Hormone replacement therapy at Encompass Wellness"},
     badge: "Services",
     title: "Hormone Replacement Therapy",
     metaTitle: "Hormone Replacement Therapy in Edmond, OK | Encompass Wellness",
@@ -59,7 +60,7 @@ export const SERVICES: ServicePageContent[] = [
   {
     ...BASE,
     slug: "thyroid-management",
-    heroImage: {"src":"/images/services/thyroid-management.jpg","alt":"Clinician performing a neck examination to assess the thyroid"},
+    heroImage: {"src":"/images/scraped/adobestock_237394541-scaled-1.jpeg","alt":"Thyroid evaluation and management"},
     badge: "Services",
     title: "Thyroid Management",
     metaTitle: "Thyroid Management in Edmond, OK | Encompass Wellness",
@@ -85,7 +86,8 @@ export const SERVICES: ServicePageContent[] = [
   {
     ...BASE,
     slug: "weight-loss-programs",
-    heroImage: {"src":"/images/services/weight-loss-programs.jpg","alt":"Fresh vegetables being prepared in a kitchen"},
+    heroImage: {"src":"/images/scraped/untitled-design-37-scaled.jpg","alt":"Medical weight loss at Encompass Wellness"},
+    gallery: [{"src":"/images/scraped/1867234-e1629837967663.jpg","alt":"Medical weight loss at Encompass Wellness — 2"},{"src":"/images/scraped/1867234-1024x1536.jpg","alt":"Medical weight loss"}],
     badge: "Services",
     title: "Weight Loss Programs",
     metaTitle: "Weight Loss Programs in Edmond, OK | Encompass Wellness",
@@ -112,7 +114,8 @@ export const SERVICES: ServicePageContent[] = [
   {
     ...BASE,
     slug: "aesthetic-services",
-    heroImage: {"src":"/images/services/aesthetic-services.jpg","alt":"Client receiving a facial treatment at a modern aesthetics clinic"},
+    heroImage: {"src":"/images/scraped/untitled-design-38-scaled.jpg","alt":"Aesthetic treatments at Encompass Wellness"},
+    gallery: [{"src":"/images/scraped/skinceuticals.jpg","alt":"SkinCeuticals skincare"},{"src":"/images/scraped/skinceuticals-1.jpg","alt":"SkinCeuticals products"},{"src":"/images/scraped/skinceuticals-2.jpg","alt":"SkinCeuticals products"},{"src":"/images/scraped/silymarin-cf-launch-primary-static-hp-desktop-skinceuticals.jpg","alt":"SkinCeuticals Silymarin CF"},{"src":"/images/scraped/obagi.jpg","alt":"Obagi Medical skincare"},{"src":"/images/scraped/obagi-9-scaled.jpg","alt":"Obagi Medical skincare"},{"src":"/images/scraped/product-photo-1.png","alt":"Pharmaceutical-grade nutraceuticals"},{"src":"/images/scraped/chempeel1.jpg","alt":"Chemical peel treatment"}],
     badge: "Services",
     title: "Aesthetic Services",
     metaTitle: "Aesthetic Services in Edmond, OK | Encompass Wellness",
@@ -138,7 +141,8 @@ export const SERVICES: ServicePageContent[] = [
   {
     ...BASE,
     slug: "iv-therapy",
-    heroImage: {"src":"/images/services/iv-therapy.jpg","alt":"Patient receiving an intravenous nutrient infusion"},
+    heroImage: {"src":"/images/scraped/iv-therapy.jpg","alt":"IV nutrient therapy at Encompass Wellness"},
+    gallery: [{"src":"/images/scraped/iv.jpg","alt":"IV nutrient therapy at Encompass Wellness — 2"}],
     badge: "Services",
     title: "IV Therapy",
     metaTitle: "IV Therapy in Edmond, OK | Encompass Wellness and Aesthetics",
@@ -166,7 +170,8 @@ export const SERVICES: ServicePageContent[] = [
   {
     ...BASE,
     slug: "womens-sexual-health",
-    heroImage: {"src":"/images/services/womens-sexual-health.jpg","alt":"Woman smiling in warm golden sunlight outdoors"},
+    heroImage: {"src":"/images/scraped/wsh-scaled.jpg","alt":"Women’s sexual health treatment"},
+    gallery: [{"src":"/images/scraped/untitled-design.jpg","alt":"Women’s sexual health treatment — 2"},{"src":"/images/scraped/empowerrf-e1652806786564.jpeg","alt":"EmpowerRF platform"},{"src":"/images/scraped/empowerrf_launch_linkedin_v2-e1652807032972.jpg","alt":"EmpowerRF"},{"src":"/images/scraped/morpheus8v.png","alt":"Morpheus8V"},{"src":"/images/scraped/morpheus8v2.jpg","alt":"Morpheus8V treatment"},{"src":"/images/scraped/formav.png","alt":"FormaV"},{"src":"/images/scraped/vtone-mobile-banner-e1652807615425.jpeg","alt":"VTone"},{"src":"/images/scraped/female-health.jpg","alt":"Women’s health"}],
     badge: "Services",
     title: "Women's Sexual Health",
     metaTitle: "Women's Sexual Health in Edmond, OK | Encompass Wellness",
@@ -190,7 +195,8 @@ export const SERVICES: ServicePageContent[] = [
   {
     ...BASE,
     slug: "mens-sexual-health",
-    heroImage: {"src":"/images/services/mens-sexual-health.jpg","alt":"Man walking confidently outdoors"},
+    heroImage: {"src":"/images/scraped/encompass-mens-sexual-health.jpg","alt":"Men’s sexual health treatment"},
+    gallery: [{"src":"/images/scraped/male-shot-1.jpg","alt":"Men’s sexual health treatment — 2"},{"src":"/images/scraped/regenepulse.jpg","alt":"Men’s sexual health treatment — 3"},{"src":"/images/scraped/untitled-design-23.jpg","alt":"Men’s sexual health treatment — 4"}],
     badge: "Services",
     title: "Men's Sexual Health",
     metaTitle: "Men's Sexual Health & ED Treatment in Edmond, OK",
@@ -214,7 +220,8 @@ export const SERVICES: ServicePageContent[] = [
   {
     ...BASE,
     slug: "body-contouring",
-    heroImage: {"src":"/images/services/body-contouring.jpg","alt":"Woman in sportswear measuring her waist with a tape measure"},
+    heroImage: {"src":"/images/scraped/evoke2.jpeg","alt":"Evoke and EvolveX body contouring"},
+    gallery: [{"src":"/images/scraped/evolvex.jpeg","alt":"Evoke and EvolveX body contouring — 2"},{"src":"/images/scraped/untitled-design-2.jpg","alt":"Evoke and EvolveX body contouring — 3"},{"src":"/images/scraped/evokehead.jpg","alt":"Evoke applicator"},{"src":"/images/scraped/evolvehead.jpg","alt":"EvolveX applicator"},{"src":"/images/scraped/evolvetite_post-scaled-1-2048x2048.jpg","alt":"Evolve Tite result"},{"src":"/images/scraped/tite.jpg","alt":"Evolve Tite"},{"src":"/images/scraped/tone.jpg","alt":"Evolve Tone"},{"src":"/images/scraped/tone2.jpeg","alt":"Evolve Tone treatment"},{"src":"/images/scraped/tonehead.jpg","alt":"Evolve Tone applicator"},{"src":"/images/scraped/transform.jpg","alt":"Evolve Transform"},{"src":"/images/scraped/transform2.jpg","alt":"Evolve Transform treatment"}],
     badge: "Services",
     title: "Body Contouring",
     metaTitle: "Body Contouring in Edmond, OK | Evoke & EvolveX",
@@ -238,7 +245,7 @@ export const SERVICES: ServicePageContent[] = [
   {
     ...BASE,
     slug: "chelation-therapy",
-    heroImage: {"src":"/images/services/chelation-therapy.jpg","alt":"Patient undergoing a cardiology examination"},
+    heroImage: {"src":"/images/scraped/adobestock_278381432-scaled-1.jpeg","alt":"Chelation therapy for cardiovascular health"},
     badge: "Services",
     title: "Chelation Therapy",
     metaTitle: "Chelation Therapy in Edmond, OK | Heart Health",
@@ -259,7 +266,8 @@ export const SERVICES: ServicePageContent[] = [
   {
     ...BASE,
     slug: "vaginal-rejuvenation",
-    heroImage: {"src":"/images/services/vaginal-rejuvenation.jpg","alt":"Woman in a bathrobe smiling after a wellness treatment"},
+    heroImage: {"src":"/images/scraped/votiva_mobile_banner-scaled-1-2048x935.jpg","alt":"Votiva vaginal rejuvenation","fit":"contain"},
+    gallery: [{"src":"/images/scraped/1894786.jpeg","alt":"Votiva vaginal rejuvenation — 2"},{"src":"/images/scraped/formav.jpg","alt":"Votiva vaginal rejuvenation — 3"},{"src":"/images/scraped/bluemarble.jpg","alt":"Votiva treatment"}],
     badge: "Services",
     title: "Vaginal Rejuvenation",
     metaTitle: "Vaginal Rejuvenation in Edmond, OK | Votiva & FormaV",
@@ -280,7 +288,8 @@ export const SERVICES: ServicePageContent[] = [
   {
     ...BASE,
     slug: "laser-treatments",
-    heroImage: {"src":"/images/services/laser-treatments.jpg","alt":"Close-up of a laser cosmetic treatment being performed in a clinic"},
+    heroImage: {"src":"/images/scraped/morpheus8-header.jpg","alt":"Laser skin treatments including Morpheus8 and Lumecca","fit":"contain"},
+    gallery: [{"src":"/images/scraped/lumecca-mobile-banner.jpg","alt":"Laser skin treatments including Morpheus8 and Lumecca — 2"},{"src":"/images/scraped/diolazexl-mobile-banner.jpg","alt":"Laser skin treatments including Morpheus8 and Lumecca — 3"},{"src":"/images/scraped/vasculaze-mobile-banner.jpg","alt":"Laser skin treatments including Morpheus8 and Lumecca — 4"},{"src":"/images/scraped/pronox.jpg","alt":"Laser skin treatments including Morpheus8 and Lumecca — 5"},{"src":"/images/scraped/morpheus8_beforeandafter_socialpost-1024x1024.jpg","alt":"Morpheus8 before and after"},{"src":"/images/scraped/morpheus8_beforeandafter_socialpost-1-1024x1024.jpg","alt":"Morpheus8 before and after"},{"src":"/images/scraped/morpheus8_beforeandafter_socialpost-3-1024x1024.jpg","alt":"Morpheus8 before and after"},{"src":"/images/scraped/hc_morpheus8_1_acne1tx15kj_social-1024x1024.jpg","alt":"Morpheus8 acne treatment result"},{"src":"/images/scraped/hc_morpheus8_1_acne1tx15kj_social-1-1024x1024.jpg","alt":"Morpheus8 acne treatment result"},{"src":"/images/scraped/1221_hexagon_morpheus8.jpg","alt":"Morpheus8 treatment"},{"src":"/images/scraped/morpheus8_instagram_v2.jpg","alt":"Morpheus8"},{"src":"/images/scraped/morpheus8head.jpg","alt":"Morpheus8 handpiece"},{"src":"/images/scraped/hr_lumecca_2a_lefthand_1tx_cropped2-1024x1024.jpg","alt":"Lumecca IPL result on the hand"},{"src":"/images/scraped/lumecca_instagram-1024x1024.jpg","alt":"Lumecca IPL photofacial"},{"src":"/images/scraped/lumecca_instagramesthinity-1024x1024.jpg","alt":"Lumecca IPL"},{"src":"/images/scraped/lumecca_area-treatment_instagram.jpg","alt":"Lumecca treatment areas"},{"src":"/images/scraped/diolaze_lifestyle_instagram-2048x2048.jpg","alt":"DiolazeXL laser hair removal"},{"src":"/images/scraped/forma_ba.png","alt":"Forma skin tightening before and after"},{"src":"/images/scraped/empowerrf-2048x2048.jpeg","alt":"EmpowerRF platform"}],
     badge: "Services",
     title: "Laser Treatments",
     metaTitle: "Laser Treatments in Edmond, OK | Morpheus8 & Lumecca",
@@ -304,7 +313,8 @@ export const SERVICES: ServicePageContent[] = [
   {
     ...BASE,
     slug: "microneedling-skinpen",
-    heroImage: {"src":"/images/services/microneedling-skinpen.jpg","alt":"Close-up of a microneedling facial procedure"},
+    heroImage: {"src":"/images/scraped/skinpen-scaled.jpg","alt":"SkinPen microneedling treatment"},
+    gallery: [{"src":"/images/scraped/skinpen-procedure-patient.jpeg","alt":"SkinPen microneedling treatment — 2"},{"src":"/images/scraped/neck-wrinkles.jpeg","alt":"SkinPen microneedling treatment — 3"},{"src":"/images/scraped/acnes-scares.jpeg","alt":"SkinPen microneedling treatment — 4"},{"src":"/images/scraped/skinpen.png","alt":"SkinPen device"},{"src":"/images/scraped/1.png","alt":"SkinPen step one — inflammation"},{"src":"/images/scraped/2.png","alt":"SkinPen step two — proliferation"},{"src":"/images/scraped/3.png","alt":"SkinPen step three — remodeling"}],
     badge: "Services",
     title: "SkinPen Microneedling",
     metaTitle: "SkinPen Microneedling in Edmond, OK",
@@ -328,7 +338,8 @@ export const SERVICES: ServicePageContent[] = [
   {
     ...BASE,
     slug: "hydrafacial",
-    heroImage: {"src":"/images/services/hydrafacial.jpg","alt":"Woman enjoying a hydrating facial treatment"},
+    heroImage: {"src":"/images/scraped/hydrafacial-scaled.jpg","alt":"HydraFacial treatment"},
+    gallery: [{"src":"/images/scraped/hydrafacial.png","alt":"HydraFacial treatment — 2"}],
     badge: "Services",
     title: "HydraFacial",
     metaTitle: "HydraFacial in Edmond, OK | 3 Steps, 30 Minutes",
@@ -352,7 +363,8 @@ export const SERVICES: ServicePageContent[] = [
   {
     ...BASE,
     slug: "dermal-fillers",
-    heroImage: {"src":"/images/services/dermal-fillers.jpg","alt":"Close-up of a dermal filler injection being administered"},
+    heroImage: {"src":"/images/scraped/fillers-scaled.jpg","alt":"Dermal filler treatment"},
+    gallery: [{"src":"/images/scraped/adobestock_108759645_edited-2048x1365.jpg","alt":"Dermal filler treatment — 2"},{"src":"/images/scraped/radiesse.png","alt":"Dermal filler treatment — 3"}],
     badge: "Services",
     title: "Dermal Fillers",
     metaTitle: "Dermal Fillers in Edmond, OK | RHA & Juvéderm",
@@ -373,7 +385,8 @@ export const SERVICES: ServicePageContent[] = [
   {
     ...BASE,
     slug: "wrinkle-relaxers",
-    heroImage: {"src":"/images/services/wrinkle-relaxers.jpg","alt":"Close-up of a neuromodulator injection being administered"},
+    heroImage: {"src":"/images/scraped/wrinkle-relaxers-scaled.jpg","alt":"Botox and Daxxify wrinkle relaxers"},
+    gallery: [{"src":"/images/scraped/botox.png","alt":"Botox and Daxxify wrinkle relaxers — 2"},{"src":"/images/scraped/shutterstock_737351473-2048x1536.jpg","alt":"Botox and Daxxify wrinkle relaxers — 3"},{"src":"/images/scraped/shutterstock_737351473-scaled-e1629834834659.jpg","alt":"Wrinkle relaxer treatment"}],
     badge: "Services",
     title: "Wrinkle Relaxers",
     metaTitle: "Botox & Daxxify in Edmond, OK | Wrinkle Relaxers",
@@ -394,7 +407,7 @@ export const SERVICES: ServicePageContent[] = [
   {
     ...BASE,
     slug: "facials-and-peels",
-    heroImage: {"src":"/images/services/facials-and-peels.jpg","alt":"Woman removing a facial treatment mask"},
+    heroImage: {"src":"/images/scraped/chempeel1.jpg","alt":"Facials and chemical peels"},
     badge: "Services",
     title: "Facials & Peels",
     metaTitle: "Facials & Chemical Peels in Edmond, OK",
@@ -418,7 +431,7 @@ export const SERVICES: ServicePageContent[] = [
   {
     ...BASE,
     slug: "prp-facials",
-    heroImage: {"src":"/images/services/prp-facials.jpg","alt":"Aesthetician performing a PRP facial treatment"},
+    heroImage: {"src":"/images/scraped/aesthetics-1.jpg","alt":"PRP facial treatment"},
     badge: "Services",
     title: "PRP Facials",
     metaTitle: "PRP Facials in Edmond, OK | Platelet-Rich Plasma",
@@ -439,7 +452,7 @@ export const SERVICES: ServicePageContent[] = [
   {
     ...BASE,
     slug: "prp-hair-restoration",
-    heroImage: {"src":"/images/services/prp-hair-restoration.jpg","alt":"Close-up of hair and scalp treatment being applied"},
+    heroImage: {"src":"/images/scraped/adobestock_135718523-scaled-1.jpeg","alt":"PRP hair restoration"},
     badge: "Services",
     title: "PRP Hair Restoration",
     metaTitle: "PRP Hair Restoration in Edmond, OK",
@@ -460,7 +473,8 @@ export const SERVICES: ServicePageContent[] = [
   {
     ...BASE,
     slug: "spider-vein-treatment",
-    heroImage: {"src":"/images/services/spider-vein-treatment.jpg","alt":"Close-up of smooth legs after vein treatment"},
+    heroImage: {"src":"/images/scraped/vein.png","alt":"Spider vein treatment"},
+    gallery: [{"src":"/images/scraped/vasculaze_post-scaled-1-2048x2048.jpg","alt":"Spider vein treatment — 2"}],
     badge: "Services",
     title: "Spider Vein Treatment",
     metaTitle: "Spider Vein Treatment in Edmond, OK | Sclerotherapy",

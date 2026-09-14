@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -10,7 +11,18 @@ export default function AboutPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[var(--color-dark)] to-[var(--color-primary)] py-28 text-white">
+      {/* Their own about-page header image from encompassspa.com */}
+      <section className="relative py-28 text-white overflow-hidden">
+        <Image
+          src="/images/scraped/about_header.jpg"
+          alt="Encompass Wellness and Aesthetics"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-ink/80 via-accent-dark/70 to-ink/75" />
+        <div className="relative">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-sm mb-6 opacity-80">
             <span className="hover:opacity-100 transition-opacity">Home</span>
@@ -24,6 +36,7 @@ export default function AboutPage() {
             Comprehensive functional medicine and wellness care in Edmond, OK
           </p>
         </div>
+      </div>
       </section>
 
       {/* Main Content */}

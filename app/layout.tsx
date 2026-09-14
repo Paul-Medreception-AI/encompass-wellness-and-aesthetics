@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Cormorant_Garamond, DM_Sans } from 'next/font/google'
 import { GoogleAnalytics } from '@next/third-parties/google'
+import SiteHeader from '@/components/SiteHeader'
 import './globals.css'
 
 const cormorant = Cormorant_Garamond({ subsets: ['latin'], weight: ['300','400','500','600','700'], variable: '--font-cormorant' })
@@ -35,21 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${cormorant.variable} ${dmSans.variable}`}>
       <body className="font-[family-name:var(--font-dm-sans)] bg-[var(--color-cream)] text-[var(--color-ink)]">
-        <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-[var(--color-border)] shadow-sm">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="/">
-              <img src="/logo.png" alt="Encompass Wellness and Aesthetics" className="h-11 w-auto" />
-            </a>
-            <nav className="hidden md:flex items-center gap-8">
-              <a href="/services" className="text-sm font-medium text-[var(--color-ink)] hover:text-[var(--color-primary)] transition-colors">Services</a>
-              <a href="/conditions" className="text-sm font-medium text-[var(--color-ink)] hover:text-[var(--color-primary)] transition-colors">Conditions</a>
-              <a href="/about" className="text-sm font-medium text-[var(--color-ink)] hover:text-[var(--color-primary)] transition-colors">About</a>
-              <a href="/team" className="text-sm font-medium text-[var(--color-ink)] hover:text-[var(--color-primary)] transition-colors">Team</a>
-              <a href="/contact" className="text-sm font-medium text-[var(--color-ink)] hover:text-[var(--color-primary)] transition-colors">Contact</a>
-              <a href="/contact" className="ml-8 bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-white px-6 py-2.5 rounded-xl font-semibold text-sm transition-colors">Schedule Your Consultation</a>
-            </nav>
-          </div>
-        </header>
+        <SiteHeader />
 
         {children}
 
@@ -94,6 +81,7 @@ export default function RootLayout({
                   <li><a href="/faq" className="text-white/80 hover:text-white transition-colors text-sm">FAQ</a></li>
                   <li><a href="/blog" className="text-white/80 hover:text-white transition-colors text-sm">Blog</a></li>
                   <li><a href="/reviews" className="text-white/80 hover:text-white transition-colors text-sm">Reviews</a></li>
+                  <li><a href="https://store.encompassspa.com/" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors text-sm">Shop Supplements &amp; Skincare</a></li>
                 </ul>
               </div>
 
