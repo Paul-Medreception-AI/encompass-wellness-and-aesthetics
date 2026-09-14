@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import HeroParallax from '@/components/HeroParallax'
 
 export const metadata = {
   alternates: { canonical: '/' },
@@ -10,20 +11,14 @@ export default function HomePage() {
     <main>
       {/* Hero */}
       <section className="relative min-h-[90vh] flex items-center text-white overflow-hidden">
-        {/* The practice's own hero from encompassspa.com. The autobuild referenced
-            this exact filename but never downloaded it, so the hero 404'd. */}
-        <Image
+        {/* The practice's own hero from encompassspa.com, with the same scroll
+            parallax their Elementor build used (motion-effects background). */}
+        <HeroParallax
           src="/images/scraped/hero-beach.jpg"
           alt="Woman walking along the shoreline in bright sunlight"
-          fill
-          priority
-          quality={85}
-          sizes="100vw"
-          className="object-cover object-center"
         />
-        {/* The source photo is high-key and very bright, so white text needs a
-            substantial scrim. Teal-to-ink pulls the logo colour out of the ocean. */}
-        <div className="absolute inset-0 bg-gradient-to-br from-ink/75 via-accent-dark/65 to-ink/70" />
+        {/* The source photo is high-key, so white text needs a real scrim. */}
+        <div className="absolute inset-0 bg-gradient-to-br from-ink/75 via-dark/65 to-ink/70" />
         <div className="relative max-w-5xl mx-auto px-6 text-center py-20">
           <h1 className="text-6xl sm:text-7xl font-light tracking-tight leading-tight" style={{fontFamily: 'var(--font-cormorant)'}}>
             Get to the Root Cause of Your Health Issues
