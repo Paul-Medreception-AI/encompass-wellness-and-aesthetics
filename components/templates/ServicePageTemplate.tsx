@@ -28,7 +28,7 @@ export type ServicePageContent = {
   metaTitle?: string
   heroSubhead?: string
   heroImage?: { src: string; alt: string; fit?: 'cover' | 'contain' }
-  gallery?: { src: string; alt: string }[]
+  gallery?: { src: string; alt: string; fit?: 'cover' | 'contain' }[]
   featuredVideo?: { videoId: string; title: string; heading?: string; subhead?: string }
   introHeading?: string
   intro?: string[]
@@ -118,8 +118,25 @@ export function ServicePageTemplate({ c }: { c: ServicePageContent }) {
               <p className="text-xl opacity-95 max-w-3xl leading-relaxed">{c.heroSubhead || c.description}</p>
             </div>
             {c.heroImage && (
-              <div className="relative w-full max-w-md lg:w-2/5 lg:max-w-none h-96 lg:h-[28rem] rounded-2xl overflow-hidden shadow-2xl">
-                <Image src={c.heroImage.src} alt={c.heroImage.alt} fill priority quality={90} sizes="(max-width: 768px) 100vw, 384px" className={c.heroImage.fit === 'contain' ? 'object-contain p-4' : 'object-cover'} />
+              <div
+                className={
+                  'relative w-full max-w-md lg:max-w-none rounded-2xl overflow-hidden shadow-2xl ' +
+                  // Wide page-header banners keep their own shape instead of being
+                  // letterboxed inside a tall card; photos still fill a tall card.
+                  (c.heroImage.fit === 'contain'
+                    ? 'lg:w-1/2 aspect-[16/7] bg-white/10'
+                    : 'lg:w-2/5 h-96 lg:h-[28rem]')
+                }
+              >
+                <Image
+                  src={c.heroImage.src}
+                  alt={c.heroImage.alt}
+                  fill
+                  priority
+                  quality={90}
+                  sizes="(max-width: 768px) 100vw, 512px"
+                  className={c.heroImage.fit === 'contain' ? 'object-contain' : 'object-cover'}
+                />
               </div>
             )}
           </div>
@@ -299,8 +316,8 @@ export function ServicePageTemplate({ c }: { c: ServicePageContent }) {
             <h3 className="font-cormorant text-3xl font-light mb-10 text-[var(--color-ink)] text-center">{c.title} Gallery</h3>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {c.gallery.map((g) => (
-                <div key={g.src} className="relative h-72 rounded-2xl overflow-hidden bg-white border border-[var(--color-border)]">
-                  <Image src={g.src} alt={g.alt} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover" />
+                <div key={g.src} className={'relative rounded-2xl overflow-hidden bg-white border border-[var(--color-border)] ' + (g.fit === 'contain' ? 'h-52 flex items-center' : 'h-72')}>
+                  <Image src={g.src} alt={g.alt} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className={g.fit === 'contain' ? 'object-contain p-3' : 'object-cover'} />
                 </div>
               ))}
             </div>
