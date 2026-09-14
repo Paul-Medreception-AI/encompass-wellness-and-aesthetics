@@ -6,7 +6,7 @@ export const SERVICES: ServicePageContent[] = [
   {
     ...BASE,
     slug: "functional-medicine",
-    heroImage: {"src":"/images/scraped/1672501-scaled-1.jpg","alt":"Functional medicine consultation at Encompass Wellness"},
+    heroImage: {"src":"/images/stock/functional-medicine.jpg","alt":"Provider reviewing a patient chart during a functional medicine consultation"},
     gallery: [{"src":"/images/scraped/ifm_2-scaled.jpg","alt":"Functional medicine consultation at Encompass Wellness — 2"},{"src":"/images/scraped/ifm_1-scaled.jpg","alt":"Institute for Functional Medicine"},{"src":"/images/scraped/general-health-1-1024x683.jpg","alt":"General health and wellness"}],
     badge: "Services",
     title: "Functional Medicine",
@@ -170,7 +170,7 @@ export const SERVICES: ServicePageContent[] = [
   {
     ...BASE,
     slug: "womens-sexual-health",
-    heroImage: {"src":"/images/scraped/wsh-scaled.jpg","alt":"Women’s sexual health treatment","fit":"contain"},
+    heroImage: {"src":"/images/stock/womens-sexual-health.jpg","alt":"Woman smiling in warm golden sunlight outdoors"},
     gallery: [{"src":"/images/scraped/untitled-design.jpg","alt":"Women’s sexual health treatment — 2"},{"src":"/images/scraped/empowerrf-e1652806786564.jpeg","alt":"EmpowerRF platform"},{"src":"/images/scraped/empowerrf_launch_linkedin_v2-e1652807032972.jpg","alt":"EmpowerRF","fit":"contain"},{"src":"/images/scraped/morpheus8v.png","alt":"Morpheus8V"},{"src":"/images/scraped/morpheus8v2.jpg","alt":"Morpheus8V treatment","fit":"contain"},{"src":"/images/scraped/formav.png","alt":"FormaV"},{"src":"/images/scraped/vtone-mobile-banner-e1652807615425.jpeg","alt":"VTone","fit":"contain"},{"src":"/images/scraped/female-health.jpg","alt":"Women’s health"}],
     badge: "Services",
     title: "Women's Sexual Health",

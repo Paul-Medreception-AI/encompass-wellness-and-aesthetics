@@ -125,7 +125,7 @@ export function ServicePageTemplate({ c }: { c: ServicePageContent }) {
                   // letterboxed inside a tall card; photos still fill a tall card.
                   (c.heroImage.fit === 'contain'
                     ? 'lg:w-1/2 aspect-[16/7] bg-white/10'
-                    : 'lg:w-2/5 h-96 lg:h-[28rem]')
+                    : 'lg:w-2/5 aspect-[4/3] sm:aspect-[3/2] lg:aspect-auto lg:h-[28rem]')
                 }
               >
                 <Image

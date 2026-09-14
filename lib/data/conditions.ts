@@ -422,7 +422,7 @@ export const CONDITIONS: ConditionPageContent[] = [
   {
     ...BASE,
     slug: "low-libido",
-    heroImage: {"src":"/images/scraped/wsh-scaled.jpg","alt":"Sexual health treatment at Encompass Wellness"},
+    heroImage: {"src":"/images/conditions/low-libido.jpg","alt":"Smiling couple enjoying a sunny day together"},
     badge: "Conditions",
     title: "Low Libido",
     metaTitle: "Low Libido Treatment in Edmond, OK | Encompass Wellness",
@@ -474,7 +474,7 @@ export const CONDITIONS: ConditionPageContent[] = [
   {
     ...BASE,
     slug: "leaky-gut-syndrome",
-    heroImage: {"src":"/images/conditions/leaky-gut-syndrome.jpg","alt":"Woman sitting in bed holding her stomach, indicating pain or discomfort, possibly due to cramps."},
+    heroImage: {"src":"/images/conditions/leaky-gut-syndrome.jpg","alt":"Woman holding her stomach, indicating abdominal discomfort"},
     badge: "Conditions",
     title: "Leaky Gut Syndrome",
     metaTitle: "Leaky Gut Syndrome Treatment in Edmond, OK | Encompass Wellness",

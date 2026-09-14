@@ -42,9 +42,9 @@ export default function RootLayout({
 
         <footer className="bg-[var(--color-ink)] text-white py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10 mb-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12 mb-12 text-center sm:text-left">
               <div>
-                <img src="/logo.png" alt="Encompass Wellness and Aesthetics" className="h-[5.5rem] w-auto mb-6" />
+                <img src="/logo.png" alt="Encompass Wellness and Aesthetics" className="h-[5.5rem] w-auto mb-6 mx-auto sm:mx-0" />
                 <p className="text-white/80 text-sm leading-relaxed mb-6">
                   Functional and aesthetic care in Edmond, Oklahoma. We partner with you to get to
                   the root of your health issues, not just treat the symptoms.
@@ -52,7 +52,7 @@ export default function RootLayout({
                 <a href="/contact" className="inline-block bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition-colors">
                   Schedule a Consultation
                 </a>
-                <div className="flex items-center gap-4 mt-6">
+                <div className="flex items-center justify-center sm:justify-start gap-4 mt-8">
                   <a href="https://www.facebook.com/encompassedmond/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-white/70 hover:text-white transition-colors">
                     <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
@@ -64,7 +64,9 @@ export default function RootLayout({
                     </svg>
                   </a>
                 </div>
-                          <div>
+              </div>
+
+              <div>
                 <h3 className="text-sm font-semibold uppercase tracking-wider text-white/50 mb-5">Care</h3>
                 <ul className="space-y-3">
                   <li><a href="/services" className="text-white/80 hover:text-white transition-colors text-sm">Services</a></li>
@@ -113,13 +115,13 @@ export default function RootLayout({
 
                 <h3 className="text-sm font-semibold uppercase tracking-wider text-white/50 mt-8 mb-4">Office Hours</h3>
                 <dl className="text-sm text-white/80 space-y-1.5">
-                  <div className="flex justify-between gap-4">
+                  <div className="flex justify-center sm:justify-between gap-3 sm:gap-4">
                     <dt>Mon &ndash; Thu</dt><dd className="text-white/60">8:00am &ndash; 5:00pm</dd>
                   </div>
-                  <div className="flex justify-between gap-4">
+                  <div className="flex justify-center sm:justify-between gap-3 sm:gap-4">
                     <dt>Friday</dt><dd className="text-white/60">8:00am &ndash; 3:00pm</dd>
                   </div>
-                  <div className="flex justify-between gap-4">
+                  <div className="flex justify-center sm:justify-between gap-3 sm:gap-4">
                     <dt>Sat &ndash; Sun</dt><dd className="text-white/60">Closed</dd>
                   </div>
                 </dl>
@@ -127,13 +129,11 @@ export default function RootLayout({
               </div>
             </div>
 
-  </div>
-
             <div className="border-t border-white/20 pt-8">
-              <p className="text-xs text-white/60 mb-4">
+              <p className="text-xs text-white/60 mb-4 text-center sm:text-left">
                 This website does not collect protected health information. All clinical intake is handled through a secure patient portal.
               </p>
-              <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-white/60">
+              <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-white/60 text-center sm:text-left">
                 <p>© {currentYear} Encompass Wellness and Aesthetics</p>
                 <p>
                   <a href="/privacy-sms" className="hover:text-white transition-colors">Privacy Policy</a>

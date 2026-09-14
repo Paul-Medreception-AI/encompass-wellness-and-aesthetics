@@ -113,7 +113,7 @@ export default function SiteHeader() {
         </Link>
 
         {/* Desktop nav */}
-        <div ref={navRef} className="hidden md:flex items-center gap-8">
+        <div ref={navRef} className="hidden lg:flex items-center gap-6 xl:gap-8">
           {/* Services */}
           <div
             className="relative"
@@ -235,7 +235,7 @@ export default function SiteHeader() {
         {/* Mobile toggle */}
         <button
           type="button"
-          className="md:hidden p-2 -mr-2 text-[var(--color-ink)]"
+          className="lg:hidden p-2 -mr-2 text-[var(--color-ink)]"
           aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={mobileOpen}
           onClick={() => setMobileOpen((v) => !v)}
@@ -252,7 +252,7 @@ export default function SiteHeader() {
 
       {/* Mobile sheet */}
       {mobileOpen && (
-        <div className="md:hidden border-t border-[var(--color-border)] bg-white max-h-[calc(100vh-7rem)] overflow-y-auto">
+        <div className="lg:hidden border-t border-[var(--color-border)] bg-white max-h-[calc(100vh-7rem)] overflow-y-auto">
           <nav className="px-5 py-4">
             <MobileAccordion
               label="Services"
