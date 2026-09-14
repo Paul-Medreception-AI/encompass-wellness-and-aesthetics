@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import ContactForm from './ContactForm'
 
 export const metadata: Metadata = {
   alternates: { canonical: '/contact' },
@@ -27,87 +28,7 @@ export default function ContactPage() {
             <div id="form" className="bg-white rounded-2xl p-10 shadow-sm border border-[var(--color-border)] animate-fade-up">
               <h2 className="font-serif text-3xl text-[var(--color-ink)] mb-8">Send Us a Message</h2>
               
-              <form method="POST" action="https://formspree.io/f/placeholder" className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-[var(--color-ink)] mb-2">
-                    Full Name <span className="text-[var(--color-accent)]">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    className="border border-[var(--color-border)] rounded-xl px-4 py-3 w-full focus:ring-2 focus:ring-[var(--color-primary)] focus:outline-none"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-[var(--color-ink)] mb-2">
-                    Email <span className="text-[var(--color-accent)]">*</span>
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    className="border border-[var(--color-border)] rounded-xl px-4 py-3 w-full focus:ring-2 focus:ring-[var(--color-primary)] focus:outline-none"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-[var(--color-ink)] mb-2">
-                    Phone
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    className="border border-[var(--color-border)] rounded-xl px-4 py-3 w-full focus:ring-2 focus:ring-[var(--color-primary)] focus:outline-none"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="service" className="block text-sm font-medium text-[var(--color-ink)] mb-2">
-                    Service Interest
-                  </label>
-                  <select
-                    id="service"
-                    name="service"
-                    className="border border-[var(--color-border)] rounded-xl px-4 py-3 w-full focus:ring-2 focus:ring-[var(--color-primary)] focus:outline-none"
-                  >
-                    <option value="">Select a service</option>
-                    <option value="Hormone Replacement Therapy">Hormone Replacement Therapy</option>
-                    <option value="Weight Loss Program">Weight Loss Program</option>
-                    <option value="Thyroid Management">Thyroid Management</option>
-                    <option value="Functional Medicine Consultation">Functional Medicine Consultation</option>
-                    <option value="Aesthetic Services">Aesthetic Services</option>
-                    <option value="IV Therapy">IV Therapy</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-[var(--color-ink)] mb-2">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={5}
-                    className="border border-[var(--color-border)] rounded-xl px-4 py-3 w-full focus:ring-2 focus:ring-[var(--color-primary)] focus:outline-none"
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-white py-4 rounded-xl font-semibold transition-colors mt-2"
-                >
-                  Send Message
-                </button>
-
-                <p className="text-[var(--color-muted)] text-xs mt-4">
-                  Please do not include any confidential or sensitive health information in this form. This contact form is not a secure method of communication for protected health information under HIPAA.
-                </p>
-              </form>
+              <ContactForm />
             </div>
 
             {/* Right Column - Contact Info */}
