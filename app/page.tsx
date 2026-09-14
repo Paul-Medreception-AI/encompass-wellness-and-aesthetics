@@ -10,62 +10,97 @@ export default function HomePage() {
   return (
     <main>
       {/* Hero.
-          One idea at two sizes: the photo and the copy are separate zones, so
-          her face is never behind the headline and the copy never needs a
-          scrim to be legible.
-            < lg  photo on top, copy beneath it on brand colour
-            >= lg the same two zones side by side, photo bleeding to the right
-                  edge with the scroll parallax their Elementor build had. */}
-      <section className="relative bg-[var(--color-dark)] text-white overflow-hidden">
-        {/* Their brand pattern, barely there, so the colour panel has texture. */}
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 opacity-[0.06] bg-repeat"
-          style={{ backgroundImage: 'url(/images/scraped/encompass_pattern1_web.jpg)', backgroundSize: '420px' }}
-        />
+          One continuous photograph, not a coloured box next to a picture.
+          The image spans the whole hero and a teal overlay fades out across a
+          long eased ramp — the stops below approximate an ease-out rather than
+          a linear alpha, because a straight ramp shows as a visible band.
+            < lg  photo on top, long vertical feather into the colour
+            >= lg photo full-bleed, overlay covering the left ~58% */}
+      <section className="relative text-white bg-[var(--color-dark)] overflow-hidden">
+        {/* lg+: the photograph behind everything */}
+        <div className="hidden lg:block absolute inset-0">
+          <HeroParallax
+            src="/images/scraped/hero-beach.jpg"
+            alt=""
+            speed={0.16}
+            className="object-[66%_top]"
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                'linear-gradient(90deg,' +
+                'var(--color-dark) 0%,' +
+                'var(--color-dark) 34%,' +
+                'rgba(61,100,99,0.93) 42%,' +
+                'rgba(61,100,99,0.78) 48%,' +
+                'rgba(61,100,99,0.55) 54%,' +
+                'rgba(61,100,99,0.32) 59%,' +
+                'rgba(61,100,99,0.14) 64%,' +
+                'rgba(61,100,99,0.04) 69%,' +
+                'rgba(61,100,99,0) 74%)',
+            }}
+          />
+        </div>
 
-        <div className="relative lg:grid lg:grid-cols-2 lg:items-stretch lg:min-h-[88vh]">
-          {/* Photo — first on phones, right-hand column on desktop */}
-          <div className="relative h-[40vh] min-h-[280px] lg:h-auto lg:order-2 overflow-hidden">
-            <HeroParallax
+        <div className="relative lg:grid lg:grid-cols-[55fr_45fr] lg:min-h-[92vh]">
+          {/* Photo — on top for phones and tablets */}
+          <div className="relative h-[42vh] min-h-[300px] w-full lg:hidden overflow-hidden">
+            <Image
               src="/images/scraped/hero-beach.jpg"
               alt="Woman walking along the shoreline in bright sunlight"
-              speed={0.18}
-              className="object-[58%_top] lg:object-[62%_top]"
+              fill
+              priority
+              quality={85}
+              sizes="100vw"
+              className="object-cover object-[58%_top]"
             />
-            {/* Feather the seam into the colour panel: downward on phones,
-                sideways on desktop. */}
-            <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[var(--color-dark)] to-transparent lg:hidden" />
-            <div className="hidden lg:block absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[var(--color-dark)] to-transparent" />
+            <div
+              className="absolute inset-x-0 bottom-0 h-56"
+              style={{
+                background:
+                  'linear-gradient(180deg,' +
+                  'rgba(61,100,99,0) 0%,' +
+                  'rgba(61,100,99,0.08) 22%,' +
+                  'rgba(61,100,99,0.24) 38%,' +
+                  'rgba(61,100,99,0.48) 54%,' +
+                  'rgba(61,100,99,0.74) 70%,' +
+                  'rgba(61,100,99,0.92) 84%,' +
+                  'var(--color-dark) 100%)',
+              }}
+            />
           </div>
 
           {/* Copy */}
-          <div className="relative lg:order-1 flex items-center">
-            <div className="w-full lg:max-w-[40rem] lg:ml-auto px-6 lg:pr-14 xl:pr-20 pt-12 pb-14 lg:py-24">
+          <div className="relative flex items-center">
+            <div className="w-full lg:max-w-[42rem] lg:ml-auto px-6 lg:pr-12 xl:pr-16 pt-14 pb-20 lg:py-32">
               <h1
-                className="text-5xl sm:text-6xl xl:text-7xl font-light tracking-tight leading-[1.08]"
+                className="text-5xl sm:text-6xl xl:text-[4.15rem] font-light tracking-tight leading-[1.05] text-balance"
                 style={{ fontFamily: 'var(--font-cormorant)' }}
               >
-                Get to the Root Cause of Your Health Issues
+                Your Health,
+                <br />
+                Fully Encompassed.
               </h1>
-              <p className="text-lg sm:text-xl text-white/90 mt-5 lg:mt-7 leading-relaxed">
-                Encompass Wellness and Aesthetics partners with you in your healthcare journey to
-                reverse disease and restore optimal health. Our functional medicine approach
-                addresses hormonal imbalance, weight management, thyroid disorders, and age-related
-                concerns through comprehensive, personalized care.
+              <p className="text-lg sm:text-xl text-white/85 mt-8 lg:mt-10 leading-relaxed max-w-xl">
+                Personalized, root-cause care that looks at the whole you — from hormones and
+                thyroid health to weight management, healthy aging, and aesthetics.
               </p>
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-start gap-3 sm:gap-4 mt-8 lg:mt-10">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-8 mt-12 lg:mt-14">
                 <Link
                   href="/contact"
-                  className="text-center bg-white text-[var(--color-dark)] px-8 py-4 rounded-xl font-bold shadow-xl hover:-translate-y-0.5 transition-all"
+                  className="text-center whitespace-nowrap bg-white text-[var(--color-dark)] px-9 py-4 rounded-xl font-bold shadow-xl hover:-translate-y-0.5 transition-all"
                 >
                   Schedule Your Consultation
                 </Link>
                 <Link
                   href="/services"
-                  className="text-center border-2 border-white/80 text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/10 transition-all"
+                  className="group inline-flex items-center justify-center gap-2 whitespace-nowrap text-white/85 hover:text-white font-medium transition-colors"
                 >
                   Explore Our Services
+                  <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">
+                    &rarr;
+                  </span>
                 </Link>
               </div>
             </div>
