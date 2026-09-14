@@ -106,10 +106,10 @@ export default function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-[var(--color-border)] shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-28 flex items-center justify-between">
         <Link href="/" aria-label="Encompass Wellness and Aesthetics — home">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo.png" alt="Encompass Wellness and Aesthetics" className="h-11 w-auto" />
+          <img src="/logo.png" alt="Encompass Wellness and Aesthetics" className="h-[5.5rem] w-auto" />
         </Link>
 
         {/* Desktop nav */}
@@ -252,7 +252,7 @@ export default function SiteHeader() {
 
       {/* Mobile sheet */}
       {mobileOpen && (
-        <div className="md:hidden border-t border-[var(--color-border)] bg-white max-h-[calc(100vh-5rem)] overflow-y-auto">
+        <div className="md:hidden border-t border-[var(--color-border)] bg-white max-h-[calc(100vh-7rem)] overflow-y-auto">
           <nav className="px-5 py-4">
             <MobileAccordion
               label="Services"

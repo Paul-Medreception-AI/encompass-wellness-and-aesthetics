@@ -16,17 +16,19 @@ export default function HomePage() {
         <HeroParallax
           src="/images/scraped/hero-beach.jpg"
           alt="Woman walking along the shoreline in bright sunlight"
+          className="object-[78%_center] md:object-[72%_center]"
         />
         {/* The source photo is high-key, so white text needs a real scrim. */}
-        <div className="absolute inset-0 bg-gradient-to-br from-ink/75 via-dark/65 to-ink/70" />
-        <div className="relative max-w-5xl mx-auto px-6 text-center py-20">
+        <div className="absolute inset-0 bg-gradient-to-r from-ink/85 via-ink/60 to-dark/35" />
+        <div className="relative w-full max-w-7xl mx-auto px-6 py-20">
+          <div className="max-w-2xl text-left">
           <h1 className="text-6xl sm:text-7xl font-light tracking-tight leading-tight" style={{fontFamily: 'var(--font-cormorant)'}}>
             Get to the Root Cause of Your Health Issues
           </h1>
-          <p className="text-xl text-white/90 max-w-2xl mx-auto mt-6 leading-relaxed">
+          <p className="text-xl text-white/90 mt-6 leading-relaxed">
             Encompass Wellness and Aesthetics partners with you in your healthcare journey to reverse disease and restore optimal health. Our functional medicine approach addresses hormonal imbalance, weight management, thyroid disorders, and age-related concerns through comprehensive, personalized care.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
+          <div className="flex flex-col sm:flex-row items-start gap-4 mt-10">
             <Link 
               href="/contact" 
               className="bg-white text-dark px-8 py-4 rounded-xl font-bold shadow-xl hover:-translate-y-0.5 transition-all"
@@ -40,6 +42,7 @@ export default function HomePage() {
               Explore Our Services
             </Link>
           </div>
+        </div>
         </div>
       </section>
 

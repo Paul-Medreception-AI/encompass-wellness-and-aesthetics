@@ -69,7 +69,7 @@ export default function HeroParallax({
         priority={priority}
         quality={85}
         sizes="100vw"
-        className={`object-cover object-top ${className}`}
+        className={`object-cover ${className || 'object-top'}`}
       />
     </div>
   )

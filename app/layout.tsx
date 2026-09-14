@@ -42,12 +42,16 @@ export default function RootLayout({
 
         <footer className="bg-[var(--color-ink)] text-white py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10 mb-12">
               <div>
-                <img src="/logo.png" alt="Encompass Wellness and Aesthetics" className="h-11 w-auto mb-6" />
-                <p className="text-white/80 text-sm leading-relaxed mb-4">
-                  Partnering with you to reverse disease and restore optimal health.
+                <img src="/logo.png" alt="Encompass Wellness and Aesthetics" className="h-[5.5rem] w-auto mb-6" />
+                <p className="text-white/80 text-sm leading-relaxed mb-6">
+                  Functional and aesthetic care in Edmond, Oklahoma. We partner with you to get to
+                  the root of your health issues, not just treat the symptoms.
                 </p>
+                <a href="/contact" className="inline-block bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition-colors">
+                  Schedule a Consultation
+                </a>
                 <div className="flex items-center gap-4 mt-6">
                   <a href="https://www.facebook.com/encompassedmond/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-white/70 hover:text-white transition-colors">
                     <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -60,40 +64,70 @@ export default function RootLayout({
                     </svg>
                   </a>
                 </div>
+                          <div>
+                <h3 className="text-sm font-semibold uppercase tracking-wider text-white/50 mb-5">Care</h3>
+                <ul className="space-y-3">
+                  <li><a href="/services" className="text-white/80 hover:text-white transition-colors text-sm">Services</a></li>
+                  <li><a href="/conditions" className="text-white/80 hover:text-white transition-colors text-sm">Conditions We Treat</a></li>
+                  <li><a href="/telehealth" className="text-white/80 hover:text-white transition-colors text-sm">Telehealth</a></li>
+                  <li><a href="/locations" className="text-white/80 hover:text-white transition-colors text-sm">Areas We Serve</a></li>
+                  <li><a href="/about" className="text-white/80 hover:text-white transition-colors text-sm">About Us</a></li>
+                  <li><a href="/team" className="text-white/80 hover:text-white transition-colors text-sm">Our Team</a></li>
+                </ul>
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold mb-6">Quick Links</h3>
-                <ul className="space-y-3">
-                  <li><a href="/services" className="text-white/80 hover:text-white transition-colors text-sm">Services</a></li>
-                  <li><a href="/conditions" className="text-white/80 hover:text-white transition-colors text-sm">Conditions</a></li>
-                  <li><a href="/locations" className="text-white/80 hover:text-white transition-colors text-sm">Areas We Serve</a></li>
-                  <li><a href="/about" className="text-white/80 hover:text-white transition-colors text-sm">About</a></li>
-                  <li><a href="/team" className="text-white/80 hover:text-white transition-colors text-sm">Team</a></li>
-                  <li><a href="/contact" className="text-white/80 hover:text-white transition-colors text-sm">Contact</a></li>
-                </ul>
-
-                <h3 className="text-lg font-semibold mt-8 mb-6">Patients</h3>
+                <h3 className="text-sm font-semibold uppercase tracking-wider text-white/50 mb-5">Patients</h3>
                 <ul className="space-y-3">
                   <li><a href="/new-patients" className="text-white/80 hover:text-white transition-colors text-sm">New Patients</a></li>
+                  <li><a href="/patient-form-sms" className="text-white/80 hover:text-white transition-colors text-sm">Patient Form</a></li>
                   <li><a href="/insurance" className="text-white/80 hover:text-white transition-colors text-sm">Insurance</a></li>
-                  <li><a href="/telehealth" className="text-white/80 hover:text-white transition-colors text-sm">Telehealth</a></li>
                   <li><a href="/faq" className="text-white/80 hover:text-white transition-colors text-sm">FAQ</a></li>
                   <li><a href="/blog" className="text-white/80 hover:text-white transition-colors text-sm">Blog</a></li>
                   <li><a href="/reviews" className="text-white/80 hover:text-white transition-colors text-sm">Reviews</a></li>
-                  <li><a href="https://store.encompassspa.com/" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors text-sm">Shop Supplements &amp; Skincare</a></li>
+                  <li>
+                    <a href="https://store.encompassspa.com/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-white/80 hover:text-white transition-colors text-sm">
+                      Shop
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.2} aria-hidden="true">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H18v4.5M17.5 6.5L10 14M16 13v5a1 1 0 01-1 1H6a1 1 0 01-1-1V9a1 1 0 011-1h5" />
+                      </svg>
+                    </a>
+                  </li>
                 </ul>
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold mb-6">Contact</h3>
-                <ul className="space-y-3 text-sm text-white/80">
-                  <li>2925 Astoria Way<br />Edmond, OK 73034</li>
-                  <li><a href="tel:+14052543000" className="hover:text-white transition-colors">(405) 254-3000</a></li>
-                  <li className="text-xs leading-relaxed pt-2">Monday - Thursday: 8:00am - 5:00pm<br />Friday: 8:00am - 3:00pm<br />(Closed for lunch from 12:00pm to 1:00pm)</li>
-                </ul>
+                <h3 className="text-sm font-semibold uppercase tracking-wider text-white/50 mb-5">Visit Us</h3>
+                <address className="not-italic space-y-4 text-sm text-white/80">
+                  <p>
+                    <a href="https://maps.google.com/?q=2925+Astoria+Way,+Edmond,+OK+73034" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                      2925 Astoria Way<br />Edmond, OK 73034
+                    </a>
+                  </p>
+                  <p>
+                    <a href="tel:+14052543000" className="text-base font-semibold text-white hover:text-[var(--color-sage)] transition-colors">
+                      (405) 254-3000
+                    </a>
+                  </p>
+                </address>
+
+                <h3 className="text-sm font-semibold uppercase tracking-wider text-white/50 mt-8 mb-4">Office Hours</h3>
+                <dl className="text-sm text-white/80 space-y-1.5">
+                  <div className="flex justify-between gap-4">
+                    <dt>Mon &ndash; Thu</dt><dd className="text-white/60">8:00am &ndash; 5:00pm</dd>
+                  </div>
+                  <div className="flex justify-between gap-4">
+                    <dt>Friday</dt><dd className="text-white/60">8:00am &ndash; 3:00pm</dd>
+                  </div>
+                  <div className="flex justify-between gap-4">
+                    <dt>Sat &ndash; Sun</dt><dd className="text-white/60">Closed</dd>
+                  </div>
+                </dl>
+                <p className="text-xs text-white/50 mt-3">Closed for lunch 12:00&ndash;1:00pm</p>
               </div>
             </div>
+
+  </div>
 
             <div className="border-t border-white/20 pt-8">
               <p className="text-xs text-white/60 mb-4">
