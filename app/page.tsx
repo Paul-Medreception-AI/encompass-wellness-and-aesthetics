@@ -17,14 +17,22 @@ export default function HomePage() {
             < lg  photo on top, long vertical feather into the colour
             >= lg photo full-bleed, overlay covering the left ~58% */}
       <section className="relative text-white bg-[var(--color-dark)] overflow-hidden">
-        {/* lg+: the photograph behind everything */}
-        <div className="hidden lg:block absolute inset-0">
+        {/* lg+: the photograph behind everything.
+            The layer starts at 16% rather than 0 so the subject sits further
+            right, clear of the gradient's transition zone. object-position
+            alone could not do this: at these viewports the photo is
+            width-constrained, so there is no horizontal overflow to shift.
+            The exposed strip on the left is under the fully opaque part of
+            the overlay, so the offset is invisible. */}
+        <div className="hidden lg:block absolute inset-y-0 right-0 left-[16%] xl:left-[14%]">
           <HeroParallax
             src="/images/scraped/hero-beach.jpg"
             alt=""
             speed={0.16}
-            className="object-[66%_top]"
+            className="object-[52%_top]"
           />
+        </div>
+        <div className="hidden lg:block absolute inset-0">
           <div
             className="absolute inset-0"
             style={{
