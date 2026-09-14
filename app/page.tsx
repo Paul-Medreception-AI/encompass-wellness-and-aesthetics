@@ -16,7 +16,7 @@ export default function HomePage() {
         <HeroParallax
           src="/images/scraped/hero-beach.jpg"
           alt="Woman walking along the shoreline in bright sunlight"
-          className="object-[78%_center] md:object-[72%_center]"
+          className="object-[60%_top] sm:object-[68%_top] md:object-[72%_top]"
         />
         {/* The source photo is high-key, so white text needs a real scrim. */}
         <div className="absolute inset-0 bg-gradient-to-r from-ink/85 via-ink/60 to-dark/35" />

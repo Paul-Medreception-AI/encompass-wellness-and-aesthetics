@@ -39,7 +39,11 @@ export default function HeroParallax({
       if (!rect) return
       // Only animate while the hero is anywhere near the viewport.
       if (rect.bottom < -200 || rect.top > window.innerHeight + 200) return
-      const offset = -rect.top * speed
+      // Positive rect.top (section below the fold) -> no shift; as the section
+      // scrolls up past the viewport rect.top goes negative and the image
+      // drifts UP, revealing the lower part of the frame. Never downward, so
+      // the top of the photo stays anchored and nothing is cropped off it.
+      const offset = Math.min(0, rect.top) * speed
       el.style.transform = `translate3d(0, ${offset.toFixed(2)}px, 0)`
     }
     const onScroll = () => {
@@ -59,7 +63,7 @@ export default function HeroParallax({
   return (
     <div
       ref={ref}
-      className="absolute inset-x-0 -top-[15%] h-[130%] will-change-transform"
+      className="absolute inset-x-0 top-0 h-[128%] will-change-transform"
       aria-hidden={alt === '' ? 'true' : undefined}
     >
       <Image
