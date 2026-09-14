@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Natural Approaches to Balancing Estrogen Levels | Encompass Wellness and Aesthetics',
+  alternates: { canonical: '/blog/natural-approaches-to-balancing-estrogen-levels' },
+  title: 'Natural Approaches to Balancing Estrogen Levels',
   description: 'Discover evidence-based natural strategies for supporting healthy estrogen balance through nutrition, lifestyle, and holistic wellness approaches. Expert guidance from Edmond, OK.',
   openGraph: {
     title: 'Natural Approaches to Balancing Estrogen Levels',

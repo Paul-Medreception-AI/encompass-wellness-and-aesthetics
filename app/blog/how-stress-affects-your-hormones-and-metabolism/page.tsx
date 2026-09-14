@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'How Stress Affects Your Hormones and Metabolism | Encompass Wellness and Aesthetics',
+  alternates: { canonical: '/blog/how-stress-affects-your-hormones-and-metabolism' },
+  title: 'How Stress Affects Your Hormones and Metabolism',
   description: 'Learn how chronic stress impacts cortisol, thyroid function, insulin resistance, and metabolic health. Expert insights from Edmond\'s hormone specialists.',
   openGraph: {
     title: 'How Stress Affects Your Hormones and Metabolism',

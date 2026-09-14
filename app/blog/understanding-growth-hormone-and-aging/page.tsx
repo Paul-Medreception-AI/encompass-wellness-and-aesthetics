@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Understanding Growth Hormone and Aging | Encompass Wellness and Aesthetics',
+  alternates: { canonical: '/blog/understanding-growth-hormone-and-aging' },
+  title: 'Understanding Growth Hormone and Aging | Encompass Wellness',
   description: 'Learn how growth hormone affects aging, metabolism, and vitality. Evidence-based insights from hormone specialists in Edmond, OK.',
   keywords: 'growth hormone, aging, HGH, hormone therapy, anti-aging, metabolism, Edmond OK',
 }

@@ -1,4 +1,11 @@
 import Link from 'next/link'
+import { SERVICES } from '@/lib/data/services'
+
+export const metadata = {
+  title: 'Our Services | Encompass Wellness',
+  description: 'Functional medicine, hormone replacement, thyroid management, weight loss, IV therapy and aesthetics at our Edmond, OK clinic. Explore all 20 services.',
+  alternates: { canonical: '/services' },
+}
 
 export default function ServicesPage() {
   const services = [
@@ -105,24 +112,22 @@ export default function ServicesPage() {
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-2xl p-8 border border-[var(--color-border)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 animate-fade-up group"
+            {SERVICES.map((service) => (
+              <Link
+                key={service.slug}
+                href={`/services/${service.slug}`}
+                className="bg-white rounded-2xl p-8 border border-[var(--color-border)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col"
               >
-                <div className="flex items-center justify-center">
-                  {service.icon}
-                </div>
-                <h3 className="font-cormorant text-2xl font-semibold text-[var(--color-ink)] mt-5">
-                  {service.name}
+                <h3 className="font-cormorant text-2xl font-semibold text-[var(--color-ink)]">
+                  {service.title}
                 </h3>
-                <p className="text-[var(--color-muted)] text-sm leading-relaxed mt-3">
+                <p className="text-[var(--color-muted)] text-sm leading-relaxed mt-3 flex-1">
                   {service.description}
                 </p>
                 <span className="block mt-6 text-[var(--color-primary)] font-semibold text-sm group-hover:underline">
-                  Learn More →
+                  Learn More &rarr;
                 </span>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

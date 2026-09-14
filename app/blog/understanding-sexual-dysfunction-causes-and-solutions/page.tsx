@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Understanding Sexual Dysfunction: Causes and Solutions | Encompass Wellness and Aesthetics',
+  alternates: { canonical: '/blog/understanding-sexual-dysfunction-causes-and-solutions' },
+  title: 'Understanding Sexual Dysfunction: Causes and Solutions',
   description: 'Learn about the causes of sexual dysfunction and evidence-based solutions. Expert insights from Encompass Wellness and Aesthetics in Edmond, OK.',
   openGraph: {
     title: 'Understanding Sexual Dysfunction: Causes and Solutions',

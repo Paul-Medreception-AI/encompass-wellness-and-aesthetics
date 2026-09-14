@@ -3,15 +3,20 @@
 @tailwind utilities;
 
 :root {
-  --color-primary: #c49a6c;
-  --color-dark: #7f6446;
-  --color-light: #f6f0e9;
+  --color-primary: #5f8f8f;
+  --color-dark: #3d6463;
+  --color-light: #e9f1ef;
   --color-ink: #1a2030;
   --color-cream: #fdfcfb;
   --color-muted: #64748b;
   --color-border: #f3eded;
-  --color-accent: #c49a6c;
-  --color-accent-dark: #7f6446;
+  /* Brand accent is the TEAL from the logo ornament (sampled #609090), not a
+     second copy of the gold. Restricted to CTA buttons, icons, links, borders
+     and dividers — never a large section background. */
+  --color-accent: #5f8f8f;
+  --color-accent-dark: #47706f;
+  --color-sage: #a8ccc0;
+  --color-gold: #c49a6c;
 }
 
 * { box-sizing: border-box; }

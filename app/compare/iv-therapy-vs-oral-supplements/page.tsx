@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'IV Therapy vs. Oral Supplements: Which is More Effective? | Encompass Wellness and Aesthetics',
+  alternates: { canonical: '/compare/iv-therapy-vs-oral-supplements' },
+  title: 'IV Therapy vs. Oral Supplements: Which is More Effective?',
   description: 'Compare IV therapy and oral supplements for effectiveness, absorption, cost, and results. Expert analysis to help you choose the right option in Edmond, OK.',
 }
 

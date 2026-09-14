@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Hormone Pellets vs. Injections vs. Creams: Comparing Delivery Methods | Encompass Wellness and Aesthetics',
+  alternates: { canonical: '/compare/hormone-pellets-vs-injections-vs-creams' },
+  title: 'Hormone Pellets vs. Injections vs. Creams Compared',
   description: 'Compare hormone pellets, injections, and creams. Understand effectiveness, side effects, cost, and which hormone delivery method is right for you in Edmond, OK.',
 }
 
@@ -19,7 +20,7 @@ export default function ComparePage() {
             <span>Comparison</span>
           </nav>
           <h1 className="font-['Cormorant_Garamond',serif] text-5xl md:text-6xl font-light leading-tight mb-6">
-            Hormone Pellets vs. Injections vs. Creams: Comparing Delivery Methods
+            Hormone Pellets vs. Injections vs. Creams Compared
           </h1>
           <p className="text-xl opacity-95 max-w-3xl mx-auto">
             An evidence-based comparison to help you choose the right hormone replacement therapy delivery method for your health goals

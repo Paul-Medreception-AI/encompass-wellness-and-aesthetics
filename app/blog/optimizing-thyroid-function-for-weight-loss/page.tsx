@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Optimizing Thyroid Function for Weight Loss | Encompass Wellness and Aesthetics',
+  alternates: { canonical: '/blog/optimizing-thyroid-function-for-weight-loss' },
+  title: 'Optimizing Thyroid Function for Weight Loss | Encompass Wellness',
   description: 'Discover how thyroid health impacts weight loss and metabolism. Expert insights on optimizing thyroid function for sustainable weight management in Edmond, OK.',
   keywords: 'thyroid function, weight loss, metabolism, hypothyroidism, thyroid optimization, hormone balance, Edmond OK',
 }

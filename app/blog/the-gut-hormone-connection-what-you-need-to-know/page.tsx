@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'The Gut-Hormone Connection: What You Need to Know | Encompass Wellness and Aesthetics',
+  alternates: { canonical: '/blog/the-gut-hormone-connection-what-you-need-to-know' },
+  title: 'The Gut-Hormone Connection: What You Need to Know',
   description: 'Discover how your gut health impacts hormone balance and learn practical strategies to optimize both for better health and vitality in Edmond, OK.',
   keywords: 'gut health, hormone balance, gut-hormone connection, digestive health, hormone therapy, Edmond OK, metabolic health',
 }

@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'The Connection Between Hormone Balance and Mental Health | Encompass Wellness and Aesthetics',
+  alternates: { canonical: '/blog/the-connection-between-hormone-balance-and-mental-health' },
+  title: 'The Connection Between Hormone Balance and Mental Health',
   description: 'Discover how hormone imbalances affect mood, anxiety, and depression. Learn evidence-based strategies for restoring hormone balance and improving mental health in Edmond, OK.',
   keywords: 'hormone balance, mental health, anxiety, depression, mood disorders, hormone therapy, Edmond OK',
 }

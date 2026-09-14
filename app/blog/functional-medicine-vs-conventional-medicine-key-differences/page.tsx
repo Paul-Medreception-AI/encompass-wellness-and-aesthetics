@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Functional Medicine vs. Conventional Medicine: Key Differences | Encompass Wellness and Aesthetics',
+  alternates: { canonical: '/blog/functional-medicine-vs-conventional-medicine-key-differences' },
+  title: 'Functional Medicine vs. Conventional Medicine: Key Differences',
   description: 'Discover the key differences between functional medicine and conventional medicine, including treatment approaches, patient care philosophy, and which may be right for you in Edmond, OK.',
   keywords: 'functional medicine, conventional medicine, holistic health, root cause medicine, integrative medicine, Edmond OK',
 }

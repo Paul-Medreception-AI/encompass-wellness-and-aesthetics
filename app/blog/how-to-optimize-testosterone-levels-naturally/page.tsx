@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'How to Optimize Testosterone Levels Naturally | Encompass Wellness and Aesthetics',
+  alternates: { canonical: '/blog/how-to-optimize-testosterone-levels-naturally' },
+  title: 'How to Optimize Testosterone Levels Naturally',
   description: 'Discover evidence-based strategies to naturally support healthy testosterone levels. Expert guidance from Edmond, OK hormone specialists.',
   openGraph: {
     title: 'How to Optimize Testosterone Levels Naturally',
@@ -390,7 +391,7 @@ export default function BlogPostPage() {
           </p>
           <a 
             href="/contact" 
-            className="inline-block bg-white text-[var(--color-primary)] hover:bg-[var(--color-cream)] px-8 py-4 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
+            className="inline-block bg-white text-[var(--color-accent)] hover:bg-[var(--color-cream)] px-8 py-4 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             Schedule Your Consultation Today
           </a>

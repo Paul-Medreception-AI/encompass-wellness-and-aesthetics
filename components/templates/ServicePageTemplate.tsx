@@ -27,7 +27,8 @@ export type ServicePageContent = {
   relatedLinks?: RelatedLink[]
   metaTitle?: string
   heroSubhead?: string
-  heroImage?: { src: string; alt: string }
+  heroImage?: { src: string; alt: string; fit?: 'cover' | 'contain' }
+  gallery?: { src: string; alt: string }[]
   featuredVideo?: { videoId: string; title: string; heading?: string; subhead?: string }
   introHeading?: string
   intro?: string[]
@@ -113,12 +114,12 @@ export function ServicePageTemplate({ c }: { c: ServicePageContent }) {
                 <span className="mx-2">›</span>
                 <span>{c.title}</span>
               </nav>
-              <h1 className="text-4xl md:text-5xl font-semibold mb-6 leading-tight">{c.headline}</h1>
+              <h1 className="font-cormorant text-4xl md:text-5xl font-light mb-6 leading-tight">{c.headline}</h1>
               <p className="text-xl opacity-95 max-w-3xl leading-relaxed">{c.heroSubhead || c.description}</p>
             </div>
             {c.heroImage && (
               <div className="relative w-full max-w-md lg:w-2/5 lg:max-w-none h-96 lg:h-[28rem] rounded-2xl overflow-hidden shadow-2xl">
-                <Image src={c.heroImage.src} alt={c.heroImage.alt} fill priority quality={90} sizes="(max-width: 768px) 100vw, 384px" className="object-cover" />
+                <Image src={c.heroImage.src} alt={c.heroImage.alt} fill priority quality={90} sizes="(max-width: 768px) 100vw, 384px" className={c.heroImage.fit === 'contain' ? 'object-contain p-4' : 'object-cover'} />
               </div>
             )}
           </div>
@@ -128,7 +129,7 @@ export function ServicePageTemplate({ c }: { c: ServicePageContent }) {
       {c.featuredVideo && (
         <section className="bg-white py-16">
           <div className="max-w-4xl mx-auto px-6">
-            {c.featuredVideo.heading && <h2 className="text-3xl md:text-4xl font-semibold mb-3 text-[var(--color-ink)] text-center">{c.featuredVideo.heading}</h2>}
+            {c.featuredVideo.heading && <h2 className="font-cormorant text-3xl md:text-4xl font-light mb-3 text-[var(--color-ink)] text-center">{c.featuredVideo.heading}</h2>}
             {c.featuredVideo.subhead && <p className="text-center text-[var(--color-muted)] mb-8 max-w-2xl mx-auto">{c.featuredVideo.subhead}</p>}
             <Video videoId={c.featuredVideo.videoId} title={c.featuredVideo.title} />
           </div>
@@ -138,7 +139,7 @@ export function ServicePageTemplate({ c }: { c: ServicePageContent }) {
       {(c.intro && c.intro.length) || (c.signsList && c.signsList.length) ? (
         <section className="bg-[var(--color-cream)] py-20">
           <div className="max-w-4xl mx-auto px-6">
-            {c.introHeading && <h2 className="text-3xl md:text-4xl font-semibold mb-8 text-[var(--color-ink)]">{c.introHeading}</h2>}
+            {c.introHeading && <h2 className="font-cormorant text-3xl md:text-4xl font-light mb-8 text-[var(--color-ink)]">{c.introHeading}</h2>}
             {c.intro && c.intro.length ? (
               <div className="space-y-6 text-lg leading-relaxed text-[var(--color-ink)]">
                 {c.intro.map((p, i) => <p key={i}>{p}</p>)}
@@ -146,7 +147,7 @@ export function ServicePageTemplate({ c }: { c: ServicePageContent }) {
             ) : null}
             {c.signsList && c.signsList.length ? (
               <div className="mt-12 bg-white rounded-xl p-8 shadow-sm">
-                {c.signsHeading && <h3 className="text-2xl font-semibold mb-6 text-[var(--color-ink)]">{c.signsHeading}</h3>}
+                {c.signsHeading && <h3 className="font-cormorant text-2xl font-semibold mb-6 text-[var(--color-ink)]">{c.signsHeading}</h3>}
                 <ul className="space-y-4">
                   {c.signsList.map((s, i) => <li key={i} className="flex items-start gap-3">{CHECK}<span className="text-[var(--color-ink)]">{s}</span></li>)}
                 </ul>
@@ -159,7 +160,7 @@ export function ServicePageTemplate({ c }: { c: ServicePageContent }) {
       {c.bullets && c.bullets.length ? (
         <section className="bg-white py-16">
           <div className="max-w-4xl mx-auto px-6">
-            <h2 className="text-3xl md:text-4xl font-semibold mb-8 text-[var(--color-ink)] text-center">What to Expect</h2>
+            <h2 className="font-cormorant text-3xl md:text-4xl font-light mb-8 text-[var(--color-ink)] text-center">What to Expect</h2>
             <ul className="space-y-4 max-w-2xl mx-auto">
               {c.bullets.map((b, i) => <li key={i} className="flex items-start gap-3">{CHECK}<span className="text-[var(--color-ink)] text-lg">{b}</span></li>)}
             </ul>
@@ -170,7 +171,7 @@ export function ServicePageTemplate({ c }: { c: ServicePageContent }) {
       {c.approach && c.approach.length ? (
         <section className="bg-white py-20">
           <div className="max-w-7xl mx-auto px-6">
-            {c.approachHeading && <h2 className="text-3xl md:text-4xl font-semibold mb-4 text-[var(--color-ink)] text-center">{c.approachHeading}</h2>}
+            {c.approachHeading && <h2 className="font-cormorant text-3xl md:text-4xl font-light mb-4 text-[var(--color-ink)] text-center">{c.approachHeading}</h2>}
             {c.approachSubhead && <p className="text-xl text-[var(--color-muted)] text-center mb-16 max-w-3xl mx-auto">{c.approachSubhead}</p>}
             <div className="grid md:grid-cols-3 gap-8">
               {c.approach.map((card, i) => (
@@ -180,7 +181,7 @@ export function ServicePageTemplate({ c }: { c: ServicePageContent }) {
                       <path strokeLinecap="round" strokeLinejoin="round" d={card.iconPath || DEFAULT_ICON} />
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-semibold mb-4 text-[var(--color-ink)]">{card.title}</h3>
+                  <h3 className="font-cormorant text-2xl font-semibold mb-4 text-[var(--color-ink)]">{card.title}</h3>
                   <p className="text-[var(--color-muted)] leading-relaxed">{card.body}</p>
                 </div>
               ))}
@@ -193,7 +194,7 @@ export function ServicePageTemplate({ c }: { c: ServicePageContent }) {
         <section className="bg-white pb-20">
           <div className="max-w-7xl mx-auto px-6">
             <div className="bg-[var(--color-light)] rounded-2xl p-10 max-w-4xl mx-auto">
-              {c.premiumHeading && <h3 className="text-3xl font-semibold mb-6 text-[var(--color-ink)]">{c.premiumHeading}</h3>}
+              {c.premiumHeading && <h3 className="font-cormorant text-3xl font-semibold mb-6 text-[var(--color-ink)]">{c.premiumHeading}</h3>}
               {c.premiumIntro && <p className="text-lg text-[var(--color-ink)] mb-8 leading-relaxed">{c.premiumIntro}</p>}
               <div className="grid md:grid-cols-2 gap-6">
                 {c.premiumOptions.map((o, i) => (
@@ -211,11 +212,11 @@ export function ServicePageTemplate({ c }: { c: ServicePageContent }) {
       {c.benefits && c.benefits.length ? (
         <section className="bg-[var(--color-cream)] py-20">
           <div className="max-w-5xl mx-auto px-6">
-            <h2 className="text-3xl md:text-4xl font-semibold mb-12 text-[var(--color-ink)] text-center">Benefits</h2>
+            <h2 className="font-cormorant text-3xl md:text-4xl font-light mb-12 text-[var(--color-ink)] text-center">Benefits</h2>
             <div className="grid md:grid-cols-2 gap-6">
               {c.benefits.map((b, i) => (
                 <div key={i} className="bg-white rounded-xl p-8 shadow-sm animate-fade-up">
-                  <h3 className="text-xl font-semibold mb-3 text-[var(--color-ink)]">{b.title}</h3>
+                  <h3 className="font-cormorant text-xl font-semibold mb-3 text-[var(--color-ink)]">{b.title}</h3>
                   <p className="text-[var(--color-muted)] leading-relaxed">{b.body}</p>
                 </div>
               ))}
@@ -228,11 +229,11 @@ export function ServicePageTemplate({ c }: { c: ServicePageContent }) {
         <section className="bg-white py-20">
           <div className="max-w-3xl mx-auto px-6">
             <div className="bg-[var(--color-light)] rounded-2xl p-12">
-              {c.timelineHeading && <h2 className="text-3xl md:text-4xl font-semibold mb-8 text-[var(--color-ink)] text-center">{c.timelineHeading}</h2>}
+              {c.timelineHeading && <h2 className="font-cormorant text-3xl md:text-4xl font-light mb-8 text-[var(--color-ink)] text-center">{c.timelineHeading}</h2>}
               <div className="space-y-8">
                 {c.timeline.map((step, i) => (
                   <div key={i} className="border-l-4 border-[var(--color-primary)] pl-6">
-                    <h3 className="text-2xl font-semibold mb-3 text-[var(--color-ink)]">{step.title}</h3>
+                    <h3 className="font-cormorant text-2xl font-semibold mb-3 text-[var(--color-ink)]">{step.title}</h3>
                     <p className="text-[var(--color-muted)] leading-relaxed">{step.body}</p>
                   </div>
                 ))}
@@ -247,7 +248,7 @@ export function ServicePageTemplate({ c }: { c: ServicePageContent }) {
           <div className="max-w-4xl mx-auto px-6 space-y-14">
             {c.extraSections.map((s, i) => (
               <div key={i}>
-                <h2 className="text-3xl md:text-4xl font-semibold mb-6 text-[var(--color-ink)]">{s.heading}</h2>
+                <h2 className="font-cormorant text-3xl md:text-4xl font-light mb-6 text-[var(--color-ink)]">{s.heading}</h2>
                 <div className="space-y-4 text-lg leading-relaxed text-[var(--color-ink)]">
                   {s.body.map((p, j) => <p key={j}>{p}</p>)}
                 </div>
@@ -260,7 +261,7 @@ export function ServicePageTemplate({ c }: { c: ServicePageContent }) {
       {c.videoLibrary && c.videoLibrary.length ? (
         <section className="bg-white py-20">
           <div className="max-w-6xl mx-auto px-6">
-            {c.videoLibraryHeading && <h2 className="text-3xl md:text-4xl font-semibold mb-4 text-[var(--color-ink)] text-center">{c.videoLibraryHeading}</h2>}
+            {c.videoLibraryHeading && <h2 className="font-cormorant text-3xl md:text-4xl font-light mb-4 text-[var(--color-ink)] text-center">{c.videoLibraryHeading}</h2>}
             {c.videoLibrarySubhead && <p className="text-center text-[var(--color-muted)] mb-12 max-w-2xl mx-auto">{c.videoLibrarySubhead}</p>}
             <div className="grid md:grid-cols-3 gap-6">
               {c.videoLibrary.map((v, i) => <Video key={i} videoId={v.videoId} title={v.title} />)}
@@ -272,7 +273,7 @@ export function ServicePageTemplate({ c }: { c: ServicePageContent }) {
       {c.faqs && c.faqs.length ? (
         <section className="bg-[var(--color-cream)] py-20">
           <div className="max-w-4xl mx-auto px-6">
-            <h2 className="text-3xl md:text-4xl font-semibold mb-12 text-[var(--color-ink)] text-center">Common Questions About {c.title}</h2>
+            <h2 className="font-cormorant text-3xl md:text-4xl font-light mb-12 text-[var(--color-ink)] text-center">Common Questions About {c.title}</h2>
             <div className="space-y-4">
               {c.faqs.map((f, i) => (
                 <details key={i} className="bg-white rounded-lg shadow-sm group">
@@ -292,10 +293,25 @@ export function ServicePageTemplate({ c }: { c: ServicePageContent }) {
         </section>
       ) : null}
 
+      {c.gallery && c.gallery.length ? (
+        <section className="bg-[var(--color-cream)] py-20 border-t border-[var(--color-border)]">
+          <div className="max-w-6xl mx-auto px-6">
+            <h3 className="font-cormorant text-3xl font-light mb-10 text-[var(--color-ink)] text-center">{c.title} Gallery</h3>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {c.gallery.map((g) => (
+                <div key={g.src} className="relative h-72 rounded-2xl overflow-hidden bg-white border border-[var(--color-border)]">
+                  <Image src={g.src} alt={g.alt} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
+
       {c.relatedLinks && c.relatedLinks.length ? (
         <section className="bg-white py-16">
           <div className="max-w-7xl mx-auto px-6">
-            <h3 className="text-3xl font-semibold mb-10 text-[var(--color-ink)] text-center">Related {c.hubLabel}</h3>
+            <h3 className="font-cormorant text-3xl font-semibold mb-10 text-[var(--color-ink)] text-center">Related {c.hubLabel}</h3>
             <div className="grid md:grid-cols-3 gap-8">
               {c.relatedLinks.map((r, i) => (
                 <a key={i} href={r.href} className="group bg-[var(--color-cream)] rounded-xl p-8 hover:shadow-xl transition-all hover:-translate-y-1">
@@ -311,9 +327,9 @@ export function ServicePageTemplate({ c }: { c: ServicePageContent }) {
 
       <section className="bg-gradient-to-br from-[var(--color-dark)] to-[var(--color-primary)] py-20 text-white text-center">
         <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-semibold mb-6">{c.ctaHeading || 'Ready to Get Started?'}</h2>
+          <h2 className="font-cormorant text-3xl md:text-4xl font-light mb-6">{c.ctaHeading || 'Ready to Get Started?'}</h2>
           {c.ctaBody && <p className="text-xl mb-8 opacity-95 leading-relaxed">{c.ctaBody}</p>}
-          <a href={c.ctaHref} className="inline-block bg-white text-[var(--color-primary)] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[var(--color-cream)] transition-colors">{c.ctaLabel}</a>
+          <a href={c.ctaHref} className="inline-block bg-white text-[var(--color-accent)] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[var(--color-cream)] transition-colors">{c.ctaLabel}</a>
         </div>
       </section>
     </main>

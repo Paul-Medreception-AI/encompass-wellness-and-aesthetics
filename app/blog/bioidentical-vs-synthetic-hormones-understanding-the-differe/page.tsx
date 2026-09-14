@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Bioidentical vs. Synthetic Hormones: Understanding the Difference | Encompass Wellness and Aesthetics',
+  alternates: { canonical: '/blog/bioidentical-vs-synthetic-hormones-understanding-the-differe' },
+  title: 'Bioidentical vs. Synthetic Hormones: Understanding the Difference',
   description: 'Learn the key differences between bioidentical and synthetic hormones, their benefits, risks, and which option may be right for your hormone therapy in Edmond, OK.',
   keywords: 'bioidentical hormones, synthetic hormones, hormone replacement therapy, HRT, BHRT, hormone therapy Edmond OK, bioidentical hormone therapy',
 }
@@ -379,7 +380,7 @@ export default function BlogPost() {
           </p>
           <a
             href="/contact"
-            className="inline-block bg-white text-[var(--color-primary)] px-8 py-4 rounded-full font-medium hover:bg-[var(--color-cream)] transition-all duration-300 hover:scale-105"
+            className="inline-block bg-white text-[var(--color-accent)] px-8 py-4 rounded-full font-medium hover:bg-[var(--color-cream)] transition-all duration-300 hover:scale-105"
           >
             Schedule Your Consultation
           </a>

@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'The Connection Between Sleep and Hormone Balance | Encompass Wellness and Aesthetics',
+  alternates: { canonical: '/blog/the-connection-between-sleep-and-hormone-balance' },
+  title: 'The Connection Between Sleep and Hormone Balance',
   description: 'Discover how sleep quality affects hormone balance and learn evidence-based strategies to optimize both for better health. Expert insights from Edmond, OK.',
   keywords: 'sleep and hormones, hormone balance, sleep quality, cortisol, melatonin, growth hormone, hormone therapy Edmond OK',
 }

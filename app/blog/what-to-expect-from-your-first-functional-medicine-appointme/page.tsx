@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'What to Expect from Your First Functional Medicine Appointment | Encompass Wellness and Aesthetics',
+  alternates: { canonical: '/blog/what-to-expect-from-your-first-functional-medicine-appointme' },
+  title: 'What to Expect from Your First Functional Medicine Appointment',
   description: 'Learn what happens during your first functional medicine appointment, how to prepare, and what makes this approach different from conventional medicine. Expert guidance from Encompass Wellness and Aesthetics in Edmond, OK.',
   keywords: 'functional medicine appointment, first visit functional medicine, functional medicine Edmond OK, integrative medicine consultation, hormone therapy consultation, metabolic medicine appointment',
 }

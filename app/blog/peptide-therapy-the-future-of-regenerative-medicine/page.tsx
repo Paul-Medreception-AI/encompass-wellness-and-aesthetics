@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Peptide Therapy: The Future of Regenerative Medicine | Encompass Wellness and Aesthetics',
+  alternates: { canonical: '/blog/peptide-therapy-the-future-of-regenerative-medicine' },
+  title: 'Peptide Therapy: The Future of Regenerative Medicine',
   description: 'Discover how peptide therapy is revolutionizing regenerative medicine. Learn about benefits, applications, and treatment options in Edmond, OK.',
   keywords: 'peptide therapy, regenerative medicine, hormone therapy, anti-aging, Edmond OK, metabolic medicine',
 }

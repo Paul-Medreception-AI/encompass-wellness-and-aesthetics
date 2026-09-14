@@ -1,5 +1,11 @@
 import Link from 'next/link'
 
+export const metadata = {
+  title: 'Frequently Asked Questions | Encompass Wellness',
+  description: 'Common questions about functional medicine, hormone therapy, insurance, appointments and what to expect as a new patient at our Edmond, OK clinic.',
+  alternates: { canonical: '/faq' },
+}
+
 export default function FAQPage() {
   return (
     <main>

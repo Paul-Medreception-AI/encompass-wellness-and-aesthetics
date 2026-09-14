@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Managing Autoimmune Conditions Through Functional Medicine | Encompass Wellness and Aesthetics',
+  alternates: { canonical: '/blog/managing-autoimmune-conditions-through-functional-medicine' },
+  title: 'Managing Autoimmune Conditions Through Functional Medicine',
   description: 'Discover how functional medicine offers a personalized, root-cause approach to managing autoimmune conditions. Learn evidence-based strategies for autoimmune care in Edmond, OK.',
   keywords: 'autoimmune conditions, functional medicine, autoimmune disease treatment, holistic autoimmune care, Edmond OK, hormone medicine, metabolic health',
 }

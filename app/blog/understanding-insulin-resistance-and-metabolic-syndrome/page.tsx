@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Understanding Insulin Resistance and Metabolic Syndrome | Encompass Wellness and Aesthetics',
+  alternates: { canonical: '/blog/understanding-insulin-resistance-and-metabolic-syndrome' },
+  title: 'Understanding Insulin Resistance and Metabolic Syndrome',
   description: 'Learn about insulin resistance and metabolic syndrome, their impact on health, and evidence-based approaches to prevention and treatment. Expert insights from our hormone and metabolic medicine specialists in Edmond, OK.',
   keywords: 'insulin resistance, metabolic syndrome, diabetes prevention, hormone health, metabolic medicine, Edmond OK',
 }
@@ -376,7 +377,7 @@ export default function BlogPost() {
           </p>
           <a
             href="/contact"
-            className="inline-block bg-white text-[var(--color-primary)] px-8 py-4 rounded-full font-medium hover:bg-[var(--color-cream)] transition-all duration-300 hover:scale-105"
+            className="inline-block bg-white text-[var(--color-accent)] px-8 py-4 rounded-full font-medium hover:bg-[var(--color-cream)] transition-all duration-300 hover:scale-105"
           >
             Schedule Your Consultation
           </a>

@@ -1,28 +1,101 @@
 import Link from 'next/link'
 
+export const metadata = {
+  alternates: { canonical: '/reviews' },
+  title: 'Patient Reviews | Encompass Wellness',
+  description:
+    'Read what patients say about Encompass Wellness and Aesthetics in Edmond, OK — root-cause functional medicine, hormone therapy and aesthetics.',
+}
+
+// Verbatim from the testimonials section of encompassspa.com/about-2.
+// Names appear exactly as the practice published them. Do not add, edit or
+// invent entries here — real reviews only.
+const TESTIMONIALS = [
+  {
+    quote:
+      'Encompass is AMAZING! The staff is so professional and they truly care about the health and wellbeing of the patients they serve! So great to have someone truly care about healing their patients from within and getting to the root of the problem.',
+    name: 'Alisha',
+  },
+  {
+    quote: 'Great place to improve your health above and beyond your typical physician.',
+    name: 'Mike',
+  },
+  {
+    quote:
+      'My inflammation is now under control! They listen and care about your well being! Encompass Wellness is the best!',
+    name: 'Ian',
+  },
+  {
+    quote: 'Great place to buy high quality supplements!',
+    name: 'Cecilia',
+  },
+]
+
+function QuoteMark() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className="w-8 h-8 text-[var(--color-primary)] opacity-30 mb-4"
+      aria-hidden="true"
+    >
+      <path d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.571-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.999v-10h9.999z" />
+    </svg>
+  )
+}
+
 export default function ReviewsPage() {
   return (
     <main className="min-h-screen">
       {/* Hero */}
       <section className="bg-gradient-to-br from-[var(--color-dark)] to-[var(--color-primary)] py-24 text-white text-center">
         <div className="max-w-4xl mx-auto px-6">
-          <h1 className="font-cormorant text-5xl font-light mb-6">
+          <h1 className="font-[family-name:var(--font-cormorant)] text-5xl font-light mb-6">
             Patient Reviews
           </h1>
           <p className="text-xl text-white/90 max-w-2xl mx-auto">
-            Your experience matters to us—share your feedback and help others discover the care they deserve.
+            We love our clients — and we are grateful when they take the time to share their
+            experience.
           </p>
         </div>
       </section>
 
-      {/* Invite Section */}
+      {/* Real testimonials */}
       <section className="bg-[var(--color-cream)] py-24">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="font-[family-name:var(--font-cormorant)] text-4xl text-[var(--color-ink)] text-center mb-16">
+            We Love Our Clients
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {TESTIMONIALS.map((t) => (
+              <figure
+                key={t.name}
+                className="bg-white rounded-2xl border border-[var(--color-border)] shadow-sm p-8 flex flex-col"
+              >
+                <QuoteMark />
+                <blockquote className="text-[var(--color-ink)] leading-relaxed flex-1">
+                  {t.quote}
+                </blockquote>
+                <figcaption className="mt-6 text-sm font-semibold uppercase tracking-wide text-[var(--color-primary)]">
+                  {t.name}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Invite Section */}
+      <section className="bg-white py-20 border-t border-[var(--color-border)]">
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <h2 className="font-cormorant text-4xl text-[var(--color-ink)] mb-6">
-            We'd Love Your Feedback
+          <h2 className="font-[family-name:var(--font-cormorant)] text-4xl text-[var(--color-ink)] mb-6">
+            We&rsquo;d Love Your Feedback
           </h2>
           <p className="text-lg text-[var(--color-muted)] mb-10 leading-relaxed">
-            At Encompass Wellness and Aesthetics, your experience drives everything we do. Whether you've completed treatment or are currently on your wellness journey, we invite you to share your thoughts. Your honest feedback helps us serve you better and guides others seeking the same compassionate, root-cause approach to health.
+            Whether you have completed treatment or are currently on your wellness journey, we invite
+            you to share your thoughts. Your honest feedback helps us serve you better and guides
+            others seeking the same root-cause approach to health.
           </p>
           <Link
             href="/contact"
@@ -30,22 +103,22 @@ export default function ReviewsPage() {
           >
             Contact Us
           </Link>
-          {/* TODO(optimize): drop in real Google/Healthgrades reviews here once available */}
         </div>
       </section>
 
       {/* CTA Section */}
       <section className="bg-[var(--color-primary)] py-20">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="font-cormorant text-4xl md:text-5xl text-white mb-6">
+          <h2 className="font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl text-white mb-6">
             Ready to Start Your Wellness Journey?
           </h2>
           <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-            Experience personalized, root-cause medicine designed to restore your optimal health and vitality.
+            Experience personalized, root-cause medicine designed to restore your optimal health and
+            vitality.
           </p>
           <Link
             href="/contact"
-            className="inline-block bg-white text-[var(--color-primary)] hover:bg-[var(--color-cream)] px-10 py-4 rounded-full font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl"
+            className="inline-block bg-white text-[var(--color-accent)] hover:bg-[var(--color-cream)] px-10 py-4 rounded-full font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl"
           >
             Schedule Your Consultation
           </Link>

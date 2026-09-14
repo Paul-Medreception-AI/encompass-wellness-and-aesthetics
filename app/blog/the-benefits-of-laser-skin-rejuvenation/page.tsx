@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'The Benefits of Laser Skin Rejuvenation | Encompass Wellness and Aesthetics',
+  alternates: { canonical: '/blog/the-benefits-of-laser-skin-rejuvenation' },
+  title: 'The Benefits of Laser Skin Rejuvenation | Encompass Wellness',
   description: 'Discover how laser skin rejuvenation can improve skin texture, reduce signs of aging, and boost confidence. Expert insights from Encompass Wellness and Aesthetics in Edmond, OK.',
   keywords: 'laser skin rejuvenation, skin rejuvenation Edmond OK, anti-aging treatment, laser therapy, skin texture, collagen production, aesthetic medicine',
 }

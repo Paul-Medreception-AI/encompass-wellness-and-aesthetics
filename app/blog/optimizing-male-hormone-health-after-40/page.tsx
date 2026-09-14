@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Optimizing Male Hormone Health After 40 | Encompass Wellness and Aesthetics',
+  alternates: { canonical: '/blog/optimizing-male-hormone-health-after-40' },
+  title: 'Optimizing Male Hormone Health After 40 | Encompass Wellness',
   description: 'Discover evidence-based strategies for managing testosterone decline and optimizing male hormone health after 40. Expert guidance from Edmond, OK hormone specialists.',
   keywords: 'male hormone health, testosterone after 40, low T symptoms, hormone optimization Edmond OK, andropause, men\'s health',
 }

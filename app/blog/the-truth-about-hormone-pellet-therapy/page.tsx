@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'The Truth About Hormone Pellet Therapy | Encompass Wellness and Aesthetics',
+  alternates: { canonical: '/blog/the-truth-about-hormone-pellet-therapy' },
+  title: 'The Truth About Hormone Pellet Therapy | Encompass Wellness',
   description: 'Discover the facts about hormone pellet therapy, how it works, who benefits, and what to expect. Evidence-based insights from our Hormone & Metabolic Medicine experts in Edmond, OK.',
   openGraph: {
     title: 'The Truth About Hormone Pellet Therapy',
@@ -228,7 +229,7 @@ export default function BlogPost() {
               If you're experiencing symptoms of hormone imbalance and are curious whether pellet therapy might be right for you, the next step is a comprehensive consultation with a provider specializing in hormone and metabolic medicine. At Encompass Wellness and Aesthetics in Edmond, OK, our team is dedicated to personalized, evidence-based care that addresses your unique needs and goals.
             </p>
             <p>
-              <a href="/contact" className="text-[var(--color-primary)] hover:text-[var(--color-dark)] transition-colors font-semibold">Contact us today</a> to schedule your consultation and take the first step toward reclaiming your vitality and well-being.
+              <a href="/contact" className="text-[var(--color-accent)] hover:text-[var(--color-dark)] transition-colors font-semibold">Contact us today</a> to schedule your consultation and take the first step toward reclaiming your vitality and well-being.
             </p>
           </div>
         </div>

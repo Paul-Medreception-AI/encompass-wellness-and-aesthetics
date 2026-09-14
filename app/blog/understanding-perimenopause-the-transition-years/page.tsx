@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Understanding Perimenopause: The Transition Years | Encompass Wellness and Aesthetics',
+  alternates: { canonical: '/blog/understanding-perimenopause-the-transition-years' },
+  title: 'Understanding Perimenopause: The Transition Years',
   description: 'Learn about perimenopause symptoms, stages, and treatment options. Expert insights from Edmond\'s hormone specialists on navigating this natural transition with confidence.',
   keywords: 'perimenopause, menopause transition, hormone changes, perimenopause symptoms, hormone therapy Edmond OK',
 }

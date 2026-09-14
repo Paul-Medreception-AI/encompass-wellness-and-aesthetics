@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'How Hormones Affect Your Skin and Appearance | Encompass Wellness and Aesthetics',
+  alternates: { canonical: '/blog/how-hormones-affect-your-skin-and-appearance' },
+  title: 'How Hormones Affect Your Skin and Appearance | Encompass Wellness',
   description: 'Discover the powerful connection between hormone balance and skin health. Learn how hormonal changes impact your appearance and what you can do about it.',
 }
 

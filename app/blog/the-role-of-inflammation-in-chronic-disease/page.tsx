@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'The Role of Inflammation in Chronic Disease | Encompass Wellness and Aesthetics',
+  alternates: { canonical: '/blog/the-role-of-inflammation-in-chronic-disease' },
+  title: 'The Role of Inflammation in Chronic Disease | Encompass Wellness',
   description: 'Discover how chronic inflammation contributes to disease and what you can do about it. Expert insights from our Hormone & Metabolic Medicine team in Edmond, OK.',
   keywords: 'chronic inflammation, inflammatory disease, autoimmune conditions, metabolic health, hormone therapy, Edmond OK',
 }

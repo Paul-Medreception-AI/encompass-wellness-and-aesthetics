@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'The Role of Detoxification in Optimal Health | Encompass Wellness and Aesthetics',
+  alternates: { canonical: '/blog/the-role-of-detoxification-in-optimal-health' },
+  title: 'The Role of Detoxification in Optimal Health | Encompass Wellness',
   description: 'Discover how detoxification supports hormone balance, metabolic function, and overall wellness. Evidence-based insights from Edmond\'s hormone and metabolic medicine experts.',
   keywords: 'detoxification, detox, metabolic health, hormone balance, optimal health, wellness, Edmond OK',
 }

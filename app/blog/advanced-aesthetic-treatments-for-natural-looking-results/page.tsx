@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Advanced Aesthetic Treatments for Natural-Looking Results | Encompass Wellness and Aesthetics',
+  alternates: { canonical: '/blog/advanced-aesthetic-treatments-for-natural-looking-results' },
+  title: 'Advanced Aesthetic Treatments for Natural-Looking Results',
   description: 'Discover how modern aesthetic treatments deliver subtle, natural-looking results. Expert insights on advanced techniques from Encompass Wellness and Aesthetics in Edmond, OK.',
   keywords: 'aesthetic treatments, natural-looking results, aesthetic medicine, Edmond OK, non-surgical treatments, cosmetic procedures',
 }

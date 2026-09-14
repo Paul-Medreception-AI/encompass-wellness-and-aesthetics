@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Why Traditional Diets Fail: The Metabolic Approach to Weight Loss | Encompass Wellness and Aesthetics',
+  alternates: { canonical: '/blog/why-traditional-diets-fail-the-metabolic-approach-to-weight-' },
+  title: 'Why Traditional Diets Fail: The Metabolic Approach to Weight Loss',
   description: 'Discover why calorie counting and restrictive diets often fail, and learn how addressing your metabolic health can lead to sustainable weight loss in Edmond, OK.',
   keywords: 'metabolic weight loss, why diets fail, hormone weight loss, metabolic health Edmond OK, sustainable weight loss, metabolism and weight gain',
 }

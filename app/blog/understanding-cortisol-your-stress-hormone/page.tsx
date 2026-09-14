@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Understanding Cortisol: Your Stress Hormone | Encompass Wellness and Aesthetics',
+  alternates: { canonical: '/blog/understanding-cortisol-your-stress-hormone' },
+  title: 'Understanding Cortisol: Your Stress Hormone | Encompass Wellness',
   description: 'Learn how cortisol affects your health, why chronic stress matters, and what you can do to support healthy cortisol levels. Expert insights from Edmond, OK hormone specialists.',
   keywords: 'cortisol, stress hormone, adrenal health, chronic stress, hormone balance, cortisol testing, adrenal fatigue, Edmond OK',
 }

@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'The Truth About Menopausal Weight Gain | Encompass Wellness and Aesthetics',
+  alternates: { canonical: '/blog/the-truth-about-menopausal-weight-gain' },
+  title: 'The Truth About Menopausal Weight Gain | Encompass Wellness',
   description: 'Understand why menopause causes weight gain and what you can do about it. Evidence-based insights from hormone and metabolic medicine specialists in Edmond, OK.',
   openGraph: {
     title: 'The Truth About Menopausal Weight Gain',
