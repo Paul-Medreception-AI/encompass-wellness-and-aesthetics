@@ -52,6 +52,10 @@ const policyRedirects = [
 ]
 
 const nextConfig = {
+  images: {
+    // Product shots are served from the Shopify CDN.
+    remotePatterns: [{ protocol: 'https', hostname: 'cdn.shopify.com' }],
+  },
   typescript: { ignoreBuildErrors: true },
   eslint: { ignoreDuringBuilds: true },
   async redirects() {
