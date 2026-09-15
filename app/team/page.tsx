@@ -16,7 +16,14 @@ type Member = {
   bio?: string[]
 }
 
-// Staff list and bio text taken verbatim in substance from encompassspa.com/about-2.
+// Roster supplied by the practice 2026-09-15, replacing the older list scraped from
+// encompassspa.com/about-2. Erin's bio text is still that scraped copy, verbatim in substance.
+//
+// Erin is listed as "Victoria E. Sutton, APRN-CNP / OWNER" on the practice's roster — the same
+// person, which the old bio gives away by opening "V. Erin Sutton is a Certified Family Nurse
+// Practitioner". She stays displayed as Erin because that is the name her patients and her
+// reviews know; the two must never become two cards.
+//
 // Staff cards are name and role only. No photo, and no placeholder standing in for one:
 // a silhouette on a named person reads as a missing face rather than a deliberate choice,
 // and a stock photo of a stranger is not an option on a medical site.
@@ -24,7 +31,7 @@ const PROVIDERS: Member[] = [
   {
     name: 'Erin Sutton',
     credential: 'APRN-CNP',
-    role: 'Certified Family Nurse Practitioner',
+    role: 'Certified Family Nurse Practitioner & Owner',
     photo: '/images/Erin-Sutton-Headshot.jpeg',
     bio: [
       'Erin Sutton is a Certified Family Nurse Practitioner with a passion for people and a great desire and curiosity to get to the root of every problem — especially when it comes to the practice of medicine. She graduated from the University of Central Oklahoma in 2005 with a Bachelor of Science in Nursing and went on to NP school at Texas Woman’s University, where she graduated with both a Master of Science in Nursing and a Certificate in Education.',
@@ -42,12 +49,11 @@ const PROVIDERS: Member[] = [
 ]
 
 const STAFF: Member[] = [
-  { name: 'Melinda Mackey', role: 'Nurse Practitioner' },
-  { name: 'Dana Perkins', credential: 'RN', role: 'Registered Nurse' },
-  { name: 'Tashica Willis', role: 'Medical Assistant' },
-  { name: 'Rhonda Carter', role: 'Administrative Assistant' },
-  { name: 'Dustyn Carroll', role: 'Customer Service Representative' },
-  { name: 'Leslie Warrior', role: 'Patient Care Team' },
+  { name: 'Kiera Lee', role: 'Aesthetics / MA-2' },
+  { name: 'Hillary Calvert', role: 'MA-1' },
+  { name: 'Tara Watkins', credential: 'RN', role: 'Registered Nurse' },
+  { name: 'Niki Sharp', role: 'Front Desk Reception' },
+  { name: 'Tauna Wilkins', role: 'DLO Phlebotomist' },
 ]
 
 export default function TeamPage() {
