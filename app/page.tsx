@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import SplitHero from '@/components/SplitHero'
+import { TESTIMONIALS, GOOGLE_RATING } from '@/lib/data/testimonials'
 
 export const metadata = {
   alternates: { canonical: '/' },
@@ -228,6 +229,81 @@ export default function HomePage() {
                 We monitor your progress with regular follow-ups and adjust your treatment plan as needed. Our team provides continuous support, education, and advanced therapies to help you achieve and maintain optimal health.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Google reviews — 4.9 from 69, shown visually only. No AggregateRating
+          structured data: Google disallows self-serving aggregate ratings for a
+          business reviewing itself, and marking it up risks a manual action. */}
+      <section className="bg-[var(--color-light)] py-20 border-t border-[var(--color-border)]">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="flex flex-col items-center text-center mb-12">
+            <div className="flex items-center gap-3">
+              <span
+                className="text-5xl font-light text-[var(--color-ink)]"
+                style={{ fontFamily: 'var(--font-cormorant)' }}
+              >
+                {GOOGLE_RATING.rating}
+              </span>
+              <span className="flex items-center gap-0.5" aria-hidden="true">
+                {[0, 1, 2, 3, 4].map((i) => (
+                  <svg key={i} width="22" height="22" viewBox="0 0 24 24" fill="#f5b544">
+                    <path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z" />
+                  </svg>
+                ))}
+              </span>
+            </div>
+            <p className="text-[var(--color-muted)] mt-3">
+              {GOOGLE_RATING.rating} out of 5 from{' '}
+              <a
+                href={GOOGLE_RATING.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[var(--color-accent)] font-semibold hover:underline"
+              >
+                {GOOGLE_RATING.reviewCount} Google reviews
+              </a>
+            </p>
+            <h2
+              className="text-4xl text-[var(--color-ink)] mt-8"
+              style={{ fontFamily: 'var(--font-cormorant)' }}
+            >
+              What Our Patients Say
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {TESTIMONIALS.map((t) => (
+              <figure
+                key={t.name}
+                className="bg-white rounded-2xl border border-[var(--color-border)] p-6 flex flex-col"
+              >
+                <span className="flex items-center gap-0.5 mb-4" aria-hidden="true">
+                  {[0, 1, 2, 3, 4].map((i) => (
+                    <svg key={i} width="14" height="14" viewBox="0 0 24 24" fill="#f5b544">
+                      <path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z" />
+                    </svg>
+                  ))}
+                </span>
+                <blockquote className="text-sm text-[var(--color-ink)] leading-relaxed flex-1">
+                  {t.quote}
+                </blockquote>
+                <figcaption className="mt-5 text-xs font-semibold uppercase tracking-wide text-[var(--color-primary)]">
+                  {t.name}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <Link
+              href="/reviews"
+              className="inline-flex items-center gap-2 text-[var(--color-accent)] font-semibold hover:underline"
+            >
+              Read more patient reviews
+              <span aria-hidden="true">&rarr;</span>
+            </Link>
           </div>
         </div>
       </section>

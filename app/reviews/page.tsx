@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { TESTIMONIALS, GOOGLE_RATING } from '@/lib/data/testimonials'
 
 export const metadata = {
   alternates: { canonical: '/reviews' },
@@ -7,29 +8,6 @@ export const metadata = {
     'Read what patients say about Encompass Wellness and Aesthetics in Edmond, OK — root-cause functional medicine, hormone therapy and aesthetics.',
 }
 
-// Verbatim from the testimonials section of encompassspa.com/about-2.
-// Names appear exactly as the practice published them. Do not add, edit or
-// invent entries here — real reviews only.
-const TESTIMONIALS = [
-  {
-    quote:
-      'Encompass is AMAZING! The staff is so professional and they truly care about the health and wellbeing of the patients they serve! So great to have someone truly care about healing their patients from within and getting to the root of the problem.',
-    name: 'Alisha',
-  },
-  {
-    quote: 'Great place to improve your health above and beyond your typical physician.',
-    name: 'Mike',
-  },
-  {
-    quote:
-      'My inflammation is now under control! They listen and care about your well being! Encompass Wellness is the best!',
-    name: 'Ian',
-  },
-  {
-    quote: 'Great place to buy high quality supplements!',
-    name: 'Cecilia',
-  },
-]
 
 function QuoteMark() {
   return (
@@ -56,6 +34,24 @@ export default function ReviewsPage() {
           <p className="text-xl text-white/90 max-w-2xl mx-auto">
             We love our clients — and we are grateful when they take the time to share their
             experience.
+          </p>
+          <p className="mt-8 inline-flex items-center gap-3 bg-white/10 rounded-full px-6 py-3">
+            <span className="text-2xl font-semibold">{GOOGLE_RATING.rating}</span>
+            <span className="flex items-center gap-0.5" aria-hidden="true">
+              {[0, 1, 2, 3, 4].map((i) => (
+                <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="#f5b544">
+                  <path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z" />
+                </svg>
+              ))}
+            </span>
+            <a
+              href={GOOGLE_RATING.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-white/90 underline hover:text-white"
+            >
+              {GOOGLE_RATING.reviewCount} Google reviews
+            </a>
           </p>
         </div>
       </section>
