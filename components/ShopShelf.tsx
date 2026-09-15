@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { COLLECTIONS, SHOP_URL, collectionUrl, productUrl } from '@/lib/data/shop'
+import { withUtm } from '@/lib/shop-links'
 import { COLLECTION_PITCH } from '@/lib/data/shop-map'
 
 /**
@@ -19,8 +20,7 @@ export default function ShopShelf({
   const col = COLLECTIONS[collection]
   if (!col || col.products.length === 0) return null
 
-  const utm = (url: string) =>
-    `${url}${url.includes('?') ? '&' : '?'}utm_source=website&utm_medium=shelf&utm_campaign=${collection}`
+  const utm = (url: string) => withUtm(url, 'shelf', collection)
 
   return (
     <section className="bg-[var(--color-light)] py-16 border-t border-[var(--color-border)]">
@@ -32,7 +32,7 @@ export default function ShopShelf({
           <a
             href={utm(collectionUrl(col.handle))}
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener"
             className="text-sm font-semibold text-[var(--color-accent)] hover:underline whitespace-nowrap"
           >
             Shop all {col.count} &rarr;
@@ -49,7 +49,7 @@ export default function ShopShelf({
               key={p.handle}
               href={utm(productUrl(p.handle))}
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
               className="group bg-white rounded-2xl border border-[var(--color-border)] overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all flex flex-col"
             >
               {p.image && (
@@ -85,7 +85,7 @@ export default function ShopShelf({
           <a
             href={utm(SHOP_URL)}
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener"
             className="underline hover:text-[var(--color-accent)]"
           >
             store.encompassspa.com

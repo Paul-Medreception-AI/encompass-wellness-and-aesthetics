@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation'
 import { SERVICES } from '@/lib/data/services'
 import { CONDITIONS } from '@/lib/data/conditions'
 import { TECHNOLOGY } from '@/lib/data/technology'
+import { withUtm } from '@/lib/shop-links'
 
 export const SHOP_URL = 'https://store.encompassspa.com/'
 
@@ -278,7 +279,7 @@ export default function SiteHeader() {
           <Link href="/contact" className={linkCls}>
             Contact
           </Link>
-          <a href={SHOP_URL} target="_blank" rel="noopener noreferrer" className={linkCls}>
+          <a href={withUtm(SHOP_URL, 'nav', 'header')} target="_blank" rel="noopener" className={linkCls}>
             Shop
           </a>
 
@@ -395,9 +396,9 @@ export default function SiteHeader() {
             ))}
 
             <a
-              href={SHOP_URL}
+              href={withUtm(SHOP_URL, 'nav', 'mobile-menu')}
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
               className="block py-3 text-base font-medium text-[var(--color-ink)] border-b border-[var(--color-border)]"
             >
               Shop Supplements &amp; Skincare

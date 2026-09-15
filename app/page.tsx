@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import SplitHero from '@/components/SplitHero'
 import { TESTIMONIALS, GOOGLE_RATING } from '@/lib/data/testimonials'
+import { withUtm } from '@/lib/shop-links'
 
 export const metadata = {
   alternates: { canonical: '/' },
@@ -329,15 +330,15 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { img: '/images/scraped/product-photo-1.png', title: 'Nutraceuticals', body: 'Pharmaceutical-grade supplements across hormone balance, gut health, energy, immune and metabolic support.' },
-              { img: '/images/scraped/obagi.jpg', title: 'Obagi Medical', body: 'Physician-dispensed skincare for tone, texture, pigmentation and long-term skin health.' },
-              { img: '/images/scraped/skinceuticals.jpg', title: 'SkinCeuticals', body: 'Clinically proven antioxidants, correctives and sun protection, including Silymarin CF.' },
+              { campaign: 'nutraceuticals', img: '/images/scraped/product-photo-1.png', title: 'Nutraceuticals', body: 'Pharmaceutical-grade supplements across hormone balance, gut health, energy, immune and metabolic support.' },
+              { campaign: 'obagi', img: '/images/scraped/obagi.jpg', title: 'Obagi Medical', body: 'Physician-dispensed skincare for tone, texture, pigmentation and long-term skin health.' },
+              { campaign: 'skinceuticals', img: '/images/scraped/skinceuticals.jpg', title: 'SkinCeuticals', body: 'Clinically proven antioxidants, correctives and sun protection, including Silymarin CF.' },
             ].map((c) => (
               <a
                 key={c.title}
-                href="https://store.encompassspa.com/"
+                href={withUtm('https://store.encompassspa.com/', 'homepage-shelf', c.campaign)}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener"
                 className="group bg-white rounded-2xl overflow-hidden border border-[var(--color-border)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               >
                 <div className="relative h-56 bg-[var(--color-light)]">
