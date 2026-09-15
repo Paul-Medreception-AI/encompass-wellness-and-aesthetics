@@ -17,8 +17,8 @@ type Member = {
 }
 
 // Staff list and bio text taken verbatim in substance from encompassspa.com/about-2.
-// Only Erin has a supplied headshot; the rest intentionally render a silhouette
-// rather than a stock photo of a named person.
+// Members without a supplied headshot intentionally render a silhouette rather
+// than a stock photo of a named person.
 const TEAM: Member[] = [
   {
     name: 'Erin Sutton',
@@ -31,6 +31,12 @@ const TEAM: Member[] = [
       'She has studied with the American Academy of Anti-Aging Medicine and is a member of A4M and the Institute for Functional Medicine. She believes that medicine is an art as well as a partnership with patients, and that nearly every disease can be reversed with appropriate diet and lifestyle modifications.',
       'Erin lives in Arcadia with her husband Buckey, their two boys Parker and Beckett, and their three dogs. When she is not working she spends most of her time at the baseball and football fields watching her boys play ball. She enjoys traveling, time with her family, exercising, and being in and on the water. She is a member of Life Church in Edmond and loves being part of the Edmond community.',
     ],
+  },
+  {
+    name: 'Stephanie Fields',
+    credential: 'APRN-CNP',
+    role: 'Nurse Practitioner',
+    photo: '/images/Stephanie-Fields-Headshot.jpeg',
   },
   { name: 'Melinda Mackey', role: 'Nurse Practitioner' },
   { name: 'Dana Perkins', credential: 'RN', role: 'Registered Nurse' },
@@ -123,8 +129,18 @@ export default function TeamPage() {
                 key={m.name}
                 className="bg-[var(--color-cream)] rounded-2xl overflow-hidden border border-[var(--color-border)] shadow-sm hover:shadow-lg transition-shadow"
               >
-                <div className="bg-[var(--color-light)] h-56 flex items-center justify-center">
-                  <Silhouette />
+                <div className="relative bg-[var(--color-light)] h-72 flex items-center justify-center">
+                  {m.photo ? (
+                    <Image
+                      src={m.photo}
+                      alt={m.credential ? `${m.name}, ${m.credential}` : m.name}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20rem"
+                      className="object-cover object-top"
+                    />
+                  ) : (
+                    <Silhouette />
+                  )}
                 </div>
                 <div className="p-6">
                   <h3 className="font-[family-name:var(--font-cormorant)] text-2xl text-[var(--color-ink)] mb-1">
