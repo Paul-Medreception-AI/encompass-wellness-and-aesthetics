@@ -104,7 +104,7 @@ export default function SplitHero({
           <div className="flex items-center">
             <div
               className={`w-full lg:max-w-[34rem] xl:max-w-[38rem] lg:ml-auto px-6 lg:pr-10 xl:pr-14 ${
-                full ? 'pt-8 pb-16 lg:py-16' : 'pt-10 pb-16 lg:py-24'
+                full ? 'pt-[1.7rem] pb-16 lg:pt-[3.4rem] lg:pb-16' : 'pt-10 pb-16 lg:py-24'
               }`}
             >
               {children}
