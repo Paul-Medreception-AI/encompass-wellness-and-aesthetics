@@ -4,17 +4,26 @@ import { NextResponse } from 'next/server'
 export const dynamic = 'force-dynamic'
 export const runtime = 'nodejs'
 
-// Payload shape matches the fleet convention (see maryland-wellness-website
-// app/api/contact/route.js): flat contact fields for GHL to map onto the
-// contact record, plus a composed `message` that repeats everything, because
-// the message body is what a human actually reads in GHL.
+// Submissions go to MedReception Studio, and nowhere else.
 //
-// Unlike the other sites there is deliberately NO hardcoded fallback webhook.
-// A wrong URL would post Encompass patient leads into another practice's CRM,
-// which is worse than refusing the submission. Unset ⇒ 503 and "call us".
-const WEBHOOK = process.env.GHL_CONTACT_WEBHOOK_URL
+// They used to go to a GoHighLevel webhook. Studio runs this practice's phones, and an enquiry
+// from the website is the same kind of thing as a message taken on a call — it belongs on the
+// same board, not in a second system the front desk has to remember to open.
+//
+// 🔴 THE TOKEN IS THE ROUTING KEY. Nothing in the body names a practice: the secret resolves
+// it server-side, so this must stay a server-to-server call from this route handler. Never
+// expose it to the browser (no NEXT_PUBLIC_ prefix, ever).
+//
+// Set both on the Vercel project that serves encompassspa.com:
+//   STUDIO_INGEST_URL    https://studio.medreception.ai/api/v1/web/submission
+//   STUDIO_INGEST_TOKEN  this practice's ingest secret
+//
+// As before there is deliberately NO hardcoded fallback. A wrong token would post Encompass
+// patient leads onto another practice's board, which is worse than refusing the submission.
+// Unset ⇒ 503 and "call us".
+const STUDIO_URL = process.env.STUDIO_INGEST_URL
+const STUDIO_TOKEN = process.env.STUDIO_INGEST_TOKEN
 
-const PRACTICE = 'Encompass Wellness and Aesthetics'
 const PHONE = '(405) 254-3000'
 
 function clean(v: unknown, max = 300): string {
@@ -32,7 +41,7 @@ export async function POST(request: Request) {
   // Honeypot: a bot fills every field, a person never sees this one.
   if (clean(body.website)) return NextResponse.json({ ok: true })
 
-  if (!WEBHOOK) {
+  if (!STUDIO_URL || !STUDIO_TOKEN) {
     return NextResponse.json(
       { error: `This form is temporarily unavailable. Please call us at ${PHONE}.` },
       { status: 503 },
@@ -40,15 +49,12 @@ export async function POST(request: Request) {
   }
 
   const name = clean(body.name)
-  const [firstName, ...rest] = name.split(/\s+/)
-  const lastName = clean(body.lastName) || rest.join(' ')
   const email = clean(body.email)
   const phone = clean(body.phone, 40)
   const message = clean(body.message, 5000)
   const service = clean(body.service, 120)
   const smsConsent = body.smsConsent === true
-  const source = clean(body.source, 60) || 'website'
-  const form = clean(body.form, 60) || source
+  const form = clean(body.form, 60) || clean(body.source, 60) || 'website'
   const page = clean(body.page, 300)
 
   if (!name || (!phone && !email)) {
@@ -59,64 +65,57 @@ export async function POST(request: Request) {
   }
 
   const submittedAt = new Date().toISOString()
-  const consentText =
-    'I agree to receive SMS appointment reminders, service notifications and occasional ' +
-    'promotions from Encompass Wellness and Aesthetics. Message frequency varies. Message and ' +
-    'data rates may apply. Reply STOP to opt out, HELP for help.'
 
-  const fullMessage = [
-    'New website enquiry',
-    `Form: ${form}`,
-    service ? `Service interest: ${service}` : null,
-    phone ? `Phone: ${phone}` : null,
-    email ? `Email: ${email}` : null,
-    `SMS consent: ${smsConsent ? 'Yes' : 'No'}`,
-    smsConsent ? `Consent captured: ${submittedAt}` : null,
-    page ? `Page: ${page}` : null,
-    '',
-    message,
-  ]
-    .filter(Boolean)
-    .join('\n')
-
+  // name / phone / email / message are COLUMNS on the Studio action and render on the card.
+  // Every other key here is unknown to Studio and is kept verbatim in the action's details,
+  // which is where the front desk reads what the patient actually asked for. So the composed
+  // "everything again" message body the GHL payload used is gone on purpose: it duplicated
+  // fields the card already shows.
+  //
+  // 🔴 studio_source, NOT source. `source` is also what this site calls its own form label,
+  // and Studio reads `studio_source or source` as the sink — so sending 'contact' under that
+  // key made every submission fall back to web_form by accident rather than by intent. The
+  // form label travels as `form`, which cannot collide.
   const payload = {
-    source,
-    event: 'website_form_submission',
-    submittedAt,
-    firstName,
-    lastName,
+    studio_source: 'web_form',
     name,
-    email,
     phone,
-    service,
-    smsConsent,
-    // The consent record, kept as discrete fields so it can be audited without
-    // parsing the message body.
-    sms_consent: smsConsent,
-    sms_consent_at: smsConsent ? submittedAt : '',
-    sms_consent_text: smsConsent ? consentText : '',
-    message: fullMessage,
+    email,
+    // A patient who only picks a service and submits must not produce a blank card.
+    message: message || (service ? `Service interest: ${service}` : 'Website enquiry'),
     form,
     page,
-    location: PRACTICE,
+    service,
+    // ⚠️ TCPA consent lands in the action's details, not in a consent record. Studio has a
+    // real consent path (/p/{slug}/sms-consent); until this site uses it, this is the only
+    // trace that the box was ticked.
+    sms_consent: smsConsent ? 'Yes' : 'No',
+    sms_consent_at: smsConsent ? submittedAt : '',
   }
 
+  // Studio is the ONLY sink, so a Studio failure IS the failure and has to surface. Hiding it
+  // behind a cheerful 200 would mean submissions vanish and nobody finds out.
   try {
-    const res = await fetch(WEBHOOK, {
+    const res = await fetch(STUDIO_URL, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'x-studio-token': STUDIO_TOKEN,
+      },
       body: JSON.stringify(payload),
       cache: 'no-store',
+      signal: AbortSignal.timeout(10_000),
     })
     if (!res.ok) {
-      console.error('GHL webhook error', res.status, await res.text())
+      // Never log the token or the body: the body carries what a patient typed about their health.
+      console.error('studio ingest error', res.status)
       return NextResponse.json(
         { error: `We could not submit that. Please call us at ${PHONE}.` },
         { status: 502 },
       )
     }
   } catch (err) {
-    console.error('GHL webhook threw', err)
+    console.error('studio ingest threw', err)
     return NextResponse.json(
       { error: `We could not submit that. Please call us at ${PHONE}.` },
       { status: 502 },
