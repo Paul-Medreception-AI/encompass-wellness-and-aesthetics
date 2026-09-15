@@ -4,6 +4,7 @@ import path from 'node:path'
 import { SERVICES } from '@/lib/data/services'
 import { CONDITIONS } from '@/lib/data/conditions'
 import { LOCATIONS } from '@/lib/data/locations'
+import { TECHNOLOGY } from '@/lib/data/technology'
 
 const BASE = 'https://encompassspa.com'
 
@@ -26,6 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: '/', priority: 1.0, changeFrequency: 'daily' as const },
     { url: '/services', priority: 0.9, changeFrequency: 'weekly' as const },
     { url: '/conditions', priority: 0.9, changeFrequency: 'weekly' as const },
+    { url: '/technology', priority: 0.85, changeFrequency: 'monthly' as const },
     { url: '/locations', priority: 0.8, changeFrequency: 'monthly' as const },
     { url: '/about', priority: 0.8, changeFrequency: 'monthly' as const },
     { url: '/team', priority: 0.7, changeFrequency: 'monthly' as const },
@@ -50,6 +52,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const conditionPages = CONDITIONS.map((c) => ({
     url: `/conditions/${c.slug}`,
     priority: 0.8,
+    changeFrequency: 'monthly' as const,
+  }))
+
+  const technologyPages = TECHNOLOGY.map((t) => ({
+    url: `/technology/${t.slug}`,
+    priority: 0.85,
     changeFrequency: 'monthly' as const,
   }))
 
@@ -79,6 +87,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...corePages,
     ...servicePages,
     ...conditionPages,
+    ...technologyPages,
     ...locationPages,
     ...comparePages,
     ...blogPages,

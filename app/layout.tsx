@@ -71,6 +71,7 @@ export default function RootLayout({
                 <ul className="space-y-3">
                   <li><a href="/services" className="text-white/80 hover:text-white transition-colors text-sm">Services</a></li>
                   <li><a href="/conditions" className="text-white/80 hover:text-white transition-colors text-sm">Conditions We Treat</a></li>
+                  <li><a href="/technology" className="text-white/80 hover:text-white transition-colors text-sm">Our Technology</a></li>
                   <li><a href="/telehealth" className="text-white/80 hover:text-white transition-colors text-sm">Telehealth</a></li>
                   <li><a href="/locations" className="text-white/80 hover:text-white transition-colors text-sm">Areas We Serve</a></li>
                   <li><a href="/about" className="text-white/80 hover:text-white transition-colors text-sm">About Us</a></li>

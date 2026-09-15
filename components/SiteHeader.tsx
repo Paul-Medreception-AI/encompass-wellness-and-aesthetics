@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { SERVICES } from '@/lib/data/services'
 import { CONDITIONS } from '@/lib/data/conditions'
+import { TECHNOLOGY } from '@/lib/data/technology'
 
 export const SHOP_URL = 'https://store.encompassspa.com/'
 
@@ -48,7 +49,7 @@ function serviceTitle(slug: string) {
   return SERVICES.find((s) => s.slug === slug)?.title ?? slug
 }
 
-type MenuKey = 'services' | 'conditions' | null
+type MenuKey = 'services' | 'conditions' | 'technology' | null
 
 export default function SiteHeader() {
   const [open, setOpen] = useState<MenuKey>(null)
@@ -211,6 +212,48 @@ export default function SiteHeader() {
             )}
           </div>
 
+          {/* Technology */}
+          <div
+            className="relative"
+            onMouseEnter={() => hoverOpen('technology')}
+            onMouseLeave={hoverClose}
+          >
+            <button
+              type="button"
+              aria-expanded={open === 'technology'}
+              aria-haspopup="true"
+              onClick={() => setOpen(open === 'technology' ? null : 'technology')}
+              className={`${linkCls} inline-flex items-center gap-1`}
+            >
+              Technology
+              <Chevron open={open === 'technology'} />
+            </button>
+
+            {open === 'technology' && (
+              <div className="absolute left-1/2 -translate-x-1/2 top-full pt-4">
+                <div className="w-[26rem] bg-white rounded-2xl border border-[var(--color-border)] shadow-xl p-6">
+                  <ul className="grid grid-cols-2 gap-x-6 gap-y-2">
+                    {TECHNOLOGY.map((t) => (
+                      <li key={t.slug}>
+                        <Link
+                          href={`/technology/${t.slug}`}
+                          className="block text-sm text-[var(--color-ink)] hover:text-[var(--color-accent)] transition-colors"
+                        >
+                          {t.title}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="border-t border-[var(--color-border)] mt-4 pt-4">
+                    <Link href="/technology" className="text-sm font-semibold text-[var(--color-accent)] hover:underline">
+                      View all technology &rarr;
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+
           <Link href="/about" className={linkCls}>
             About
           </Link>
@@ -296,6 +339,25 @@ export default function SiteHeader() {
               </ul>
               <Link href="/conditions" className="block text-sm font-semibold text-[var(--color-accent)] py-2">
                 View all conditions &rarr;
+              </Link>
+            </MobileAccordion>
+
+            <MobileAccordion
+              label="Technology"
+              open={mobileSection === 'technology'}
+              onToggle={() => setMobileSection(mobileSection === 'technology' ? null : 'technology')}
+            >
+              <ul className="space-y-2 pl-1">
+                {TECHNOLOGY.map((t) => (
+                  <li key={t.slug}>
+                    <Link href={`/technology/${t.slug}`} className="block text-sm text-[var(--color-ink)] py-1">
+                      {t.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <Link href="/technology" className="block text-sm font-semibold text-[var(--color-accent)] py-2">
+                View all technology &rarr;
               </Link>
             </MobileAccordion>
 
