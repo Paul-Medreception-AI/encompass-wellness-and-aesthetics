@@ -19,7 +19,7 @@ type Member = {
 // Staff list and bio text taken verbatim in substance from encompassspa.com/about-2.
 // Members without a supplied headshot intentionally render a silhouette rather
 // than a stock photo of a named person.
-const TEAM: Member[] = [
+const PROVIDERS: Member[] = [
   {
     name: 'Erin Sutton',
     credential: 'APRN-CNP',
@@ -38,6 +38,9 @@ const TEAM: Member[] = [
     role: 'Nurse Practitioner',
     photo: '/images/Stephanie-Fields-Headshot.jpeg',
   },
+]
+
+const STAFF: Member[] = [
   { name: 'Melinda Mackey', role: 'Nurse Practitioner' },
   { name: 'Dana Perkins', credential: 'RN', role: 'Registered Nurse' },
   { name: 'Tashica Willis', role: 'Medical Assistant' },
@@ -66,8 +69,6 @@ function Silhouette() {
 }
 
 export default function TeamPage() {
-  const [lead, ...staff] = TEAM
-
   return (
     <main>
       {/* Hero Section */}
@@ -83,35 +84,51 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {/* Lead provider */}
+      {/* Providers */}
       <section className="bg-[var(--color-cream)] py-24">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="grid md:grid-cols-[minmax(0,22rem)_1fr] gap-12 items-start">
-            <div className="relative h-96 w-full rounded-2xl overflow-hidden bg-[var(--color-light)] shadow-sm">
-              <Image
-                src={lead.photo as string}
-                alt={`${lead.name}, ${lead.credential}`}
-                fill
-                sizes="(max-width: 768px) 100vw, 22rem"
-                className="object-cover object-top"
-                priority
-              />
-            </div>
+          <h2 className="font-[family-name:var(--font-cormorant)] text-4xl text-[var(--color-ink)] text-center mb-16">
+            Our Providers
+          </h2>
 
-            <div>
-              <h2 className="font-[family-name:var(--font-cormorant)] text-4xl text-[var(--color-ink)] mb-2">
-                {lead.name}
-                {lead.credential ? `, ${lead.credential}` : ''}
-              </h2>
-              <p className="text-sm text-[var(--color-primary)] font-semibold uppercase tracking-wide mb-6">
-                {lead.role}
-              </p>
-              <div className="space-y-4 text-[var(--color-muted)] leading-relaxed">
-                {lead.bio?.map((p) => (
-                  <p key={p.slice(0, 40)}>{p}</p>
-                ))}
+          <div className="space-y-16">
+            {PROVIDERS.map((p, i) => (
+              <div
+                key={p.name}
+                // No bio yet ⇒ centre the name against the photo. Left top-aligned it
+                // reads as a bio that failed to load rather than a provider we have
+                // only listed so far.
+                className={`grid md:grid-cols-[minmax(0,22rem)_1fr] gap-12 ${
+                  p.bio ? 'items-start' : 'items-center'
+                }`}
+              >
+                <div className="relative h-96 w-full rounded-2xl overflow-hidden bg-[var(--color-light)] shadow-sm">
+                  <Image
+                    src={p.photo as string}
+                    alt={p.credential ? `${p.name}, ${p.credential}` : p.name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 22rem"
+                    className="object-cover object-top"
+                    priority={i === 0}
+                  />
+                </div>
+
+                <div>
+                  <h3 className="font-[family-name:var(--font-cormorant)] text-4xl text-[var(--color-ink)] mb-2">
+                    {p.name}
+                    {p.credential ? `, ${p.credential}` : ''}
+                  </h3>
+                  <p className="text-sm text-[var(--color-primary)] font-semibold uppercase tracking-wide mb-6">
+                    {p.role}
+                  </p>
+                  <div className="space-y-4 text-[var(--color-muted)] leading-relaxed">
+                    {p.bio?.map((para) => (
+                      <p key={para.slice(0, 40)}>{para}</p>
+                    ))}
+                  </div>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -120,11 +137,11 @@ export default function TeamPage() {
       <section className="bg-white py-24 border-t border-[var(--color-border)]">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="font-[family-name:var(--font-cormorant)] text-4xl text-[var(--color-ink)] text-center mb-16">
-            Our Providers &amp; Staff
+            Our Team
           </h2>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {staff.map((m) => (
+            {STAFF.map((m) => (
               <div
                 key={m.name}
                 className="bg-[var(--color-cream)] rounded-2xl overflow-hidden border border-[var(--color-border)] shadow-sm hover:shadow-lg transition-shadow"
