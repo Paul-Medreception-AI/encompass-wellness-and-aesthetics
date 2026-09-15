@@ -17,8 +17,9 @@ type Member = {
 }
 
 // Staff list and bio text taken verbatim in substance from encompassspa.com/about-2.
-// Members without a supplied headshot intentionally render a silhouette rather
-// than a stock photo of a named person.
+// Staff cards are name and role only. No photo, and no placeholder standing in for one:
+// a silhouette on a named person reads as a missing face rather than a deliberate choice,
+// and a stock photo of a stranger is not an option on a medical site.
 const PROVIDERS: Member[] = [
   {
     name: 'Erin Sutton',
@@ -48,25 +49,6 @@ const STAFF: Member[] = [
   { name: 'Dustyn Carroll', role: 'Customer Service Representative' },
   { name: 'Leslie Warrior', role: 'Patient Care Team' },
 ]
-
-function Silhouette() {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="var(--color-primary)"
-      strokeWidth={1.5}
-      className="w-20 h-20 opacity-40"
-      aria-hidden="true"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
-      />
-    </svg>
-  )
-}
 
 export default function TeamPage() {
   return (
@@ -146,20 +128,7 @@ export default function TeamPage() {
                 key={m.name}
                 className="bg-[var(--color-cream)] rounded-2xl overflow-hidden border border-[var(--color-border)] shadow-sm hover:shadow-lg transition-shadow"
               >
-                <div className="relative bg-[var(--color-light)] h-72 flex items-center justify-center">
-                  {m.photo ? (
-                    <Image
-                      src={m.photo}
-                      alt={m.credential ? `${m.name}, ${m.credential}` : m.name}
-                      fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20rem"
-                      className="object-cover object-top"
-                    />
-                  ) : (
-                    <Silhouette />
-                  )}
-                </div>
-                <div className="p-6">
+                <div className="p-8 text-center">
                   <h3 className="font-[family-name:var(--font-cormorant)] text-2xl text-[var(--color-ink)] mb-1">
                     {m.name}
                     {m.credential ? `, ${m.credential}` : ''}
