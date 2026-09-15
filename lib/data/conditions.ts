@@ -110,7 +110,7 @@ export const CONDITIONS: ConditionPageContent[] = [
   {
     ...BASE,
     slug: "perimenopause",
-    heroImage: {"src":"/images/conditions/perimenopause.jpg","alt":"A woman gazes thoughtfully amidst lush greenery, bathed in natural light."},
+    heroImage: {"src":"/images/conditions/perimenopause.jpg","alt":"Smiling woman in her forties at home in natural light"},
     badge: "Conditions",
     title: "Perimenopause",
     metaTitle: "Perimenopause Treatment in Edmond, OK | Encompass Wellness",
