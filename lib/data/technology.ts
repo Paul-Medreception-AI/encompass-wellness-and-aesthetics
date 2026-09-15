@@ -364,7 +364,7 @@ export const TECHNOLOGY: ServicePageContent[] = [
     headline: 'Evoke & EvolveX in Edmond',
     description:
       'Evoke and EvolveX in Edmond, OK — hands-free, non-invasive remodeling for the face and body. Tite, Tone and Transform remodel skin, target fat and tone muscle with zero downtime.',
-    heroImage: { src: '/images/scraped/evolvex.jpeg', alt: 'EvolveX by InMode' },
+    heroImage: {"src":"/images/scraped/evolvex.jpeg","alt":"EvolveX by InMode","fit":"contain","boxAspect":"aspect-square lg:max-w-[26rem]"},
     heroSubhead:
       'Hands-free, non-invasive platforms that remodel skin, target fat and tone muscle — Evoke for the face and jawline, EvolveX for the body.',
     introHeading: 'Two Platforms, One Idea',

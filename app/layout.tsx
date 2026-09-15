@@ -117,7 +117,10 @@ export default function RootLayout({
                 <h3 className="text-sm font-semibold uppercase tracking-wider text-white/50 mt-8 mb-4">Office Hours</h3>
                 <dl className="text-sm text-white/80 space-y-1.5">
                   <div className="flex justify-center sm:justify-between gap-3 sm:gap-4">
-                    <dt>Mon &ndash; Thu</dt><dd className="text-white/60">8:00am &ndash; 5:00pm</dd>
+                    <dt>Monday</dt><dd className="text-white/60">8:00am &ndash; 3:00pm</dd>
+                  </div>
+                  <div className="flex justify-center sm:justify-between gap-3 sm:gap-4">
+                    <dt>Tue &ndash; Thu</dt><dd className="text-white/60">8:00am &ndash; 5:00pm</dd>
                   </div>
                   <div className="flex justify-center sm:justify-between gap-3 sm:gap-4">
                     <dt>Friday</dt><dd className="text-white/60">8:00am &ndash; 3:00pm</dd>

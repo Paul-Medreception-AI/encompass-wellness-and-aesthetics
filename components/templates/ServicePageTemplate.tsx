@@ -27,7 +27,7 @@ export type ServicePageContent = {
   relatedLinks?: RelatedLink[]
   metaTitle?: string
   heroSubhead?: string
-  heroImage?: { src: string; alt: string; fit?: 'cover' | 'contain'; pos?: string }
+  heroImage?: { src: string; alt: string; fit?: 'cover' | 'contain'; pos?: string; boxAspect?: string }
   gallery?: { src: string; alt: string; fit?: 'cover' | 'contain' }[]
   featuredVideo?: { videoId: string; title: string; heading?: string; subhead?: string }
   introHeading?: string
@@ -124,7 +124,7 @@ export function ServicePageTemplate({ c }: { c: ServicePageContent }) {
                   // Wide page-header banners keep their own shape instead of being
                   // letterboxed inside a tall card; photos still fill a tall card.
                   (c.heroImage.fit === 'contain'
-                    ? 'lg:w-1/2 aspect-[16/7] bg-white/10'
+                    ? `lg:w-1/2 ${c.heroImage.boxAspect || 'aspect-[16/7]'} bg-white/10`
                     : 'lg:w-2/5 aspect-[4/3] sm:aspect-[3/2] lg:aspect-auto lg:h-[28rem]')
                 }
               >

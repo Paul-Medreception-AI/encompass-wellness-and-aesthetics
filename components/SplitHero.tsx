@@ -71,7 +71,7 @@ export default function SplitHero({
         style={{ background: OVERLAY_X }}
       />
 
-      <div className={`relative ${full ? 'lg:min-h-[92vh]' : 'lg:min-h-[54vh]'}`}>
+      <div className={`relative ${full ? 'lg:min-h-[72vh]' : 'lg:min-h-[54vh]'}`}>
         {/* Photo on top, phones and tablets */}
         <div
           className={`relative w-full lg:hidden overflow-hidden ${
@@ -98,13 +98,13 @@ export default function SplitHero({
             sits near the page's optical centre. */}
         <div
           className={`relative lg:grid lg:grid-cols-[55fr_45fr] ${
-            full ? 'lg:min-h-[92vh]' : 'lg:min-h-[54vh]'
+            full ? 'lg:min-h-[72vh]' : 'lg:min-h-[54vh]'
           }`}
         >
           <div className="flex items-center">
             <div
               className={`w-full lg:max-w-[34rem] xl:max-w-[38rem] lg:ml-auto px-6 lg:pr-10 xl:pr-14 ${
-                full ? 'pt-14 pb-20 lg:py-32' : 'pt-10 pb-16 lg:py-24'
+                full ? 'pt-8 pb-16 lg:py-16' : 'pt-10 pb-16 lg:py-24'
               }`}
             >
               {children}

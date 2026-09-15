@@ -64,7 +64,8 @@ export default function ContactPage() {
                 </svg>
                 <h3 className="font-serif text-2xl text-[var(--color-ink)] mb-3">Office Hours</h3>
                 <div className="text-[var(--color-ink)] leading-relaxed space-y-1">
-                  <p className="font-medium">Monday - Thursday: 8:00am - 5:00pm</p>
+                  <p className="font-medium">Monday: 8:00am - 3:00pm</p>
+                  <p className="font-medium">Tuesday - Thursday: 8:00am - 5:00pm</p>
                   <p className="font-medium">Friday: 8:00am - 3:00pm</p>
                   <p className="text-sm text-[var(--color-muted)] mt-2">Closed for lunch from 12:00pm to 1:00pm</p>
                 </div>

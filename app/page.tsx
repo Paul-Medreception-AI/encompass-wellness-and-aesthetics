@@ -160,11 +160,24 @@ export default function HomePage() {
               </Link>
             </div>
             <div className="lg:col-span-2">
-              <div className="bg-[var(--color-light)] rounded-2xl h-80 w-full flex items-center justify-center">
-                <svg stroke="var(--color-primary)" strokeWidth={1.5} fill="none" viewBox="0 0 24 24" className="w-20 h-20 opacity-40">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-                </svg>
-              </div>
+              {/* Was an empty grey box with a heart icon. The section ends with
+                  "Meet Our Team", so this is the lead provider. */}
+              <figure className="relative">
+                <div className="relative h-[26rem] w-full rounded-2xl overflow-hidden bg-[var(--color-light)] shadow-sm">
+                  <Image
+                    src="/images/Erin-Sutton-Headshot.jpeg"
+                    alt="Erin Sutton, APRN-CNP"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 40vw"
+                    className="object-cover object-top"
+                  />
+                </div>
+                <figcaption className="mt-4 text-sm text-[var(--color-muted)]">
+                  <span className="font-semibold text-[var(--color-ink)]">Erin Sutton, APRN-CNP</span>
+                  <br />
+                  Certified Family Nurse Practitioner
+                </figcaption>
+              </figure>
             </div>
           </div>
         </div>

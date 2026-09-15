@@ -121,16 +121,21 @@ export default function SiteHeader() {
             onMouseEnter={() => hoverOpen('services')}
             onMouseLeave={hoverClose}
           >
-            <button
-              type="button"
-              aria-expanded={open === 'services'}
-              aria-haspopup="true"
-              onClick={() => setOpen(open === 'services' ? null : 'services')}
-              className={`${linkCls} inline-flex items-center gap-1`}
-            >
-              Services
-              <Chevron open={open === 'services'} />
-            </button>
+            <span className="inline-flex items-center gap-1">
+              <Link href="/services" className={linkCls}>
+                Services
+              </Link>
+              <button
+                type="button"
+                aria-expanded={open === 'services'}
+                aria-haspopup="true"
+                aria-label={`${open === 'services' ? 'Hide' : 'Show'} services menu`}
+                onClick={() => setOpen(open === 'services' ? null : 'services')}
+                className="p-1 -m-1 text-[var(--color-ink)] hover:text-[var(--color-accent)] transition-colors"
+              >
+                <Chevron open={open === 'services'} />
+              </button>
+            </span>
 
             {open === 'services' && (
               <div className="absolute left-1/2 -translate-x-1/2 top-full pt-4">
@@ -173,16 +178,21 @@ export default function SiteHeader() {
             onMouseEnter={() => hoverOpen('conditions')}
             onMouseLeave={hoverClose}
           >
-            <button
-              type="button"
-              aria-expanded={open === 'conditions'}
-              aria-haspopup="true"
-              onClick={() => setOpen(open === 'conditions' ? null : 'conditions')}
-              className={`${linkCls} inline-flex items-center gap-1`}
-            >
-              Conditions
-              <Chevron open={open === 'conditions'} />
-            </button>
+            <span className="inline-flex items-center gap-1">
+              <Link href="/conditions" className={linkCls}>
+                Conditions
+              </Link>
+              <button
+                type="button"
+                aria-expanded={open === 'conditions'}
+                aria-haspopup="true"
+                aria-label={`${open === 'conditions' ? 'Hide' : 'Show'} conditions menu`}
+                onClick={() => setOpen(open === 'conditions' ? null : 'conditions')}
+                className="p-1 -m-1 text-[var(--color-ink)] hover:text-[var(--color-accent)] transition-colors"
+              >
+                <Chevron open={open === 'conditions'} />
+              </button>
+            </span>
 
             {open === 'conditions' && (
               <div className="absolute left-1/2 -translate-x-1/2 top-full pt-4">
@@ -218,16 +228,21 @@ export default function SiteHeader() {
             onMouseEnter={() => hoverOpen('technology')}
             onMouseLeave={hoverClose}
           >
-            <button
-              type="button"
-              aria-expanded={open === 'technology'}
-              aria-haspopup="true"
-              onClick={() => setOpen(open === 'technology' ? null : 'technology')}
-              className={`${linkCls} inline-flex items-center gap-1`}
-            >
-              Technology
-              <Chevron open={open === 'technology'} />
-            </button>
+            <span className="inline-flex items-center gap-1">
+              <Link href="/technology" className={linkCls}>
+                Technology
+              </Link>
+              <button
+                type="button"
+                aria-expanded={open === 'technology'}
+                aria-haspopup="true"
+                aria-label={`${open === 'technology' ? 'Hide' : 'Show'} technology menu`}
+                onClick={() => setOpen(open === 'technology' ? null : 'technology')}
+                className="p-1 -m-1 text-[var(--color-ink)] hover:text-[var(--color-accent)] transition-colors"
+              >
+                <Chevron open={open === 'technology'} />
+              </button>
+            </span>
 
             {open === 'technology' && (
               <div className="absolute left-1/2 -translate-x-1/2 top-full pt-4">
