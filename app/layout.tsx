@@ -44,7 +44,9 @@ export default function RootLayout({
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12 mb-12 text-center sm:text-left">
               <div>
-                <img src="/logo.png" alt="Encompass Wellness and Aesthetics" className="h-[5.5rem] w-auto mb-6 mx-auto sm:mx-0" />
+                {/* Reversed logo: the "wellness and aesthetics" wordmark is near-black in
+                    the standard file and disappears on the dark footer. */}
+                <img src="/logo-light.png" alt="Encompass Wellness and Aesthetics" className="h-[5.5rem] w-auto mb-6 mx-auto sm:mx-0" />
                 <p className="text-white/80 text-sm leading-relaxed mb-6">
                   Functional and aesthetic care in Edmond, Oklahoma. We partner with you to get to
                   the root of your health issues, not just treat the symptoms.
