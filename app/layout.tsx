@@ -12,6 +12,7 @@ const dmSans = DM_Sans({ subsets: ['latin'], weight: ['300','400','500','600'], 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID
 
 export const metadata: Metadata = {
+  verification: { google: 'q7IiOCzR7myKYAxJ0RJQR0zFn9XbLCsoDKQZUSx6dpI' },
   metadataBase: new URL('https://encompassspa.com'),
   title: 'Encompass Wellness | Functional & Hormone Medicine in Edmond, OK',
   description: 'Encompass Wellness and Aesthetics partners with you in your healthcare journey to reverse disease and restore optimal health. Our functional medicine approach addresses hormonal imbalance, weight management, thyroid disorders, and age-related concerns through comprehensive, personalized care.',
