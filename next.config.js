@@ -1,13 +1,20 @@
 /** @type {import("next").NextConfig} */
 
-// Legacy WordPress URLs from encompassspa.com/page-sitemap.xml (30 indexed pages).
+// Legacy WordPress URLs from encompassspa.com/page-sitemap.xml — 31 pages, not 30.
+// The miscount was load-bearing: the two URLs that never made it into this list were
+// live 404s on an indexed page until 2026-09-17.
 //
-// NOTE: seven legacy service URLs are preserved EXACTLY by the new /services/[slug]
+// NOTE: six legacy service URLs are preserved EXACTLY by the new /services/[slug]
 // routes and therefore must NOT appear here — a redirect would hijack the real page:
 //   /services/functional-medicine   /services/thyroid-management
 //   /services/body-contouring       /services/chelation-therapy
-//   /services/vaginal-rejuvenation  /services/womens-sexual-health
-//   /services/mens-sexual-health
+//   /services/womens-sexual-health  /services/mens-sexual-health
+//
+// ⚠️ /services/vaginal-rejuvenation was previously listed above as a seventh
+// preserved URL. It is not one. That flat path is a NEW route; the legacy URL was
+// nested under its parent — /services/womens-sexual-health/vaginal-rejuvenation —
+// which /services/[slug] cannot match, so it 404'd. It needs a redirect, below.
+//
 // Every other legacy URL is mapped to its closest 1:1 equivalent below.
 const legacyRedirects = [
   // Top-level pages
@@ -24,6 +31,10 @@ const legacyRedirects = [
   { source: '/services/hormones', destination: '/services/hormone-replacement-therapy', permanent: true },
   { source: '/services/weight-loss', destination: '/services/weight-loss-programs', permanent: true },
 
+  // Nested legacy child of Women's Sexual Health. The new route is the flat
+  // /services/vaginal-rejuvenation, so the nested legacy path must redirect.
+  { source: '/services/womens-sexual-health/vaginal-rejuvenation', destination: '/services/vaginal-rejuvenation', permanent: true },
+
   // Aesthetics hub + children
   { source: '/services/aesthetics', destination: '/services/aesthetic-services', permanent: true },
   { source: '/services/aesthetics/aesthetics-menu', destination: '/services/aesthetic-services', permanent: true },
@@ -36,6 +47,11 @@ const legacyRedirects = [
   { source: '/services/aesthetics/prp-facials', destination: '/services/prp-facials', permanent: true },
   { source: '/services/aesthetics/prp-hair-loss', destination: '/services/prp-hair-restoration', permanent: true },
   { source: '/services/aesthetics/spider-vein-treatment', destination: '/services/spider-vein-treatment', permanent: true },
+  // Cellulite Reduction was a real child of the legacy Aesthetics hub (its nav lists
+  // it) but no Wayback capture of the page survives, so there is no copy to rebuild
+  // from. EvolveX — the InMode platform the practice actually treats cellulite with —
+  // is covered on the body-contouring page, which is the closest honest destination.
+  { source: '/services/aesthetics/cellulite-reduction', destination: '/services/body-contouring', permanent: true },
 
   // Standalone legacy pages
   { source: '/skin-pen', destination: '/services/microneedling-skinpen', permanent: true },
