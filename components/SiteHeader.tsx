@@ -7,6 +7,7 @@ import { SERVICES } from '@/lib/data/services'
 import { CONDITIONS } from '@/lib/data/conditions'
 import { TECHNOLOGY } from '@/lib/data/technology'
 import { withUtm } from '@/lib/shop-links'
+import { PATIENT_PORTAL_URL } from '@/lib/links'
 
 export const SHOP_URL = 'https://store.encompassspa.com/'
 
@@ -283,6 +284,20 @@ export default function SiteHeader() {
             Shop
           </a>
 
+          {/* Returning patients log in to MDHQ. Secondary treatment so it does not
+              compete with the booking CTA. */}
+          <a
+            href={PATIENT_PORTAL_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-2 inline-flex items-center gap-1.5 border border-[var(--color-accent)] text-[var(--color-accent)] hover:bg-[var(--color-accent)] hover:text-white px-4 py-2.5 rounded-xl font-semibold text-sm transition-colors whitespace-nowrap"
+          >
+            Patient Portal
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.2} aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H18v4.5M17.5 6.5L10 14M16 13v5a1 1 0 01-1 1H6a1 1 0 01-1-1V9a1 1 0 011-1h5" />
+            </svg>
+          </a>
+
           <Link
             href="/contact"
             className="ml-2 bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-white px-6 py-2.5 rounded-xl font-semibold text-sm transition-colors whitespace-nowrap"
@@ -394,6 +409,15 @@ export default function SiteHeader() {
                 {label}
               </Link>
             ))}
+
+            <a
+              href={PATIENT_PORTAL_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block py-3 text-base font-medium text-[var(--color-ink)] border-b border-[var(--color-border)]"
+            >
+              Patient Portal
+            </a>
 
             <a
               href={withUtm(SHOP_URL, 'nav', 'mobile-menu')}

@@ -3,6 +3,7 @@ import { Cormorant_Garamond, DM_Sans } from 'next/font/google'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import SiteHeader from '@/components/SiteHeader'
 import { withUtm } from '@/lib/shop-links'
+import { PATIENT_PORTAL_URL } from '@/lib/links'
 import './globals.css'
 
 const cormorant = Cormorant_Garamond({ subsets: ['latin'], weight: ['300','400','500','600','700'], variable: '--font-cormorant' })
@@ -86,6 +87,14 @@ export default function RootLayout({
               <div>
                 <h3 className="text-sm font-semibold uppercase tracking-wider text-white/50 mb-5">Patients</h3>
                 <ul className="space-y-3">
+                  <li>
+                    <a href={PATIENT_PORTAL_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-white/80 hover:text-white transition-colors text-sm">
+                      Patient Portal
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.2} aria-hidden="true">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H18v4.5M17.5 6.5L10 14M16 13v5a1 1 0 01-1 1H6a1 1 0 01-1-1V9a1 1 0 011-1h5" />
+                      </svg>
+                    </a>
+                  </li>
                   <li><a href="/new-patients" className="text-white/80 hover:text-white transition-colors text-sm">New Patients</a></li>
                   <li><a href="/patient-form-sms" className="text-white/80 hover:text-white transition-colors text-sm">Patient Form</a></li>
                   <li><a href="/insurance" className="text-white/80 hover:text-white transition-colors text-sm">Insurance</a></li>
