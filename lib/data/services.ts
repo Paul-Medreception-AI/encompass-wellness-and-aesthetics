@@ -1,4 +1,5 @@
 import type { ServicePageContent } from '@/components/templates/ServicePageTemplate'
+import { SKINCARE_MENUS } from '@/lib/data/skincare-brands'
 
 const BASE = {"siteUrl":"https://encompassspa.com","siteName":"Encompass Wellness and Aesthetics","ctaLabel":"Book an Appointment","ctaHref":"/contact","hubLabel":"Services","hubHref":"/services"};
 
@@ -492,5 +493,148 @@ export const SERVICES: ServicePageContent[] = [
     relatedLinks: [{"href":"/services/laser-treatments","label":"Laser Treatments","eyebrow":"Related","body":"Vasculaze targets visible vascular lesions with laser energy."},{"href":"/services/aesthetic-services","label":"Aesthetics","eyebrow":"Related","body":"The full range of aesthetic treatments offered at Encompass."},{"href":"/services/functional-medicine","label":"Functional Medicine","eyebrow":"Related","body":"Circulation and vascular health as part of a whole-person evaluation."}],
     ctaHeading: "Ready to Learn More?",
     ctaBody: "Contact us to ask questions about sclerotherapy or to set up a free consultation.",
+  },
+  {
+    ...BASE,
+    slug: "iv-therapy-menu",
+    badge: "IV Therapy",
+    title: "IV Therapy Menu",
+    metaTitle: "IV Therapy Menu & Pricing in Edmond, OK | Encompass Wellness",
+    // The page H1 on the WordPress site. Entity-decoded: the source markup reads
+    // "Injectable &amp;amp; IV Cocktail Menu" and pasting that raw prints "&amp;".
+    headline: "Injectable & IV Cocktail Menu",
+    description: "The full injectable and IV cocktail menu at Encompass Wellness and Aesthetics in Edmond, OK — IV drips, the shot bar and lipotropic injections, with pricing.",
+    heroImage: {"src":"/images/scraped/iv.jpg","alt":"IV therapy at Encompass Wellness and Aesthetics in Edmond, Oklahoma"},
+    heroSubhead: "Every IV drip, vitamin shot and lipotropic injection we offer, with pricing. Custom cocktails are available too — pricing starts at $99.",
+    introHeading: "How Does It Work?",
+    intro: ["By injecting nutrients directly into your bloodstream, you’re able to absorb them faster than if you received them from food or nutraceuticals.", "Our IV Therapy experts can create custom treatments specific to your needs including IVs for weight loss, pain relief, beauty, etc.", "Pricing starts at $99. Contact us for scheduling and requirements."],
+    signsHeading: "Indications for Treatment",
+    signsList: ["Athletic Recovery", "Immune Support", "Fatigue", "Migraine Relief", "Weight Loss", "Hangover Relief", "High Blood Pressure", "Allergy Relief", "General Nutrition", "Dehydration", "Liver Detoxification", "Reduction of Heavy Metals"],
+    bullets: ["Athletic Recovery", "Immune Support", "Fatigue", "Migraine Relief", "Weight Loss", "Hangover Relief"],
+    priceMenusHeading: "The Menu",
+    priceMenusIntro: "Three menus: IV cocktails delivered by drip, single vitamin shots from the shot bar, and lipotropic injections for fat metabolism.",
+    priceMenus: [
+      { heading: "IV Cocktail Menu", items: [{"name": "Hydration", "price": "$125", "description": "Dehydrated? Replenish with this IV fluids only hydrating IV."}, {"name": "Myers", "price": "$175", "description": "The original IV nutrient therapy cocktail. This is a great base cocktail of vitamins and minerals to improve your overall well-being and give you a boost of energy. Includes Vitamin C, Magnesium Chloride, B vitamins, and Calcium Gluconate."}, {"name": "Immune Booster", "price": "$200", "description": "Aides in eliminating cold, flu, or allergy symptoms with a cocktail designed to restore your health and power up your immune system and packed with Vitamin C, B Complex, and Zinc."}, {"name": "The Detox", "price": "$225", "description": "This is a great starter for those beginning a detox program or feeling bogged down from nutritional imbalance. Includes L-Carnitine, Vitamin C, and Glutathione in addition to a vitamin and mineral blend. *Additional ALA (alpha-lipoic acid) can be added for a more aggressive approach to detoxification."}, {"name": "The Encompass Energizer", "price": "$225", "description": "This cocktail is packed with vitamins to give you a natural boost- including Vitamin C, B complex, Amino Acid Blend, and Mineral blend. Perfect for athletes or anyone wanting to improve physical performance."}, {"name": "The Allstar (Hangover)", "price": "$225", "description": "Not every star should party like one. Our Allstar cocktail is packed with anti-nausea vitamins and antioxidants including Vitamin C, Magnesium Chloride, B Vitamins, Zofran, and Glutathione. You’ll feel so great, you might even forget your promise to never over-indulge again."}, {"name": "NAD", "price": "$125-$1250 (depending on dose)", "description": "NAD (Nicotinamide Adenine Dinucleotide) is an important coenzyme found in every cell of your body. This “Wonder Molecule” supports brain health, stress resistance, energy metabolism, nervous system health, muscle recovery, cell health, addiction recovery, and anti-aging!\n\n**ADD ONS **\nALA, Amino blend, B complex, B12, Carnitine, Glutathione, Lysine, Magnesium, MIC, Mineral complex, Proline, Taurine, Vitamin C, Zinc, Vitamin D"}, {"name": "Ozone/UV Light Therapy", "price": "$225", "description": "Ozone Therapy empowers our body with the holistic healing properties of oxygen to naturally supercharge your immune system, defeat disease-causing pathogens, and more! This therapy can recalibrate the immune system, inactivate pathogens (viruses, bacteria, fungi, yeast, protozoa), increase oxygen supply in the body, and stimulate the production of white blood cells. Contact us today to see if Ozone Therapy is right for you."}, {"name": "Chelation Therapy", "price": "$1500 (package of 10)", "description": "High calcium score? Chelation Therapy targets toxic metals and mineral deposits that block your cardiovascular system and harden your arteries. Take control of your heart health with this non-invasive procedure designed to combat atherosclerosis. Chelation removes toxic metals, improves blood flow, reduces atherosclerotic plaque, and may relieve coronary artery disease (CAD) symptoms in addition to multiple other benefits."}, {"name": "IV Mesenchymal Stem Cells", "price": "$4000", "description": "Consists of nanoparticles carrying growth factors, cytokines, and nucleic acids which give an incredible combination of healing components that possess multiple therapeutic benefits."}] },
+      { heading: "Shot Bar Menu", items: [{"name": "Amino Blend", "price": "$20 or $65 for 4pk", "description": "A great compliment to any workout routine or active lifestyle. This blend consists of key amino acids essential in improving fat metabolism, energy production, and muscle repair (shortening your recovery time).\n\nMenu description: ingredients are glutamine, arginine, ornithine, lysine, citrulline, and carnitine. Glutamine plays key roles in protein metabolism, cell volumizing, and anti-catabolism. Glutamine also increases your ability to secrete Human Growth Hormone, which helps metabolize body fat and support new muscle growth. Arginine +Ornithine: The combination of both amino acids improves the overall regeneration capability of the body and leads to a noticeable increase in vitality. Lysine is very important in the creation of carnitine, which converts fatty acids into energy and also lowers cholesterol levels. L-lysine also seems to play a role in absorbing calcium and helps the body form collagen, which aids in the growth and maintenance of bones and connective tissue. Citrulline promotes vasodilation(increases blood flow),and supports our immune system. Carnitine improves fat metabolism and energy, reduces recovery times and promotes muscle building potential.\n\n***Can be added to any IV Therapy"}, {"name": "Biotin", "price": "$20 or $125 for 10pk", "description": "Biotin is considered a wonderful overall general health vitamin linked to aiding in stronger hair and nails, healthy skin, lowering cholesterol, improving metabolism, and regulating blood sugar.\n\n***Can be added to any IV for 100% absorption!"}, {"name": "Tri Immune Boost", "price": "$35 or $75 for 3pk", "description": "Tri-Immune Boost is a power-packed immunity blendof Glutathione, Ascorbic Acid and Zinc that is the ultimate immune system enhancer. This high concentration blend of immune system boosting essentials helps maintain a healthy immune response. This is a great alternative to anyone who is pressed for timeand cannot relax in our IV room for an immune support IV. With the first injection, however, patient will be asked to remain in our facility for 30 minutes to ensure no allergic reaction occurs."}, {"name": "Glutathione 200mg/ml", "price": "$35 or $125 for 4pk", "description": "Commonly called THE master antioxidant. It is incredibly versatile—a universal toxin-binder. Glutathione protects our body’scells from free radical damage and is important for maintaining intracellular health. Levels of glutathione have been shown to diminish substantially with age as well as with chronic illness and poor health.Another amazing benefit is for its SKIN BRIGHTENING effects!! This antioxidant is a key to many health maintenance arsenals.Potential for allergic reaction for anyone with a sulfa allergy....\n\n***All required to remain at facility for no less than 30 minutes after 1st injection.\n\n**Can be added to any IV therapy (must be given separately, after the first infusion, or can be given alone)as a ‘supercharger’!"}] },
+      { heading: "Lipotropic Injections", intro: "Lipotropic compounds are a combination of amino acids, vitamins, and minerals that help metabolize fat in the body. Combined with diet and exercise, lipotropic injections can speed up the process of fat breakdown and enhance your weight loss results.", items: [{"name": "B12", "price": "$20 or $65 for 4 pk", "description": "Methylcobalamin is the best and purest source of vitamin B12 and is important for absorption of food, proper digestion, DNA, healthy nerve cells and red blood cells. B12 injections also aid in boosting energy as well as serving as a prolonged source of energy throughout the day.\n\n***Can be added to any IV for a quick pick me up"}, {"name": "L-Carnitine", "price": "$15 or $45 for 4pk", "description": "L-Carnitine is one of the building blocks of protein. It is known to increase the number of androgen receptors in muscles. These receptors allow the muscle to utilizetestosteroneresulting in an enhanced ability to build muscle. It also enhances the body’s ability to metabolize fat, thereby improving energy levels. This means L-Carnitine enhancesfat burningand leads to faster, more effective muscle building. Healthy meal plans become easier to maintain because you have sufficient energy and you can get more fat burning power out of your workouts!Not only does L-carnitine help the body burn fuel as efficiently and effectively as possible for increased energy,but it also improves athletic performance and endurance by inhibiting the build-up of lactic acid (one of the primary causes of fatigue during physical exercise).\n\n****Can also be added as a booster to your IV to enhance fat metabolism."}, {"name": "MIC", "price": "$15 or $45 for 4pk", "description": "Contains three amino acids essential in fat metabolism, flushing the liver, as well as mood support.\n\n• Methionine, which helps the liver maintain the optimal ability to process fatty acids. It deactivates estrogen, which is what inhibits fatburning bile.\n• Choline, which stimulates the mobilization of fatty acids and prevents their deposition in a given part of the body.\n\n• Inositol, which aids in the transport of fat into and out of the liver and intestinal cells, acts synergistically with choline, exhibiting more lipotropic activity than when administered alone."}, {"name": "LIPO B", "price": "$25 or $85 for 4pk", "description": "Mix of fat burning aminos (MIC) with added b12 for and energy boost."}, {"name": "LIPO C", "price": "$35 or $125 for 4pk", "description": "MIC aminos with carnitine."}, {"name": "Slim Shot", "price": "$30 or $105 for 4pk", "description": "Slim shot – an even mix of Lipo B and Lipo C… considered the ‘best of both worlds’ in providing the ultimate supplementation for your health and wellness journey."}] },
+    ],
+    priceMenusFootnote: "Please call for additional details and requirements: (405) 254-3000. Pricing is as last published by the practice — call to confirm before your visit.",
+    benefits: [
+      { title: "IV Cocktails", body: "Ten drips, from a simple hydration bag to Myers, the immune booster, the detox and NAD. Nutrients go straight into the bloodstream, so absorption is faster than it is from food or capsules." },
+      { title: "The Shot Bar", body: "Single intramuscular shots — amino blend, biotin, Tri Immune Boost and glutathione — priced individually or as a multi-pack." },
+      { title: "Lipotropic Injections", body: "B12, L-Carnitine, MIC, LIPO B, LIPO C and the Slim Shot: amino acids, vitamins and minerals that help the body metabolise fat alongside diet and exercise." },
+      { title: "Custom Cocktails", body: "Our IV therapy team can build a treatment specific to your needs, including IVs for weight loss, pain relief and beauty. Pricing starts at $99." },
+    ],
+    relatedLinks: [
+      {"href":"/services/iv-therapy","label":"IV Therapy","eyebrow":"Related","body":"How IV nutrient therapy works and who it suits."},
+      {"href":"/services/uv-light-iv-therapy","label":"UV Light & Ozone IV Therapy","eyebrow":"Related","body":"Light and ozone delivered intravenously, on the menu at $225."},
+      {"href":"/services/chelation-therapy","label":"Chelation Therapy","eyebrow":"Related","body":"Chelation for heavy-metal reduction, offered as a package of ten."},
+    ],
+    ctaHeading: "Schedule your IV treatment today",
+    ctaBody: "Contact us for scheduling and requirements, or call (405) 254-3000.",
+  },
+  {
+    ...BASE,
+    slug: "uv-light-iv-therapy",
+    badge: "IV Therapy",
+    title: "UV Light & Ozone IV Therapy",
+    metaTitle: "UV Light & Ozone IV Therapy in Edmond, OK | Encompass Wellness",
+    headline: "IV UV Light & Ozone Therapy",
+    description: "IV UV light and ozone therapy at Encompass Wellness and Aesthetics in Edmond, OK — laser light delivered into the bloodstream, and ozone administered by IV, injection or directly to tissue.",
+    heroImage: {"src":"/images/scraped/iv.jpg","alt":"IV therapy suite at Encompass Wellness and Aesthetics in Edmond, Oklahoma"},
+    heroSubhead: "See your health in a new light. IV UV light therapy harnesses the natural restorative power of light to deliver anti-aging effects and improve your whole-body health.",
+    introHeading: "What is UV Light IV Therapy?",
+    intro: ["IV UV light therapy uses a specialized fiber-optic IV needle to introduce UV laser light into the bloodstream through a vein. The light triggers a biological response that not only improves circulation and reduces inflammation, but also heightens the immune system by killing viruses and bacteria.", "A therapy needle is used to carry light into your bloodstream. The entire process takes about ten minutes, during which your entire blood supply will be exposed to the colored laser approximately ten times."],
+    signsHeading: "What are the Benefits?",
+    signsList: ["Improve overall well-being", "Activate natural anti-aging response", "Stimulate circulation of blood and stem cells", "Strengthen the immune system", "Generate powerful anti-inflammatory effects"],
+    bullets: ["Improve overall well-being", "Activate natural anti-aging response", "Stimulate circulation of blood and stem cells", "Strengthen the immune system", "Generate powerful anti-inflammatory effects"],
+    premiumHeading: "Which light treatment is right for me?",
+    premiumOptions: [
+      { title: "Red light for energy and strength", body: "Red light increases ATP production in cells, toughens the immune system, improves circulation, and regenerates damaged tissue." },
+      { title: "Blue light for healing and anti-aging", body: "Blue light improves microcirculation, accelerating wound healing and pain relief. It also activates telomerase to provide an anti-aging effect" },
+      { title: "Green light for oxygenation and fighting inflammation", body: "Green light increases the red blood cells’ ability to carry oxygen, which supports brain function and helps to reduce blood pressure, inflammation and swelling." },
+    ],
+    // Ozone is a separate modality on the legacy page, under its own headings. The
+    // benefit bullets below belong to ozone and must not be merged with the UV
+    // light bullets above — they are indications for different treatments.
+    extraSections: [
+      { heading: "Ozone Therapy", body: ["Ozone therapy empowers your body with the holistic healing properties of oxygen to naturally supercharge your immune system, defeat disease-causing pathogens and more."] },
+      { heading: "What is Ozone?", body: ["Ozone is a colorless gas made up of three oxygen atoms. The same gas that forms the protective layer of our planet is used in ozone therapy to protect your body by killing pathogens, stimulating the immune system, and boosting the oxygen supplied to your tissues and cells."] },
+      { heading: "What are the benefits of ozone therapy?", body: ["Power up your immune system! Research has shown that ozone therapy promotes hyperoxygenation within tissues that can stimulate the immune system and help rebalance the immune system when it is not functioning correctly. This strengthens your immune system’s ability to fight disease, as well as providing health benefits for patients with immune disorders.", "Recalibrate the immune system.", "Inactivate pathogens (viruses, bacteria, fungi, yeast, protozoa).", "Increase oxygen supply in the body.", "Stimulate the production of white blood cells."] },
+      { heading: "What happens during ozone treatment?", body: ["Depending on your health needs, ozone therapy can be administered directly to tissue, intravenously (IV) or via intramuscular injection. Our highly-trained team can help you decide which option is right for you.", "Other delivery methods available. Call for more information!"] },
+    ],
+    benefits: [
+      { title: "Red light", body: "Red light increases ATP production in cells, toughens the immune system, improves circulation, and regenerates damaged tissue." },
+      { title: "Blue light", body: "Blue light improves microcirculation, accelerating wound healing and pain relief. It also activates telomerase to provide an anti-aging effect" },
+      { title: "Green light", body: "Green light increases the red blood cells’ ability to carry oxygen, which supports brain function and helps to reduce blood pressure, inflammation and swelling." },
+      { title: "Ozone", body: "Ozone therapy empowers your body with the holistic healing properties of oxygen to naturally supercharge your immune system, defeat disease-causing pathogens and more." },
+    ],
+    // The five accordion items that were actually on the page, with the page's own
+    // question wording. A sixth ("Which light treatment is right for me?") was an
+    // H2 section, not an FAQ, and is rendered as such above.
+    faqs: [
+      { q: "What is UV Light IV Therapy?", a: "IV UV light therapy uses a specialized fiber-optic IV needle to introduce UV laser light into the bloodstream through a vein. The light triggers a biological response that not only improves circulation and reduces inflammation, but also heightens the immune system by killing viruses and bacteria." },
+      { q: "What happens during treatment?", a: "A therapy needle is used to carry light into your bloodstream. The entire process takes about ten minutes, during which your entire blood supply will be exposed to the colored laser approximately ten times." },
+      { q: "What is ozone?", a: "Ozone is a colorless gas made up of three oxygen atoms. The same gas that forms the protective layer of our planet is used in ozone therapy to protect your body by killing pathogens, stimulating the immune system, and boosting the oxygen supplied to your tissues and cells." },
+      { q: "What are the benefits?", a: "Power up your immune system! Research has shown that ozone therapy promotes hyperoxygenation within tissues that can stimulate the immune system and help rebalance the immune system when it is not functioning correctly. This strengthens your immune system’s ability to fight disease, as well as providing health benefits for patients with immune disorders." },
+      { q: "What happens during ozone treatment?", a: "Depending on your health needs, ozone therapy can be administered directly to tissue, intravenously (IV) or via intramuscular injection. Our highly-trained team can help you decide which option is right for you. Other delivery methods available. Call for more information!" },
+    ],
+    relatedLinks: [
+      {"href":"/services/iv-therapy-menu","label":"IV Therapy Menu","eyebrow":"Pricing","body":"Ozone/UV Light Therapy is on the IV cocktail menu at $225."},
+      {"href":"/services/iv-therapy","label":"IV Therapy","eyebrow":"Related","body":"The rest of our IV nutrient therapy programme."},
+      {"href":"/services/functional-medicine","label":"Functional Medicine","eyebrow":"Related","body":"Immune and inflammatory support as part of a whole-person evaluation."},
+    ],
+    ctaHeading: "Ready to take the next step?",
+    ctaBody: "Contact us to ask questions or set up a free consultation.",
+  },
+  {
+    ...BASE,
+    slug: "medical-grade-skincare",
+    badge: "Aesthetics",
+    title: "Medical-Grade Skincare",
+    metaTitle: "Medical-Grade Skincare in Edmond, OK | SkinCeuticals & Obagi",
+    headline: "Medical-Grade Skincare",
+    description: "SkinCeuticals, Obagi, SkinBetter Science and Hydrinity at Encompass Wellness and Aesthetics in Edmond, OK — physician-dispensed skincare, available in clinic and from our online store.",
+    heroImage: {"src":"/images/scraped/skinceuticals.jpg","alt":"SkinCeuticals medical-grade skincare at Encompass Wellness and Aesthetics"},
+    heroSubhead: "Physician-dispensed skincare you cannot buy at a drugstore counter. Every line below is one we stock — browse it in clinic, or order from our own store.",
+    introHeading: "What is SkinCeuticals?",
+    intro: ["Research and innovation are at the core of the SkinCeuticals mission. As the brand leader in advanced skincare, SkinCeuticals is a revolutionary formulation.", "SkinCeuticals mission is to improve SKIN HEALTH. They are committed to leading the skincare industry in research and innovation, and provide advanced skincare backed by science.", "The SkinCeuticals skincare philosophy centers on three main pillars: PREVENT. PROTECT. CORRECT. These principles work synergistically to provide the healthiest skin possible, and optimal anti-aging results."],
+    signsHeading: "Why medical-grade",
+    signsList: [
+      "Higher active concentrations than retail skincare, dispensed by a provider",
+      "Formulations backed by published research rather than marketing claims",
+      "Matched to your skin and to the treatments you are having in clinic",
+      "Authentic product, bought through the practice rather than a grey-market reseller",
+      "PREVENT. PROTECT. CORRECT. — the three pillars SkinCeuticals formulates around",
+    ],
+    bullets: [
+      "SkinCeuticals — the brand leader in advanced skincare, built on research and innovation",
+      "Obagi — physician-dispensed correction for pigmentation, tone and texture",
+      "SkinBetter Science — award-winning formulations available only through a provider",
+      "Hydrinity — advanced hyaluronic acid serums",
+      "Ask your provider which products suit your skin and your treatment plan",
+    ],
+    priceMenusHeading: "The lines we carry",
+    priceMenusIntro: "Live from our own store — prices and availability come straight from the catalogue, not from a list typed out by hand. Tap any product to see it.",
+    priceMenus: SKINCARE_MENUS,
+    priceMenusFootnote: "Prices are those listed in our online store at store.encompassspa.com and may change. Products can also be purchased in clinic — call (405) 254-3000.",
+    benefits: [
+      { title: "SkinCeuticals", body: "Research and innovation are at the core of the SkinCeuticals mission. As the brand leader in advanced skincare, SkinCeuticals is a revolutionary formulation." },
+      { title: "Obagi", body: "Physician-dispensed skincare for pigmentation, tone and texture, prescribed as part of a treatment plan rather than bought off a shelf." },
+      { title: "SkinBetter Science", body: "Formulations available only through a provider, including the AlphaRet line, for smoothing texture and softening the look of lines." },
+      { title: "Bought through the practice", body: "Buying from us means the product is authentic, current and matched to what we are doing in clinic — not a resold bottle of unknown age." },
+    ],
+    gallery: [
+      {"src":"/images/scraped/skinceuticals-1.jpg","alt":"SkinCeuticals H.A. Intensifier"},
+      {"src":"/images/scraped/skinceuticals-2.jpg","alt":"SkinCeuticals C E Ferulic"},
+      {"src":"/images/scraped/obagi.jpg","alt":"Obagi medical-grade skincare"},
+    ],
+    relatedLinks: [
+      {"href":"/services/facials-and-peels","label":"Facials & Peels","eyebrow":"Related","body":"In-clinic treatments that your home regimen is built around."},
+      {"href":"/services/aesthetic-services","label":"Aesthetics","eyebrow":"Related","body":"The full range of aesthetic treatments offered at Encompass."},
+      {"href":"/services/microneedling-skinpen","label":"SkinPen Microneedling","eyebrow":"Related","body":"Collagen induction therapy, supported by the right post-procedure products."},
+    ],
+    ctaHeading: "Not sure what your skin needs?",
+    ctaBody: "Contact us and we will build a regimen around your skin and the treatments you are having.",
   },
 ]

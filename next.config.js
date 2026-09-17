@@ -22,10 +22,18 @@ const legacyRedirects = [
   { source: '/contact-2', destination: '/contact', permanent: true },
   { source: '/patient-resources', destination: '/new-patients', permanent: true },
 
+  // Three of these used to land on a broad hub page, which returned 200 while
+  // silently dropping the specific page's content — the IV cocktail price menu,
+  // the UV/ozone modality and the SkinCeuticals line. Those pages have been
+  // rebuilt from the WordPress captures, so the redirects now point at them.
   // IV therapy hub + children
   { source: '/iv-therapy', destination: '/services/iv-therapy', permanent: true },
-  { source: '/iv-therapy/iv-therapy-menu', destination: '/services/iv-therapy', permanent: true },
-  { source: '/iv-therapy/uv-light-iv-therapy', destination: '/services/iv-therapy', permanent: true },
+  { source: '/iv-therapy/iv-therapy-menu', destination: '/services/iv-therapy-menu', permanent: true },
+  { source: '/iv-therapy/uv-light-iv-therapy', destination: '/services/uv-light-iv-therapy', permanent: true },
+
+  // Not in page-sitemap.xml, but archived 200 in 2021 and a live 404 until now:
+  // ozone had its own page before it was merged onto the UV light one.
+  { source: '/services/ozone-therapy', destination: '/services/uv-light-iv-therapy', permanent: true },
 
   // Renamed service pages
   { source: '/services/hormones', destination: '/services/hormone-replacement-therapy', permanent: true },
@@ -38,7 +46,7 @@ const legacyRedirects = [
   // Aesthetics hub + children
   { source: '/services/aesthetics', destination: '/services/aesthetic-services', permanent: true },
   { source: '/services/aesthetics/aesthetics-menu', destination: '/services/aesthetic-services', permanent: true },
-  { source: '/services/aesthetics/skinceuticals', destination: '/services/aesthetic-services', permanent: true },
+  { source: '/services/aesthetics/skinceuticals', destination: '/services/medical-grade-skincare', permanent: true },
   { source: '/services/aesthetics/laser-treatments', destination: '/services/laser-treatments', permanent: true },
   { source: '/services/aesthetics/facials-and-peels', destination: '/services/facials-and-peels', permanent: true },
   { source: '/services/aesthetics/hydrafacial', destination: '/services/hydrafacial', permanent: true },

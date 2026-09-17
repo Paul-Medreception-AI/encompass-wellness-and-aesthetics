@@ -11,8 +11,8 @@ import { PATIENT_PORTAL_URL } from '@/lib/links'
 
 export const SHOP_URL = 'https://store.encompassspa.com/'
 
-// The 20 services grouped the way a patient thinks about them, rather than
-// one flat list of twenty.
+// The 23 services grouped the way a patient thinks about them, rather than
+// one flat list of twenty-three.
 const SERVICE_GROUPS: { heading: string; slugs: string[] }[] = [
   {
     heading: 'Wellness & Medical',
@@ -22,6 +22,8 @@ const SERVICE_GROUPS: { heading: string; slugs: string[] }[] = [
       'thyroid-management',
       'weight-loss-programs',
       'iv-therapy',
+      'iv-therapy-menu',
+      'uv-light-iv-therapy',
       'chelation-therapy',
     ],
   },
@@ -43,6 +45,7 @@ const SERVICE_GROUPS: { heading: string; slugs: string[] }[] = [
       'prp-facials',
       'prp-hair-restoration',
       'spider-vein-treatment',
+      'medical-grade-skincare',
     ],
   },
 ]

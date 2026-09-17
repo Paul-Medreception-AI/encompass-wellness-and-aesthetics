@@ -6,6 +6,15 @@ export type FAQ = { q: string; a: string }
 export type RelatedLink = { href: string; label: string; eyebrow?: string; body?: string }
 export type IconCard = { title: string; body: string; iconPath?: string }
 export type MediaVideo = { videoId: string; title: string }
+// A published price list, e.g. the IV cocktail menu. `note` prints under the
+// group; `footnote` prints once under all the groups. Prices are strings, not
+// numbers, because the practice publishes ranges and pack pricing
+// ("$125-$1250 (depending on dose)", "$20 or $65 for 4pk").
+export type PriceMenu = {
+  heading: string
+  intro?: string
+  items: { name: string; price: string; description?: string; href?: string }[]
+}
 
 // Canonical silo schema (required core) + optional rich sections.
 export type ServicePageContent = {
@@ -43,6 +52,10 @@ export type ServicePageContent = {
   timelineHeading?: string
   timeline?: { title: string; body: string }[]
   extraSections?: { heading: string; body: string[] }[]
+  priceMenus?: PriceMenu[]
+  priceMenusHeading?: string
+  priceMenusIntro?: string
+  priceMenusFootnote?: string
   videoLibraryHeading?: string
   videoLibrarySubhead?: string
   videoLibrary?: MediaVideo[]
@@ -274,6 +287,69 @@ export function ServicePageTemplate({ c }: { c: ServicePageContent }) {
                 </div>
               </div>
             ))}
+          </div>
+        </section>
+      ) : null}
+
+      {c.priceMenus && c.priceMenus.length ? (
+        <section className="bg-white py-20">
+          <div className="max-w-4xl mx-auto px-6">
+            {c.priceMenusHeading && (
+              <h2 className="font-cormorant text-3xl md:text-4xl font-light mb-4 text-[var(--color-ink)] text-center">
+                {c.priceMenusHeading}
+              </h2>
+            )}
+            {c.priceMenusIntro && (
+              <p className="text-lg text-[var(--color-muted)] text-center mb-14 max-w-2xl mx-auto">{c.priceMenusIntro}</p>
+            )}
+
+            <div className="space-y-14">
+              {c.priceMenus.map((menu, i) => (
+                <div key={i}>
+                  <h3 className="font-cormorant text-2xl md:text-3xl font-semibold text-[var(--color-ink)] pb-3 border-b-2 border-[var(--color-accent)]">
+                    {menu.heading}
+                  </h3>
+                  {menu.intro && (
+                    <p className="text-base text-[var(--color-muted)] leading-relaxed mt-5">{menu.intro}</p>
+                  )}
+                  <dl className="mt-6 divide-y divide-[var(--color-border)]">
+                    {menu.items.map((item, j) => (
+                      <div key={j} className="py-5">
+                        {/* Name and price on one baseline, with the dotted leader a
+                            printed menu uses, so the eye can travel between them. */}
+                        <div className="flex items-baseline gap-3">
+                          <dt className="font-semibold text-[var(--color-ink)] text-lg shrink-0">
+                            {item.href ? (
+                              <a
+                                href={item.href}
+                                target="_blank"
+                                rel="noopener"
+                                className="hover:text-[var(--color-accent)] transition-colors underline decoration-[var(--color-border)] underline-offset-4 hover:decoration-[var(--color-accent)]"
+                              >
+                                {item.name}
+                              </a>
+                            ) : (
+                              item.name
+                            )}
+                          </dt>
+                          <span aria-hidden="true" className="flex-1 border-b border-dotted border-[var(--color-border)] translate-y-[-0.25rem]" />
+                          <dd className="font-semibold text-[var(--color-accent)] text-lg shrink-0 text-right">{item.price}</dd>
+                        </div>
+                        {item.description && (
+                          <p className="text-[var(--color-muted)] leading-relaxed mt-2 pr-2">{item.description}</p>
+                        )}
+                      </div>
+                    ))}
+                  </dl>
+                </div>
+              ))}
+            </div>
+
+            {c.priceMenusFootnote && (
+              <p className="text-sm text-[var(--color-muted)] mt-12 pt-6 border-t border-[var(--color-border)]">
+                {c.priceMenusFootnote}
+              </p>
+            )}
           </div>
         </section>
       ) : null}
