@@ -109,14 +109,14 @@ export default function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-[var(--color-border)] shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-28 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between gap-6">
         <Link href="/" aria-label="Encompass Wellness and Aesthetics — home">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo.png" alt="Encompass Wellness and Aesthetics" className="h-[5.5rem] w-auto" />
+          <img src="/logo.png" alt="Encompass Wellness and Aesthetics" className="h-16 w-auto" />
         </Link>
 
         {/* Desktop nav */}
-        <div ref={navRef} className="hidden lg:flex items-center gap-6 xl:gap-8">
+        <div ref={navRef} className="hidden xl:flex items-center gap-5 2xl:gap-7">
           {/* Services */}
           <div
             className="relative"
@@ -284,13 +284,17 @@ export default function SiteHeader() {
             Shop
           </a>
 
+          {/* The two actions are a PAIR, held in their own group. Loose in the nav they
+              inherited the link gap and read as two more menu items at the end of seven,
+              which is why the right-hand side looked crowded rather than decisive. */}
+          <div className="flex items-center gap-2.5 ml-1">
           {/* Returning patients log in to MDHQ. Secondary treatment so it does not
               compete with the booking CTA. */}
           <a
             href={PATIENT_PORTAL_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-2 inline-flex items-center gap-1.5 border border-[var(--color-accent)] text-[var(--color-accent)] hover:bg-[var(--color-accent)] hover:text-white px-4 py-2.5 rounded-xl font-semibold text-sm transition-colors whitespace-nowrap"
+            className="inline-flex items-center gap-1.5 border border-[var(--color-accent)] text-[var(--color-accent)] hover:bg-[var(--color-accent)] hover:text-white px-4 py-2.5 rounded-xl font-semibold text-sm transition-colors whitespace-nowrap"
           >
             Patient Portal
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.2} aria-hidden="true">
@@ -300,16 +304,17 @@ export default function SiteHeader() {
 
           <Link
             href="/contact"
-            className="ml-2 bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-white px-6 py-2.5 rounded-xl font-semibold text-sm transition-colors whitespace-nowrap"
+            className="bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-white px-5 py-2.5 rounded-xl font-semibold text-sm transition-colors whitespace-nowrap"
           >
             Schedule Your Consultation
           </Link>
+          </div>
         </div>
 
         {/* Mobile toggle */}
         <button
           type="button"
-          className="lg:hidden p-2 -mr-2 text-[var(--color-ink)]"
+          className="xl:hidden p-2 -mr-2 text-[var(--color-ink)]"
           aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={mobileOpen}
           onClick={() => setMobileOpen((v) => !v)}
@@ -326,7 +331,7 @@ export default function SiteHeader() {
 
       {/* Mobile sheet */}
       {mobileOpen && (
-        <div className="lg:hidden border-t border-[var(--color-border)] bg-white max-h-[calc(100vh-7rem)] overflow-y-auto">
+        <div className="xl:hidden border-t border-[var(--color-border)] bg-white max-h-[calc(100vh-6rem)] overflow-y-auto">
           <nav className="px-5 py-4">
             <MobileAccordion
               label="Services"
