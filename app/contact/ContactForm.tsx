@@ -34,7 +34,12 @@ export default function ContactForm() {
           name: fd.get('name'),
           email: fd.get('email'),
           phone: fd.get('phone'),
-          message: service ? `Service interest: ${service}\n\n${msg}` : msg,
+          // Separate fields, not one composed string. Folded together, the patient's own words
+          // sat unlabelled under "Service interest: …" on the Studio card and read as missing
+          // (Paul, 2026-09-17). The route files `service` as its own labelled row, and still
+          // falls back to "Service interest: …" as the body when nothing was typed.
+          message: msg,
+          service,
           smsConsent: fd.get('smsConsent') === 'on',
           source: 'contact',
         }),
